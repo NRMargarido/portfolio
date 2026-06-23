@@ -557,10 +557,22 @@ function applyFilter(){
 }
 (function(){
   const mi=document.getElementById('matchInput');
-  if(mi){
-    mi.addEventListener('input',()=>{clearTimeout(filterTimer);filterTimer=setTimeout(applyFilter,220);});
-    document.getElementById('matchClear').addEventListener('click',()=>{mi.value='';applyFilter();mi.focus();});
-  }
+  if(!mi) return;
+  const isMobile=()=>window.matchMedia('(max-width:600px)').matches;
+  let scrolled=false;
+  mi.addEventListener('input',()=>{
+    clearTimeout(filterTimer);
+    filterTimer=setTimeout(applyFilter,220);
+    if(isMobile()){
+      const has=!!mi.value.trim();
+      if(has && !scrolled){
+        scrolled=true;
+        document.getElementById('skills').scrollIntoView({behavior:REDUCE?'auto':'smooth',block:'start'});
+      }
+      if(!has) scrolled=false;
+    }
+  });
+  document.getElementById('matchClear').addEventListener('click',()=>{mi.value='';applyFilter();mi.focus();scrolled=false;});
 })();
 
 document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
