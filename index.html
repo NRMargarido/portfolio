@@ -116,6 +116,12 @@ h1,h2,h3{font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-
 .card .plinks a:hover{text-decoration:underline;text-underline-offset:3px}
 .card .plinks a:hover .arr{transform:translate(2px,-2px)}
 .card.wide{grid-column:1 / -1}
+.proj-cta{text-align:center;margin-top:48px}
+.proj-cta a{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--ink);border-radius:999px;padding:13px 26px;font-weight:500;font-size:15px;transition:background .2s,color .2s,transform .15s}
+.proj-cta a::after{content:"\2197";transition:transform .2s}
+.proj-cta a:hover{background:var(--ink);color:var(--cream)}
+.proj-cta a:hover::after{transform:translate(2px,-2px)}
+.proj-cta a:active{transform:translateY(1px)}
 @media(max-width:680px){.proj-grid{grid-template-columns:1fr}.card.wide{grid-column:auto}}
 
 /* skills */
@@ -303,6 +309,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
             </div>
           </article>
         </div>
+        <div class="proj-cta">
+          <a href="work.html" data-i18n="proj_cta"></a>
+        </div>
       </div>
     </section>
 
@@ -380,6 +389,7 @@ const I18N={
 
     proj_k:"Projetos", proj_h:"Onde a curiosidade encontra o código",
     proj_intro:"Projetos pessoais onde exploro inteligência artificial, dados e automação.",
+    proj_cta:"Ver portfólio completo",
     proj1_title:"Plataforma cívica",
     proj1_desc:"Plataforma cívica de incidência municipal e local que reúne e digere várias fontes de informação, com o intuito de promover uma maior intervenção e conhecimento cívico do utilizador. Procura ainda aproximar o cidadão das necessidades diárias da autarquia.",
     proj1_tags:"Cívico <i>·</i> Web <i>·</i> Dados",
@@ -432,6 +442,7 @@ const I18N={
 
     proj_k:"Projects", proj_h:"Where curiosity meets code",
     proj_intro:"Personal projects exploring artificial intelligence, data and automation.",
+    proj_cta:"See full portfolio",
     proj1_title:"Civic platform",
     proj1_desc:"A civic platform focused on the municipal and local level that gathers and digests multiple sources of information to encourage greater civic engagement and awareness, bringing citizens closer to the day-to-day needs of their local council.",
     proj1_tags:"Civic <i>·</i> Web <i>·</i> Data",
