@@ -22,71 +22,86 @@ h1,h2,h3{font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-
 .grain{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.05;mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-/* top bar */
-.bar{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:24px 32px;font-size:14px}
-.back{display:inline-flex;align-items:center;gap:9px;font-family:"Space Grotesk";font-weight:600;font-size:16px}
-.back .arr{transition:transform .2s}.back:hover .arr{transform:translateX(-3px)}
-.lang{display:inline-flex;align-items:center;gap:7px;font-size:13px}
-.lang button{font:inherit;font-size:13px;border:0;background:none;cursor:pointer;color:var(--muted);padding:0;letter-spacing:.04em;transition:color .2s}
+.lang{position:fixed;top:24px;right:32px;z-index:40;display:inline-flex;align-items:center;gap:7px;font-size:13px}
+.lang button{font:inherit;font-size:13px;border:0;background:none;cursor:pointer;color:var(--muted);padding:0;letter-spacing:.04em;transition:color .25s}
 .lang button.on{color:var(--ink);font-weight:600}
 .lang .sep{color:var(--line)}
 
 /* right menu */
-.worknav{position:fixed;right:30px;top:50%;transform:translateY(-50%);z-index:30;display:flex;flex-direction:column;gap:15px;align-items:flex-end}
-.worknav button{display:flex;align-items:center;gap:11px;font:inherit;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;background:none;border:0;cursor:pointer;transition:color .25s}
-.worknav button::after{content:"";width:13px;height:1.5px;background:currentColor;opacity:.45;transition:width .3s cubic-bezier(.16,1,.3,1),opacity .3s}
-.worknav button:hover{color:var(--ink)}
+.worknav{position:fixed;right:32px;top:50%;transform:translateY(-50%);z-index:30;display:flex;flex-direction:column;gap:16px;align-items:flex-end}
+.worknav button,.worknav a{display:flex;align-items:center;gap:11px;font:inherit;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;background:none;border:0;cursor:pointer;transition:color .3s ease}
+.worknav button::after,.worknav a::after{content:"";width:13px;height:1.5px;background:currentColor;opacity:.4;transition:width .45s cubic-bezier(.16,1,.3,1),opacity .45s ease}
+.worknav button:hover,.worknav a:hover{color:var(--ink)}
 .worknav button.active{color:var(--accent)}
-.worknav button.active::after{width:30px;opacity:1}
+.worknav button.active::after{width:32px;opacity:1}
+.worknav .back-item{margin-top:10px;color:var(--ink);opacity:.75}
+.worknav .back-item:hover{opacity:1}
 
 /* centered stage */
-.stage-wrap{height:100dvh;display:flex;align-items:center;justify-content:center;padding:96px 150px 56px 56px}
-.stage{position:relative;width:min(700px,100%);height:min(66vh,580px)}
-.panel{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .45s ease,transform .45s ease;pointer-events:none}
+.stage-wrap{height:100dvh;display:flex;align-items:center;justify-content:center;padding:90px 184px 56px 64px}
+.stage{position:relative;width:min(840px,100%);height:min(72vh,640px)}
+.panel{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px;opacity:0;visibility:hidden;transform:translateY(16px) scale(.985);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);pointer-events:none}
 .panel.active{opacity:1;visibility:visible;transform:none;pointer-events:auto}
 .panel .lead{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:500}
-.panel h2{font-size:clamp(26px,4vw,40px)}
-.panel p{color:var(--muted);font-size:16px;line-height:1.55;max-width:46ch}
-.panel .links{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:4px}
-.panel .links a{color:var(--accent);font-weight:500;font-size:15px;display:inline-flex;align-items:center;gap:6px}
-.panel .links a .arr{transition:transform .2s}.panel .links a:hover .arr{transform:translate(2px,-2px)}
+.panel h2{font-size:clamp(28px,4.2vw,44px)}
+.panel p{color:var(--muted);font-size:16px;line-height:1.55;max-width:48ch}
 
-/* galleries */
+/* e-konomista list */
+.eklist{list-style:none;width:min(520px,92%);text-align:left;margin-top:2px}
+.eklist li{border-top:1px solid var(--line)}
+.eklist li:last-child{border-bottom:1px solid var(--line)}
+.eklist a{display:flex;justify-content:space-between;gap:14px;align-items:baseline;padding:13px 0;font-size:15.5px;line-height:1.4}
+.eklist a .arr{color:var(--accent);transition:transform .2s}
+.eklist a:hover{color:var(--accent)}.eklist a:hover .arr{transform:translate(2px,-2px)}
+.alllink{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:500;font-size:14.5px;margin-top:4px}
+.alllink .arr{transition:transform .2s}.alllink:hover .arr{transform:translate(2px,-2px)}
+
+/* link rows for data/brand panels */
+.links{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+.links a{color:var(--accent);font-weight:500;font-size:15px;display:inline-flex;align-items:center;gap:6px}
+.links a .arr{transition:transform .2s}.links a:hover .arr{transform:translate(2px,-2px)}
+
+/* galleries (open in lightbox) */
 .gal{display:flex;gap:12px;width:max-content;max-width:100%;margin-inline:auto;overflow-x:auto;padding-bottom:8px}
 .gal figure{flex:0 0 auto;display:flex;flex-direction:column;gap:6px}
-.gal img{height:40vh;width:auto;border:1px solid var(--line);border-radius:8px;transition:opacity .2s}
-.gal a:hover img{opacity:.85}
+.gal img{height:42vh;width:auto;border:1px solid var(--line);border-radius:8px;cursor:zoom-in;transition:opacity .2s,transform .2s}
+.gal img:hover{opacity:.88;transform:translateY(-2px)}
 .gal figcaption{font-size:12px;color:var(--muted)}
 .hint{font-size:12.5px;color:var(--muted)}
 
 /* video */
-.vembed{width:min(580px,86vw);aspect-ratio:16/9;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.vembed{width:min(620px,86vw);aspect-ratio:16/9;border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .vembed iframe{width:100%;height:100%;border:0;display:block}
+
+/* lightbox reader */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(18,16,11,.94);display:none;justify-content:center;padding:5vh 4vw;overflow:auto;opacity:0;transition:opacity .35s ease}
+.lb.open{display:flex;opacity:1}
+.lb-inner{margin:auto}
+.lb-inner img{width:min(1000px,94vw);height:auto;border-radius:6px;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+.lb-close{position:fixed;top:16px;right:24px;z-index:81;background:none;border:0;color:#fff;font-size:36px;line-height:1;cursor:pointer;opacity:.85;transition:opacity .2s}
+.lb-close:hover{opacity:1}
 
 @media(max-width:820px){
   body{overflow:auto}
-  .bar{position:static}
-  .worknav{position:static;transform:none;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 16px;padding:0 20px;margin:6px 0 4px}
-  .worknav button::after{display:none}
-  .stage-wrap{height:auto;min-height:70vh;padding:24px 20px 50px}
+  .worknav{position:static;transform:none;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 16px;padding:64px 20px 0}
+  .worknav button::after,.worknav a::after{display:none}
+  .worknav .back-item{margin-top:0}
+  .stage-wrap{height:auto;min-height:64vh;padding:22px 20px 50px}
   .stage{height:auto;min-height:54vh;width:100%}
-  .panel{position:relative;display:none;opacity:1;visibility:visible;transform:none}
+  .panel{position:relative;display:none;opacity:1;visibility:visible;transform:none;transition:none}
   .panel.active{display:flex}
-  .gal img{height:36vh}
+  .gal img{height:34vh}
 }
 </style>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
 
-  <header class="bar">
-    <a href="index.html" class="back"><span class="arr">&larr;</span> <span data-i18n="back"></span></a>
-    <span class="lang">
-      <button data-l="pt" class="on">PT</button>
-      <span class="sep">/</span>
-      <button data-l="en">EN</button>
-    </span>
-  </header>
+  <span class="lang">
+    <button data-l="pt" class="on">PT</button>
+    <span class="sep">/</span>
+    <button data-l="en">EN</button>
+  </span>
 
   <nav class="worknav" aria-label="Portfolio">
     <button data-target="ek" class="active">E-Konomista</button>
@@ -96,6 +111,7 @@ h1,h2,h3{font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-
     <button data-target="pbi">Power BI</button>
     <button data-target="luxury">Luxury Literie</button>
     <button data-target="evento" data-i18n="m_evento"></button>
+    <a class="back-item" href="index.html"><span class="arr">&larr;</span> <span data-i18n="back"></span></a>
   </nav>
 
   <div class="stage-wrap">
@@ -104,22 +120,23 @@ h1,h2,h3{font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-
       <section class="panel active" id="p-ek">
         <p class="lead" data-i18n="k_articles"></p>
         <h2>E-Konomista</h2>
-        <p data-i18n="ek_d"></p>
-        <div class="links">
-          <a href="https://www.e-konomista.pt/problemas-que-nao-tinhamos-antes-da-internet/" target="_blank" rel="noopener"><span data-i18n="ek_ex"></span> <span class="arr">&#8599;</span></a>
-          <a href="https://www.e-konomista.pt/author/nuno-margarido/" target="_blank" rel="noopener"><span data-i18n="ek_all"></span> <span class="arr">&#8599;</span></a>
-        </div>
+        <ul class="eklist">
+          <li><a href="https://www.e-konomista.pt/problemas-que-nao-tinhamos-antes-da-internet/" target="_blank" rel="noopener">Relembre 8 problemas que não tínhamos antes da internet <span class="arr">&#8599;</span></a></li>
+          <li><a href="https://www.e-konomista.pt/como-melhorar-as-financas-pessoais-numa-semana/" target="_blank" rel="noopener">Como melhorar as finanças pessoais numa semana <span class="arr">&#8599;</span></a></li>
+          <li><a href="https://www.e-konomista.pt/jogos-classicos-espera-reavivar-memorias/" target="_blank" rel="noopener">Há mais de seis mil jogos clássicos à espera de reavivar memórias <span class="arr">&#8599;</span></a></li>
+        </ul>
+        <a class="alllink" href="https://www.e-konomista.pt/author/nuno-margarido/" target="_blank" rel="noopener"><span data-i18n="ek_all"></span> <span class="arr">&#8599;</span></a>
       </section>
 
       <section class="panel" id="p-record">
         <p class="lead" data-i18n="k_articles"></p>
         <h2>Jornal Record</h2>
         <div class="gal">
-          <figure><a href="work_assets/record/beira-mar-porto.jpg" target="_blank" rel="noopener"><img loading="lazy" src="work_assets/record/beira-mar-porto.jpg" alt="Recorte Record: FC Porto x Beira-Mar juniores" /></a><figcaption>FC Porto x Beira-Mar</figcaption></figure>
-          <figure><a href="work_assets/record/dirigente-albergaria.jpg" target="_blank" rel="noopener"><img loading="lazy" src="work_assets/record/dirigente-albergaria.jpg" alt="Recorte Record: dirigente do Albergaria" /></a><figcaption>Dirigente do Albergaria</figcaption></figure>
-          <figure><a href="work_assets/record/supertaca-basquetebol-1819.jpg" target="_blank" rel="noopener"><img loading="lazy" src="work_assets/record/supertaca-basquetebol-1819.jpg" alt="Recorte Record: Supertaça de basquetebol" /></a><figcaption>Supertaça basquetebol 18/19</figcaption></figure>
+          <figure><img class="zoom" loading="lazy" src="work_assets/record/beira-mar-porto.jpg" alt="Recorte Record: FC Porto x Beira-Mar juniores" /><figcaption>FC Porto x Beira-Mar</figcaption></figure>
+          <figure><img class="zoom" loading="lazy" src="work_assets/record/dirigente-albergaria.jpg" alt="Recorte Record: dirigente do Albergaria" /><figcaption>Dirigente do Albergaria</figcaption></figure>
+          <figure><img class="zoom" loading="lazy" src="work_assets/record/supertaca-basquetebol-1819.jpg" alt="Recorte Record: Supertaça de basquetebol" /><figcaption>Supertaça basquetebol 18/19</figcaption></figure>
         </div>
-        <p class="hint" data-i18n="clip_hint"></p>
+        <p class="hint" data-i18n="read_hint"></p>
       </section>
 
       <section class="panel" id="p-oponto">
@@ -127,14 +144,14 @@ h1,h2,h3{font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-
         <h2>Jornal O Ponto</h2>
         <p class="hint">Edição 518 &middot; Especial 25 de Abril (2023)</p>
         <div class="gal">
-          <figure><a href="work_assets/oponto/p-04.jpg" target="_blank" rel="noopener"><img loading="lazy" src="work_assets/oponto/p-04.jpg" alt="O Ponto 518 pág. 4" /></a></figure>
-          <figure><a href="work_assets/oponto/p-05.jpg" target="_blank" rel="noopener"><img loading="lazy" src="work_assets/oponto/p-05.jpg" alt="O Ponto 518 pág. 5" /></a></figure>
-          <figure><a href="work_assets/oponto/p-06.jpg" target="_blank" rel="noopener"><img loading="lazy" src="work_assets/oponto/p-06.jpg" alt="O Ponto 518 pág. 6" /></a></figure>
-          <figure><a href="work_assets/oponto/p-07.jpg" target="_blank" rel="noopener"><img loading="lazy" src="work_assets/oponto/p-07.jpg" alt="O Ponto 518 pág. 7" /></a></figure>
-          <figure><a href="work_assets/oponto/p-08.jpg" target="_blank" rel="noopener"><img loading="lazy" src="work_assets/oponto/p-08.jpg" alt="O Ponto 518 pág. 8" /></a></figure>
-          <figure><a href="work_assets/oponto/p-09.jpg" target="_blank" rel="noopener"><img loading="lazy" src="work_assets/oponto/p-09.jpg" alt="O Ponto 518 pág. 9" /></a></figure>
+          <figure><img class="zoom" loading="lazy" src="work_assets/oponto/p-04.jpg" alt="O Ponto 518 pág. 4" /></figure>
+          <figure><img class="zoom" loading="lazy" src="work_assets/oponto/p-05.jpg" alt="O Ponto 518 pág. 5" /></figure>
+          <figure><img class="zoom" loading="lazy" src="work_assets/oponto/p-06.jpg" alt="O Ponto 518 pág. 6" /></figure>
+          <figure><img class="zoom" loading="lazy" src="work_assets/oponto/p-07.jpg" alt="O Ponto 518 pág. 7" /></figure>
+          <figure><img class="zoom" loading="lazy" src="work_assets/oponto/p-08.jpg" alt="O Ponto 518 pág. 8" /></figure>
+          <figure><img class="zoom" loading="lazy" src="work_assets/oponto/p-09.jpg" alt="O Ponto 518 pág. 9" /></figure>
         </div>
-        <p class="hint" data-i18n="clip_hint"></p>
+        <p class="hint" data-i18n="read_hint"></p>
       </section>
 
       <section class="panel" id="p-video">
@@ -170,6 +187,12 @@ h1,h2,h3{font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-
     </div>
   </div>
 
+  <!-- lightbox reader -->
+  <div class="lb" id="lb" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Fechar">&times;</button>
+    <div class="lb-inner"><img id="lbImg" src="" alt="" /></div>
+  </div>
+
 <script>
 const I18N={
   pt:{
@@ -177,10 +200,8 @@ const I18N={
     back:"Voltar",
     k_articles:"Artigos publicados", k_video:"Audiovisual", k_data:"Dados, marca e eventos",
     m_video:"Vídeo", m_evento:"Evento",
-    ek_d:"Redator de conteúdos online: tecnologia, ciência, lazer e lifestyle.",
-    ek_ex:"Problemas que não tínhamos antes da internet",
     ek_all:"Ver todos os artigos",
-    clip_hint:"Clica para ampliar.",
+    read_hint:"Clica numa imagem para ler.",
     pbi_d:"Scraping de dados e visualização em Power BI.",
     cat_d:"Organização do catálogo disponível da marca.",
     evt_t:"Evento Planiflex (+400 pessoas)",
@@ -192,10 +213,8 @@ const I18N={
     back:"Back",
     k_articles:"Published articles", k_video:"Audiovisual", k_data:"Data, brand & events",
     m_video:"Video", m_evento:"Event",
-    ek_d:"Online content writer: technology, science, leisure and lifestyle.",
-    ek_ex:"Problems we didn't have before the internet",
     ek_all:"View all articles",
-    clip_hint:"Click to enlarge.",
+    read_hint:"Click an image to read it.",
     pbi_d:"Data scraping and visualisation in Power BI.",
     cat_d:"Organising the brand's available catalogue.",
     evt_t:"Planiflex event (400+ people)",
@@ -221,6 +240,15 @@ function show(key){
   navs.forEach(b=>b.classList.toggle('active',b.dataset.target===key));
 }
 navs.forEach(b=>b.addEventListener('click',()=>show(b.dataset.target)));
+
+/* lightbox */
+const lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg');
+function openLB(src,alt){lbImg.src=src;lbImg.alt=alt||'';lb.classList.add('open');document.body.style.overflow='hidden';}
+function closeLB(){lb.classList.remove('open');document.body.style.overflow='';setTimeout(()=>{if(!lb.classList.contains('open'))lbImg.src='';},350);}
+document.getElementById('lbClose').onclick=closeLB;
+lb.addEventListener('click',e=>{if(e.target===lb||e.target.classList.contains('lb-inner'))closeLB();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLB();});
+document.querySelectorAll('.zoom').forEach(img=>img.addEventListener('click',()=>openLB(img.src,img.alt)));
 </script>
 </body>
 </html>
