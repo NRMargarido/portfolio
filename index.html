@@ -43,7 +43,7 @@ h1,h2,h3{font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-
 .bar .mark{font-family:"Space Grotesk";font-weight:700;font-size:18px;letter-spacing:-.03em}
 .bar .left{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
 .bar .place{color:var(--muted);letter-spacing:.02em}
-.lang{position:fixed;top:26px;right:34px;z-index:40;display:inline-flex;align-items:center;gap:7px;font-size:13px}
+.lang{position:fixed;top:26px;right:34px;z-index:60;display:inline-flex;align-items:center;gap:7px;font-size:13px}
 .lang button{font:inherit;font-size:13px;border:0;background:none;cursor:pointer;color:var(--muted);padding:0;letter-spacing:.04em;transition:color .2s}
 .lang button.on{color:var(--ink);font-weight:600}
 .lang .sep{color:var(--line)}
@@ -171,7 +171,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 @media(max-width:600px){
   .wrap{padding:0 20px}
   .bar{padding:18px 18px}
-  .lang{top:18px;right:18px}
+  .lang{top:14px;right:14px;padding:7px 13px;border-radius:999px;background:rgba(242,235,221,.82);backdrop-filter:blur(8px);box-shadow:0 6px 20px -12px rgba(28,26,20,.4)}
   .eyebrow{white-space:normal;text-align:center;font-size:11px;letter-spacing:.14em;line-height:1.85;max-width:30ch;margin-left:auto;margin-right:auto}
   .hero{padding:92px 20px 60px}
   .section{padding:74px 0}
