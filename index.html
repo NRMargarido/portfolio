@@ -116,7 +116,7 @@ h1,h2,h3{font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-
 .card .plinks a:hover{text-decoration:underline;text-underline-offset:3px}
 .card .plinks a:hover .arr{transform:translate(2px,-2px)}
 .card.wide{grid-column:1 / -1}
-.proj-cta{text-align:center;margin-top:48px}
+.proj-cta{display:none;text-align:center}
 .proj-cta a{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--ink);border-radius:999px;padding:13px 26px;font-weight:500;font-size:15px;transition:background .2s,color .2s,transform .15s}
 .proj-cta a::after{content:"\2197";transition:transform .2s}
 .proj-cta a:hover{background:var(--ink);color:var(--cream)}
@@ -169,7 +169,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .sidenav a:hover{color:var(--ink)}
 .sidenav a.active{color:var(--accent)}
 .sidenav a.active::after{width:30px;opacity:1}
-@media(max-width:1024px){.sidenav{display:none}}
+@media(max-width:1024px){.sidenav{display:none}.proj-cta{display:block}}
 
 .rise{opacity:0;transform:translateY(16px);animation:rise .9s cubic-bezier(.16,1,.3,1) forwards}
 .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.32s}.d4{animation-delay:.46s}
@@ -273,6 +273,11 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
       </div>
     </section>
 
+    <!-- PORTFOLIO CTA (mobile only) -->
+    <div class="proj-cta">
+      <a href="work.html" data-i18n="proj_cta"></a>
+    </div>
+
     <!-- PROJECTS -->
     <section class="section" id="projects">
       <div class="wrap reveal">
@@ -308,9 +313,6 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
               <a href="dashboard.html" target="_blank" rel="noopener">dashboard <span class="arr">&#8599;</span></a>
             </div>
           </article>
-        </div>
-        <div class="proj-cta">
-          <a href="work.html" data-i18n="proj_cta"></a>
         </div>
       </div>
     </section>
