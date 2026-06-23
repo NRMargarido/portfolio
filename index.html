@@ -177,7 +177,11 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   .section{padding:74px 0}
   .xp-row{grid-template-columns:70px 1fr;gap:16px}
   .contact{padding:90px 0 80px}
-  .matchbox{margin-top:40px}
+  /* on mobile: search box above the competences so typing keeps it in view */
+  #skills .wrap{display:flex;flex-direction:column}
+  #skills #matchbox{order:1;margin:0 0 24px}
+  #skills #skillsGrid{order:2}
+  #skills #noMatch{order:3}
 }
 @media(prefers-reduced-motion:reduce){.rise,.reveal{animation:none!important;opacity:1!important;transform:none!important}html{scroll-behavior:auto}.skills-grid,.sk li,.nomatch{transition:none!important}}
 </style>
@@ -558,21 +562,8 @@ function applyFilter(){
 (function(){
   const mi=document.getElementById('matchInput');
   if(!mi) return;
-  const isMobile=()=>window.matchMedia('(max-width:600px)').matches;
-  let scrolled=false;
-  mi.addEventListener('input',()=>{
-    clearTimeout(filterTimer);
-    filterTimer=setTimeout(applyFilter,220);
-    if(isMobile()){
-      const has=!!mi.value.trim();
-      if(has && !scrolled){
-        scrolled=true;
-        document.getElementById('skills').scrollIntoView({behavior:REDUCE?'auto':'smooth',block:'start'});
-      }
-      if(!has) scrolled=false;
-    }
-  });
-  document.getElementById('matchClear').addEventListener('click',()=>{mi.value='';applyFilter();mi.focus();scrolled=false;});
+  mi.addEventListener('input',()=>{clearTimeout(filterTimer);filterTimer=setTimeout(applyFilter,220);});
+  document.getElementById('matchClear').addEventListener('click',()=>{mi.value='';applyFilter();mi.focus();});
 })();
 
 document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
