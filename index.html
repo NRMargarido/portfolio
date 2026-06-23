@@ -149,6 +149,9 @@ h1,h2,h3{font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-
 .btn{display:inline-flex;align-items:center;gap:9px;border-radius:999px;padding:16px 30px;font-weight:500;font-size:16px;background:var(--ink);color:var(--cream);transition:transform .15s,opacity .2s}
 .btn:hover{opacity:.9}.btn:active{transform:translateY(1px)}
 .btn .arr{transition:transform .2s}.btn:hover .arr{transform:translateX(3px)}
+.ct-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-alt:hover{background:rgba(28,26,20,.05);opacity:1}
 .cinfo{margin-top:34px;display:flex;gap:14px 30px;justify-content:center;flex-wrap:wrap;font-size:14.5px;color:var(--muted)}
 .cinfo a:hover{color:var(--ink)}
 
@@ -325,11 +328,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
     <section class="contact" id="contact">
       <div class="wrap reveal">
         <h2 data-i18n="ct_h"></h2>
-        <p data-i18n="ct_p"></p>
-        <a href="mailto:nmargarido@gmail.com" class="btn"><span data-i18n="ct_cta"></span> <span class="arr">&rarr;</span></a>
-        <div class="cinfo">
-          <a href="mailto:nmargarido@gmail.com">nmargarido@gmail.com</a>
-          <a href="tel:+351912364791">+351 912 364 791</a>
+        <div class="ct-actions">
+          <a href="mailto:nmargarido@gmail.com" class="btn"><span data-i18n="ct_cta"></span> <span class="arr">&rarr;</span></a>
+          <a href="tel:+351912364791" class="btn btn-alt"><span data-i18n="ct_cta2"></span> <span class="arr">&rarr;</span></a>
         </div>
       </div>
     </section>
@@ -396,7 +397,7 @@ const I18N={
 
     ct_h:'Vamos construir algo<span class="dot">.</span>',
     ct_p:"Aberto a novos projetos e desafios. A forma mais rápida de falar comigo é por email.",
-    ct_cta:"Enviar email",
+    ct_cta:"Enviar email", ct_cta2:"Telefonar",
     footer_note:"Feito com curiosidade em Oliveira de Azeméis."
   },
   en:{
@@ -448,7 +449,7 @@ const I18N={
 
     ct_h:'Let’s build something<span class="dot">.</span>',
     ct_p:"Open to new projects and challenges. The fastest way to reach me is email.",
-    ct_cta:"Email me",
+    ct_cta:"Email me", ct_cta2:"Call",
     footer_note:"Made with curiosity in Oliveira de Azeméis."
   }
 };
