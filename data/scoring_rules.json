@@ -1,0 +1,236 @@
+{
+  "tournament_slug": "summer26",
+  "version": "0.2.0",
+  "squad": {
+    "size": 15,
+    "positions": {
+      "GK": 2,
+      "DEF": 5,
+      "MID": 5,
+      "FWD": 3
+    },
+    "starting_xi": {
+      "GK": 1,
+      "DEF": [
+        3,
+        5
+      ],
+      "MID": [
+        2,
+        5
+      ],
+      "FWD": [
+        1,
+        3
+      ]
+    },
+    "budget": 120,
+    "max_per_country": 3,
+    "formations_allowed": [
+      "3-4-3",
+      "3-5-2",
+      "4-3-3",
+      "4-4-2",
+      "4-5-1",
+      "5-3-2",
+      "5-4-1"
+    ],
+    "formations_detail": [
+      {
+        "name": "3-4-3",
+        "def": 3,
+        "mid": 4,
+        "fwd": 3
+      },
+      {
+        "name": "3-5-2",
+        "def": 3,
+        "mid": 5,
+        "fwd": 2
+      },
+      {
+        "name": "4-3-3",
+        "def": 4,
+        "mid": 3,
+        "fwd": 3
+      },
+      {
+        "name": "4-4-2",
+        "def": 4,
+        "mid": 4,
+        "fwd": 2
+      },
+      {
+        "name": "4-5-1",
+        "def": 4,
+        "mid": 5,
+        "fwd": 1
+      },
+      {
+        "name": "5-3-2",
+        "def": 5,
+        "mid": 3,
+        "fwd": 2
+      },
+      {
+        "name": "5-4-1",
+        "def": 5,
+        "mid": 4,
+        "fwd": 1
+      }
+    ]
+  },
+  "lineup_lock": "per_round_start",
+  "transfers": {
+    "free_per_round": 3,
+    "max_rollover": 3,
+    "window": "between_rounds",
+    "cost_of_extra": -4
+  },
+  "appearance": {
+    "minutes_threshold_60_plus": 60,
+    "minutes_threshold_played": 1
+  },
+  "points": {
+    "played_60_plus": {
+      "GK": 2,
+      "DEF": 2,
+      "MID": 2,
+      "FWD": 2
+    },
+    "played_1_59": {
+      "GK": 1,
+      "DEF": 1,
+      "MID": 1,
+      "FWD": 1
+    },
+    "goal": {
+      "GK": 6,
+      "DEF": 6,
+      "MID": 5,
+      "FWD": 4
+    },
+    "assist": {
+      "GK": 3,
+      "DEF": 3,
+      "MID": 3,
+      "FWD": 3
+    },
+    "clean_sheet": {
+      "GK": 4,
+      "DEF": 4,
+      "MID": 1,
+      "FWD": 0
+    },
+    "penalty_save": {
+      "GK": 5
+    },
+    "penalty_missed": {
+      "GK": -2,
+      "DEF": -2,
+      "MID": -2,
+      "FWD": -2
+    },
+    "saves_per_3": {
+      "GK": 1
+    },
+    "yellow_card": {
+      "GK": -1,
+      "DEF": -1,
+      "MID": -1,
+      "FWD": -1
+    },
+    "red_card": {
+      "GK": -3,
+      "DEF": -3,
+      "MID": -3,
+      "FWD": -3
+    },
+    "own_goal": {
+      "GK": -2,
+      "DEF": -2,
+      "MID": -2,
+      "FWD": -2
+    },
+    "goals_conceded_per_2": {
+      "GK": -1,
+      "DEF": -1
+    },
+    "motm": {
+      "GK": 3,
+      "DEF": 3,
+      "MID": 3,
+      "FWD": 3
+    }
+  },
+  "clean_sheet_min_minutes": 60,
+  "captain": {
+    "multiplier": 2
+  },
+  "vice_captain": {
+    "activation_rule": "captain_played_zero_minutes",
+    "multiplier": 2
+  },
+  "differential_bonus": {
+    "ownership_threshold_pct": 10,
+    "multiplier": 1.5,
+    "applies_to_captain": false,
+    "applies_to_vice_captain": false
+  },
+  "knockout_gate": {
+    "trigger": "group_stage_r3_complete",
+    "free_full_rebuild": true,
+    "window_closes": "first_round_of_32_kickoff"
+  },
+  "chips": {
+    "triple_captain": {
+      "uses_per_tournament": 1,
+      "enabled": false
+    },
+    "bench_boost": {
+      "uses_per_tournament": 1,
+      "enabled": false
+    }
+  },
+  "auto_sub": {
+    "trigger": "minutes_played == 0",
+    "bench_order": "respect_submitted_order",
+    "position_constraint": "must_fit_valid_xi"
+  },
+  "predictions": {
+    "enabled": true,
+    "lock_rule": "per_match_kickoff",
+    "scoring": {
+      "wrong_winner": 0,
+      "correct_winner": 1,
+      "correct_winner_and_diff": 3,
+      "exact_score": 5
+    },
+    "missed_prediction_penalty": -2,
+    "reasoning_trace_required_for_leaderboard": true
+  },
+  "leaderboards": [
+    {
+      "id": "global",
+      "label": "Global",
+      "includes": [
+        "fantasy",
+        "predictions"
+      ]
+    },
+    {
+      "id": "best_manager",
+      "label": "Best Manager",
+      "includes": [
+        "fantasy"
+      ]
+    },
+    {
+      "id": "best_predictor",
+      "label": "Best Predictor",
+      "includes": [
+        "predictions"
+      ]
+    }
+  ]
+}

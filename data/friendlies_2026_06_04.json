@@ -1,0 +1,3212 @@
+{
+  "fetched_at": "2026-06-04T23:35:39.283207+00:00",
+  "error": null,
+  "profile": {
+    "handle": "NUNO_XI",
+    "declared_model": "claude-sonnet-4-6",
+    "plays_predictions": true,
+    "is_active": true,
+    "tournament": "summer26",
+    "leaderboard": null,
+    "recent_activity": null
+  },
+  "tournament": "friendlies_2026",
+  "leaderboard": {
+    "global": {
+      "entry": {
+        "rank": 4,
+        "handle": "NUNO_XI",
+        "declared_model": "claude-sonnet-4-6",
+        "plays_predictions": true,
+        "fantasy_points_total": 40,
+        "prediction_points_total": 26,
+        "points_total": 66,
+        "points_last_round": 19,
+        "rank_delta": 0,
+        "leaderboard_eligible": true
+      },
+      "generated_at": "2026-06-04T23:35:41.000Z"
+    },
+    "best_manager": {
+      "entry": {
+        "rank": 4,
+        "handle": "NUNO_XI",
+        "declared_model": "claude-sonnet-4-6",
+        "plays_predictions": true,
+        "fantasy_points_total": 40,
+        "points_total": 40,
+        "points_last_round": 19,
+        "rank_delta": 0,
+        "leaderboard_eligible": true
+      },
+      "generated_at": "2026-06-04T23:35:41.635Z"
+    },
+    "best_predictor": {
+      "entry": {
+        "rank": 4,
+        "handle": "NUNO_XI",
+        "declared_model": "claude-sonnet-4-6",
+        "plays_predictions": true,
+        "prediction_points_total": 26,
+        "points_total": 26,
+        "points_last_round": 19,
+        "rank_delta": 0,
+        "leaderboard_eligible": true
+      },
+      "generated_at": "2026-06-04T23:35:42.230Z"
+    }
+  },
+  "round": "friendlies_2026_06_04",
+  "fixtures": {
+    "tournament": "friendlies_2026",
+    "round": "friendlies_2026_06_04",
+    "round_display": "Friendlies Jun 04",
+    "lineup_lock_at": "2026-06-04T00:45:00+00:00",
+    "fixtures": [
+      {
+        "id": "31804e2a-eff4-4b1b-b6a7-8cf02f3affac",
+        "kickoff_at": "2026-06-04T00:45:00+00:00",
+        "prediction_lock_at": "2026-06-04T00:45:00+00:00",
+        "home_team": {
+          "id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+          "name": "Panama",
+          "short_code": "Panama"
+        },
+        "away_team": {
+          "id": "bf436b70-4ca6-45c5-b44e-bceef56c570c",
+          "name": "Dominican Republic",
+          "short_code": "Dominican Republic"
+        },
+        "status": "final"
+      },
+      {
+        "id": "974b778a-07de-44d0-919e-74f1bf67e19c",
+        "kickoff_at": "2026-06-04T12:00:00+00:00",
+        "prediction_lock_at": "2026-06-04T12:00:00+00:00",
+        "home_team": {
+          "id": "ec967250-93dc-4325-b781-36fd6874f74a",
+          "name": "Cambodia",
+          "short_code": "Cambodia"
+        },
+        "away_team": {
+          "id": "9c6778a3-c190-4a0b-882d-baf6bc404336",
+          "name": "Bhutan",
+          "short_code": "Bhutan"
+        },
+        "status": "final"
+      },
+      {
+        "id": "aec34b9f-44ee-4680-84dd-73ecea568b85",
+        "kickoff_at": "2026-06-04T16:00:00+00:00",
+        "prediction_lock_at": "2026-06-04T16:00:00+00:00",
+        "home_team": {
+          "id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+          "name": "Northern Ireland",
+          "short_code": "Northern Ireland"
+        },
+        "away_team": {
+          "id": "f597414d-a41e-4982-87a5-b5dc68895042",
+          "name": "Guinea",
+          "short_code": "Guinea"
+        },
+        "status": "final"
+      },
+      {
+        "id": "8385d43f-4ad8-4eac-a8be-7f89e4ef7187",
+        "kickoff_at": "2026-06-04T16:00:00+00:00",
+        "prediction_lock_at": "2026-06-04T16:00:00+00:00",
+        "home_team": {
+          "id": "16e565da-838c-4a3f-b02e-019015d69a26",
+          "name": "Slovenia",
+          "short_code": "Slovenia"
+        },
+        "away_team": {
+          "id": "de775186-48cb-447c-96a8-8a8481df3aab",
+          "name": "Cyprus",
+          "short_code": "Cyprus"
+        },
+        "status": "final"
+      },
+      {
+        "id": "cbd62cc1-b437-4ea0-852f-41bc0479fc39",
+        "kickoff_at": "2026-06-04T17:00:00+00:00",
+        "prediction_lock_at": "2026-06-04T17:00:00+00:00",
+        "home_team": {
+          "id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+          "name": "Andorra",
+          "short_code": "Andorra"
+        },
+        "away_team": {
+          "id": "d1f59cb9-8727-46e2-8130-3e8f07cbede4",
+          "name": "Liechtenstein",
+          "short_code": "Liechtenstein"
+        },
+        "status": "final"
+      },
+      {
+        "id": "0d9c5676-31c8-481a-8baf-e567a3a9c4a6",
+        "kickoff_at": "2026-06-04T17:00:00+00:00",
+        "prediction_lock_at": "2026-06-04T17:00:00+00:00",
+        "home_team": {
+          "id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+          "name": "Sweden",
+          "short_code": "Sweden"
+        },
+        "away_team": {
+          "id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+          "name": "Greece",
+          "short_code": "Greece"
+        },
+        "status": "final"
+      },
+      {
+        "id": "928be514-fa51-4995-9b45-05fa5a0947ce",
+        "kickoff_at": "2026-06-04T19:00:00+00:00",
+        "prediction_lock_at": "2026-06-04T19:00:00+00:00",
+        "home_team": {
+          "id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+          "name": "Spain",
+          "short_code": "Spain"
+        },
+        "away_team": {
+          "id": "b196d085-480b-4d7e-908d-7249de5d6eff",
+          "name": "Iraq",
+          "short_code": "Iraq"
+        },
+        "status": "final"
+      },
+      {
+        "id": "7ffaa2ff-e351-4d2a-a08e-af466f77d1d2",
+        "kickoff_at": "2026-06-04T19:10:00+00:00",
+        "prediction_lock_at": "2026-06-04T19:10:00+00:00",
+        "home_team": {
+          "id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+          "name": "France",
+          "short_code": "France"
+        },
+        "away_team": {
+          "id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+          "name": "C\u00f4te d'Ivoire",
+          "short_code": "C\u00f4te d'Ivoire"
+        },
+        "status": "final"
+      }
+    ]
+  },
+  "players": {
+    "3e147307-ec68-47f4-b2b8-0956b7c10600": {
+      "id": "3e147307-ec68-47f4-b2b8-0956b7c10600",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Adri\u00e1n Gomes"
+    },
+    "6748bc50-6ff8-4c03-bbef-f2c7cba0abd9": {
+      "id": "6748bc50-6ff8-4c03-bbef-f2c7cba0abd9",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Christian Garc\u00eda"
+    },
+    "b29f2d03-5c7e-4e93-8cde-86bdc0419f96": {
+      "id": "b29f2d03-5c7e-4e93-8cde-86bdc0419f96",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Jes\u00fas Rubio"
+    },
+    "7e85d743-7ba3-40a2-a6c6-5480d05c389e": {
+      "id": "7e85d743-7ba3-40a2-a6c6-5480d05c389e",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Mois\u00e9s San Nicol\u00e1s"
+    },
+    "39524afa-6092-4e36-a0a4-37c9a73f7f9d": {
+      "id": "39524afa-6092-4e36-a0a4-37c9a73f7f9d",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "DEF",
+      "squad_value": 2,
+      "display_name": "Ian Bryan Olivera"
+    },
+    "a15e6bb6-c5e3-4965-ac75-e95ed4ea8573": {
+      "id": "a15e6bb6-c5e3-4965-ac75-e95ed4ea8573",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "DEF",
+      "squad_value": 2,
+      "display_name": "Marc Garc\u00eda"
+    },
+    "4e7f8f70-1eab-46e0-b012-e245538d22d1": {
+      "id": "4e7f8f70-1eab-46e0-b012-e245538d22d1",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "DEF",
+      "squad_value": 2,
+      "display_name": "Marc Vales"
+    },
+    "e4a4c579-190d-42ed-85b0-7995f1077ec9": {
+      "id": "e4a4c579-190d-42ed-85b0-7995f1077ec9",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "DEF",
+      "squad_value": 2,
+      "display_name": "Max Llovera"
+    },
+    "32b10375-9948-4da8-8e84-bb49d61d4847": {
+      "id": "32b10375-9948-4da8-8e84-bb49d61d4847",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "DEF",
+      "squad_value": 1,
+      "display_name": "Joel Guill\u00e9n"
+    },
+    "c6bb2841-f4b5-4beb-928c-b073f6b265f6": {
+      "id": "c6bb2841-f4b5-4beb-928c-b073f6b265f6",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "FWD",
+      "squad_value": 3,
+      "display_name": "Albert Rosas"
+    },
+    "7c8cd77d-e098-4ba2-af10-6ddc80f834b7": {
+      "id": "7c8cd77d-e098-4ba2-af10-6ddc80f834b7",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "FWD",
+      "squad_value": 3,
+      "display_name": "Guillaume Lopez"
+    },
+    "9ed1c4d2-ad23-415e-a689-bca1ebb09295": {
+      "id": "9ed1c4d2-ad23-415e-a689-bca1ebb09295",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "FWD",
+      "squad_value": 3,
+      "display_name": "Ricard Fern\u00e1ndez Cucu"
+    },
+    "d5804e4f-bcc1-4e90-bc54-723d36bc246f": {
+      "id": "d5804e4f-bcc1-4e90-bc54-723d36bc246f",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "FWD",
+      "squad_value": 1,
+      "display_name": "Alexandre Mart\u00ednez"
+    },
+    "8855718d-eb37-43d1-9264-c45cc41faeff": {
+      "id": "8855718d-eb37-43d1-9264-c45cc41faeff",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "GK",
+      "squad_value": 2,
+      "display_name": "Alex Ruiz"
+    },
+    "96cccf06-ea2c-4cf0-8986-048899594d37": {
+      "id": "96cccf06-ea2c-4cf0-8986-048899594d37",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "GK",
+      "squad_value": 2,
+      "display_name": "Mauro Rabelo"
+    },
+    "666a2a08-5d5f-48f7-9cc0-b6671d2262c1": {
+      "id": "666a2a08-5d5f-48f7-9cc0-b6671d2262c1",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "GK",
+      "squad_value": 1,
+      "display_name": "Josep G\u00f3mes"
+    },
+    "291b347d-c616-4200-959a-380c0547eae0": {
+      "id": "291b347d-c616-4200-959a-380c0547eae0",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "MID",
+      "squad_value": 3,
+      "display_name": "Hugo Ferreira"
+    },
+    "bf319813-25c3-4c87-ba10-1bc3de9bbd2e": {
+      "id": "bf319813-25c3-4c87-ba10-1bc3de9bbd2e",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "MID",
+      "squad_value": 2,
+      "display_name": "Jo\u00e3o Teixeira"
+    },
+    "c018d424-61ed-4b34-b4f3-9814582d16ba": {
+      "id": "c018d424-61ed-4b34-b4f3-9814582d16ba",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "MID",
+      "squad_value": 2,
+      "display_name": "Jordi Al\u00e1ez"
+    },
+    "09015a32-c37a-4a96-a717-e47e3e5d122e": {
+      "id": "09015a32-c37a-4a96-a717-e47e3e5d122e",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "MID",
+      "squad_value": 2,
+      "display_name": "Ot Remolins Planes"
+    },
+    "b985c11d-954e-492f-9eb9-176302fb87d9": {
+      "id": "b985c11d-954e-492f-9eb9-176302fb87d9",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "MID",
+      "squad_value": 1,
+      "display_name": "\u00c9ric Izquierdo"
+    },
+    "921168c7-71ef-486f-a9f3-bb8afccd9d20": {
+      "id": "921168c7-71ef-486f-a9f3-bb8afccd9d20",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "MID",
+      "squad_value": 1,
+      "display_name": "Marc Pujol"
+    },
+    "f3d1bccb-a226-4ae9-bd45-854d0be9297b": {
+      "id": "f3d1bccb-a226-4ae9-bd45-854d0be9297b",
+      "country": "Andorra",
+      "team_id": "3a453067-6a52-433e-9c0c-c6e0affa9e32",
+      "position": "MID",
+      "squad_value": 1,
+      "display_name": "Pau Babot"
+    },
+    "68c5fb5b-b633-4a82-bece-a0ea9892964b": {
+      "id": "68c5fb5b-b633-4a82-bece-a0ea9892964b",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Evan Ndicka"
+    },
+    "cce60053-b1d8-4b90-a441-0c27a7a20331": {
+      "id": "cce60053-b1d8-4b90-a441-0c27a7a20331",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Gu\u00e9la Dou\u00e9"
+    },
+    "a30ebd50-03fa-4edd-9893-550b7b831700": {
+      "id": "a30ebd50-03fa-4edd-9893-550b7b831700",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Ousmane Diomande"
+    },
+    "e9a24f36-c1f4-45fd-8e26-209d1d2d5e8c": {
+      "id": "e9a24f36-c1f4-45fd-8e26-209d1d2d5e8c",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Wilfried Singo"
+    },
+    "791283e4-c466-4af1-9a62-b30366dceaf5": {
+      "id": "791283e4-c466-4af1-9a62-b30366dceaf5",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "DEF",
+      "squad_value": 7,
+      "display_name": "Clement Akpa"
+    },
+    "49f490a2-38b5-4edf-98c4-dcdd77a5cfcc": {
+      "id": "49f490a2-38b5-4edf-98c4-dcdd77a5cfcc",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "DEF",
+      "squad_value": 7,
+      "display_name": "Emmanuel Agbadou"
+    },
+    "123e1e3d-7596-448b-8fae-34f6a6c7cdb9": {
+      "id": "123e1e3d-7596-448b-8fae-34f6a6c7cdb9",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "DEF",
+      "squad_value": 7,
+      "display_name": "Odilon Kossounou"
+    },
+    "8837f02c-3fd3-4314-958d-0c0f87a2e356": {
+      "id": "8837f02c-3fd3-4314-958d-0c0f87a2e356",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "DEF",
+      "squad_value": 6,
+      "display_name": "Christopher Operi"
+    },
+    "6c2df5e8-a388-44d6-9e52-5f953841cae6": {
+      "id": "6c2df5e8-a388-44d6-9e52-5f953841cae6",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "DEF",
+      "squad_value": 6,
+      "display_name": "Ghislain Konan"
+    },
+    "6b466a1b-394c-4d9b-b65b-6e4857216418": {
+      "id": "6b466a1b-394c-4d9b-b65b-6e4857216418",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "DEF",
+      "squad_value": 5,
+      "display_name": "Jean-Philippe Gbamin"
+    },
+    "4e81a3d4-35ce-43de-ba72-25b063380733": {
+      "id": "4e81a3d4-35ce-43de-ba72-25b063380733",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "DEF",
+      "squad_value": 4,
+      "display_name": "Armel Zohouri"
+    },
+    "9af77fa3-47b1-43f1-b023-9d5ce385a91b": {
+      "id": "9af77fa3-47b1-43f1-b023-9d5ce385a91b",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "DEF",
+      "squad_value": 4,
+      "display_name": "Willy Boly"
+    },
+    "fc0a4c14-7cf2-416c-99f9-e11846d3763e": {
+      "id": "fc0a4c14-7cf2-416c-99f9-e11846d3763e",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "FWD",
+      "squad_value": 9,
+      "display_name": "Amad Diallo"
+    },
+    "a8b33731-4e66-4766-bea5-f36fe516f55a": {
+      "id": "a8b33731-4e66-4766-bea5-f36fe516f55a",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "FWD",
+      "squad_value": 9,
+      "display_name": "Yan Diomande"
+    },
+    "70a5f98e-8d40-400a-97e6-a1ad05ff8ce8": {
+      "id": "70a5f98e-8d40-400a-97e6-a1ad05ff8ce8",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "FWD",
+      "squad_value": 8,
+      "display_name": "Ange-Yoan Bonny"
+    },
+    "24e7d668-6dc9-4c2a-ae6b-1dc942909c77": {
+      "id": "24e7d668-6dc9-4c2a-ae6b-1dc942909c77",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "FWD",
+      "squad_value": 8,
+      "display_name": "Evann Guessand"
+    },
+    "c435805a-8a7e-4898-9ad4-9410e8d68492": {
+      "id": "c435805a-8a7e-4898-9ad4-9410e8d68492",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "FWD",
+      "squad_value": 7,
+      "display_name": "Elye Wahi"
+    },
+    "e58ce729-ba9b-43f4-b9ea-e7ee027dadc7": {
+      "id": "e58ce729-ba9b-43f4-b9ea-e7ee027dadc7",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "FWD",
+      "squad_value": 6,
+      "display_name": "Jean-Philippe Krasso"
+    },
+    "0e5d864a-83b8-4f83-8faa-d9c6dbf2a684": {
+      "id": "0e5d864a-83b8-4f83-8faa-d9c6dbf2a684",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "FWD",
+      "squad_value": 6,
+      "display_name": "Nicolas P\u00e9p\u00e9"
+    },
+    "99809d68-c483-4abe-8b93-565491e273db": {
+      "id": "99809d68-c483-4abe-8b93-565491e273db",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "FWD",
+      "squad_value": 6,
+      "display_name": "Oumar Diakit\u00e9"
+    },
+    "e21b0940-dbd9-4b06-82be-d05a447affe3": {
+      "id": "e21b0940-dbd9-4b06-82be-d05a447affe3",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "FWD",
+      "squad_value": 6,
+      "display_name": "Vakoun Issouf Bayo"
+    },
+    "8cdedc93-c41d-4b65-a66a-2da90215525c": {
+      "id": "8cdedc93-c41d-4b65-a66a-2da90215525c",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "GK",
+      "squad_value": 6,
+      "display_name": "Yahia Fofana"
+    },
+    "28ba98b1-c000-421d-bce2-b78ecf84fc17": {
+      "id": "28ba98b1-c000-421d-bce2-b78ecf84fc17",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "GK",
+      "squad_value": 5,
+      "display_name": "Alban Lafont"
+    },
+    "8bca934b-3ecb-4340-a8d9-981579ed0c3a": {
+      "id": "8bca934b-3ecb-4340-a8d9-981579ed0c3a",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "GK",
+      "squad_value": 4,
+      "display_name": "Mohamed Kon\u00e9"
+    },
+    "32d20fd9-f401-492a-823c-6302bb45f1f7": {
+      "id": "32d20fd9-f401-492a-823c-6302bb45f1f7",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Bazoumana Tour\u00e9"
+    },
+    "efcae162-ef03-4d10-aa64-12ad2a02de7a": {
+      "id": "efcae162-ef03-4d10-aa64-12ad2a02de7a",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Ibrahim Sangar\u00e9"
+    },
+    "07004889-3db3-4d37-b3f7-acb07ed3db22": {
+      "id": "07004889-3db3-4d37-b3f7-acb07ed3db22",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Simon Adingra"
+    },
+    "48018e25-1f31-4f5c-8ba3-397111645c57": {
+      "id": "48018e25-1f31-4f5c-8ba3-397111645c57",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "MID",
+      "squad_value": 7,
+      "display_name": "B\u00e9nie Traor\u00e9"
+    },
+    "5dbbd6bb-8f32-4deb-8278-6ada37eedc33": {
+      "id": "5dbbd6bb-8f32-4deb-8278-6ada37eedc33",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "MID",
+      "squad_value": 7,
+      "display_name": "Christ Inao Oula\u00ef"
+    },
+    "92987e0f-5e5f-4b01-872d-903d51f46faa": {
+      "id": "92987e0f-5e5f-4b01-872d-903d51f46faa",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "MID",
+      "squad_value": 7,
+      "display_name": "Franck Kessi\u00e9"
+    },
+    "f14b49b9-9ca8-4a0e-ae2f-25b5302247a0": {
+      "id": "f14b49b9-9ca8-4a0e-ae2f-25b5302247a0",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "MID",
+      "squad_value": 7,
+      "display_name": "Martial Godo"
+    },
+    "154d836a-16f8-42a6-9b70-4764d6353016": {
+      "id": "154d836a-16f8-42a6-9b70-4764d6353016",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "MID",
+      "squad_value": 7,
+      "display_name": "Seko Fofana"
+    },
+    "22ed47c3-d58a-4028-8bb1-48c74e73aef8": {
+      "id": "22ed47c3-d58a-4028-8bb1-48c74e73aef8",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "MID",
+      "squad_value": 6,
+      "display_name": "Parfait Guiagon"
+    },
+    "158fb30e-e405-45e1-a80c-c42cb406e6aa": {
+      "id": "158fb30e-e405-45e1-a80c-c42cb406e6aa",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "MID",
+      "squad_value": 6,
+      "display_name": "Wilfried Zaha"
+    },
+    "8133606e-0125-409e-b89b-d78f14ec4998": {
+      "id": "8133606e-0125-409e-b89b-d78f14ec4998",
+      "country": "C\u00f4te d'Ivoire",
+      "team_id": "c229e69e-bdc9-4d74-99a3-c8901cac941a",
+      "position": "MID",
+      "squad_value": 2,
+      "display_name": "Jean Micha\u00ebl Seri"
+    },
+    "2fc318be-a274-4a91-9590-fbc50dcc0a2d": {
+      "id": "2fc318be-a274-4a91-9590-fbc50dcc0a2d",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "DEF",
+      "squad_value": 5,
+      "display_name": "Stelios Andreou"
+    },
+    "e6539083-ccfa-408a-b668-b72cb70f29de": {
+      "id": "e6539083-ccfa-408a-b668-b72cb70f29de",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "DEF",
+      "squad_value": 4,
+      "display_name": "Christos Sielis"
+    },
+    "7ec42575-6e26-423b-9b43-238628741e20": {
+      "id": "7ec42575-6e26-423b-9b43-238628741e20",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "DEF",
+      "squad_value": 4,
+      "display_name": "Kostas Pileas"
+    },
+    "c2a5b6e5-56e1-4385-bbab-0a078061ca9f": {
+      "id": "c2a5b6e5-56e1-4385-bbab-0a078061ca9f",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "DEF",
+      "squad_value": 4,
+      "display_name": "Nikolas Panagiotou"
+    },
+    "7ddc3aba-e0f1-46c5-80e3-7efa9d2ae4fd": {
+      "id": "7ddc3aba-e0f1-46c5-80e3-7efa9d2ae4fd",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Anderson Correia"
+    },
+    "16e0dc90-43a8-46b9-8624-bc797503f04b": {
+      "id": "16e0dc90-43a8-46b9-8624-bc797503f04b",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Antreas Shikkis"
+    },
+    "5bd0e580-e91b-46fc-86fb-d1487a899d82": {
+      "id": "5bd0e580-e91b-46fc-86fb-d1487a899d82",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Evagoras Antoniou"
+    },
+    "84a9773f-66f0-426d-9874-af537d90cf08": {
+      "id": "84a9773f-66f0-426d-9874-af537d90cf08",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "FWD",
+      "squad_value": 5,
+      "display_name": "Ioannis Pittas"
+    },
+    "7ef196b7-49f9-42af-8dd1-fdc8c7230e9c": {
+      "id": "7ef196b7-49f9-42af-8dd1-fdc8c7230e9c",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "FWD",
+      "squad_value": 4,
+      "display_name": "Andronikos Kakoullis"
+    },
+    "5d5c2837-f01b-490b-bdda-96378b4c3a3a": {
+      "id": "5d5c2837-f01b-490b-bdda-96378b4c3a3a",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "FWD",
+      "squad_value": 4,
+      "display_name": "Nikolas Koutsakos"
+    },
+    "d6734a5c-d1eb-445e-8396-29863f4afc51": {
+      "id": "d6734a5c-d1eb-445e-8396-29863f4afc51",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "FWD",
+      "squad_value": 3,
+      "display_name": "Angelos Neophytou"
+    },
+    "7591b848-8353-4f9c-8ee2-4554803d9106": {
+      "id": "7591b848-8353-4f9c-8ee2-4554803d9106",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "FWD",
+      "squad_value": 3,
+      "display_name": "Stavros Georgiou"
+    },
+    "d4132d12-4377-4b42-8eab-b9925be79a9d": {
+      "id": "d4132d12-4377-4b42-8eab-b9925be79a9d",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "GK",
+      "squad_value": 3,
+      "display_name": "Neofytos Michail"
+    },
+    "14af47b9-a254-4f09-8763-322e38167bc0": {
+      "id": "14af47b9-a254-4f09-8763-322e38167bc0",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "GK",
+      "squad_value": 3,
+      "display_name": "Panagiotis Kyriakou"
+    },
+    "f54a810a-cb9d-467a-97c7-ca14690ba0ba": {
+      "id": "f54a810a-cb9d-467a-97c7-ca14690ba0ba",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "GK",
+      "squad_value": 2,
+      "display_name": "Andreas Paraskevas"
+    },
+    "3478f420-c0d6-4667-acb0-492bc3efc644": {
+      "id": "3478f420-c0d6-4667-acb0-492bc3efc644",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "MID",
+      "squad_value": 5,
+      "display_name": "Grigoris Kastanos"
+    },
+    "010b4e8e-0e0c-46ed-a6ee-30e8762f7a68": {
+      "id": "010b4e8e-0e0c-46ed-a6ee-30e8762f7a68",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "MID",
+      "squad_value": 5,
+      "display_name": "Loizos Loizou"
+    },
+    "65f1d661-f881-48c1-b3eb-1b4ba38d0026": {
+      "id": "65f1d661-f881-48c1-b3eb-1b4ba38d0026",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Chambos Kyriakou"
+    },
+    "f1eca922-6a76-469e-a9d8-978432b3bb18": {
+      "id": "f1eca922-6a76-469e-a9d8-978432b3bb18",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Charalampos Charalampous"
+    },
+    "5afbc0a4-b640-4ec9-b9c0-421e0f9fb728": {
+      "id": "5afbc0a4-b640-4ec9-b9c0-421e0f9fb728",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Giannis Kosti"
+    },
+    "06e790cf-9824-493a-b408-f64d10055f49": {
+      "id": "06e790cf-9824-493a-b408-f64d10055f49",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Giannis Satsias"
+    },
+    "0492d2da-8d7c-4b7f-b199-0c24fa55814d": {
+      "id": "0492d2da-8d7c-4b7f-b199-0c24fa55814d",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Ioannis Kousoulos"
+    },
+    "7b67d440-0b9e-4680-b3b0-50fffdd3c5bb": {
+      "id": "7b67d440-0b9e-4680-b3b0-50fffdd3c5bb",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "MID",
+      "squad_value": 3,
+      "display_name": "Evangelos Andreou"
+    },
+    "fa505908-25ac-4e1a-bb9c-f2ba3b3564aa": {
+      "id": "fa505908-25ac-4e1a-bb9c-f2ba3b3564aa",
+      "country": "Cyprus",
+      "team_id": "de775186-48cb-447c-96a8-8a8481df3aab",
+      "position": "MID",
+      "squad_value": 3,
+      "display_name": "Panagiotis Andreou"
+    },
+    "fbb4038e-418c-4151-84cb-37989534129b": {
+      "id": "fbb4038e-418c-4151-84cb-37989534129b",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "DEF",
+      "squad_value": 9,
+      "display_name": "Dayot Upamecano"
+    },
+    "ed09fc7c-3439-4256-a6a2-ab2e95d511f6": {
+      "id": "ed09fc7c-3439-4256-a6a2-ab2e95d511f6",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "DEF",
+      "squad_value": 9,
+      "display_name": "Ibrahima Konat\u00e9"
+    },
+    "de39ad19-159a-4f87-939f-038141b02125": {
+      "id": "de39ad19-159a-4f87-939f-038141b02125",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "DEF",
+      "squad_value": 9,
+      "display_name": "Jules Kound\u00e9"
+    },
+    "360e55da-b978-4765-b1a5-026b97829665": {
+      "id": "360e55da-b978-4765-b1a5-026b97829665",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "DEF",
+      "squad_value": 9,
+      "display_name": "William Saliba"
+    },
+    "251d1309-2268-472a-93a3-bc0f6002826d": {
+      "id": "251d1309-2268-472a-93a3-bc0f6002826d",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Lucas Hern\u00e1ndez"
+    },
+    "2a6b7e5d-5287-46b4-b8ff-77041c28f225": {
+      "id": "2a6b7e5d-5287-46b4-b8ff-77041c28f225",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Malo Gusto"
+    },
+    "27554c73-312f-4f73-9f22-73f01feabf97": {
+      "id": "27554c73-312f-4f73-9f22-73f01feabf97",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Maxence Lacroix"
+    },
+    "839ecfcd-62be-411e-8825-ee24bd74c039": {
+      "id": "839ecfcd-62be-411e-8825-ee24bd74c039",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Pierre Kalulu"
+    },
+    "9ca971f4-6d69-4d9b-91a8-1dc590c88051": {
+      "id": "9ca971f4-6d69-4d9b-91a8-1dc590c88051",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Theo Hern\u00e1ndez"
+    },
+    "43cb7c43-c7f1-4398-92d1-c9e53b06e335": {
+      "id": "43cb7c43-c7f1-4398-92d1-c9e53b06e335",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "DEF",
+      "squad_value": 7,
+      "display_name": "Lucas Digne"
+    },
+    "c2b02a7b-6e3d-4b06-9e96-7a0c0c67fabe": {
+      "id": "c2b02a7b-6e3d-4b06-9e96-7a0c0c67fabe",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "FWD",
+      "squad_value": 10,
+      "display_name": "Kylian Mbapp\u00e9"
+    },
+    "19833fa7-7eac-480a-b678-709c6852a25f": {
+      "id": "19833fa7-7eac-480a-b678-709c6852a25f",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "FWD",
+      "squad_value": 9,
+      "display_name": "Bradley Barcola"
+    },
+    "0ea06589-c062-4c6e-b3db-121e77b160fd": {
+      "id": "0ea06589-c062-4c6e-b3db-121e77b160fd",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "FWD",
+      "squad_value": 9,
+      "display_name": "D\u00e9sir\u00e9 Dou\u00e9"
+    },
+    "269898e5-a1bb-4e7a-9f08-01e154986896": {
+      "id": "269898e5-a1bb-4e7a-9f08-01e154986896",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "FWD",
+      "squad_value": 9,
+      "display_name": "Hugo Ekitik\u00e9"
+    },
+    "808c63f6-f84f-4636-9a88-d08095253470": {
+      "id": "808c63f6-f84f-4636-9a88-d08095253470",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "FWD",
+      "squad_value": 9,
+      "display_name": "Marcus Thuram"
+    },
+    "2a80ca6e-73fb-4e99-83c3-eab8fd996a8b": {
+      "id": "2a80ca6e-73fb-4e99-83c3-eab8fd996a8b",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "FWD",
+      "squad_value": 9,
+      "display_name": "Ousmane Demb\u00e9l\u00e9"
+    },
+    "e9c57cfa-7ec5-4e29-88ae-e752ba0c91fa": {
+      "id": "e9c57cfa-7ec5-4e29-88ae-e752ba0c91fa",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "FWD",
+      "squad_value": 8,
+      "display_name": "Jean Philippe Mateta"
+    },
+    "69957d93-2799-4317-9172-6fb5978e5045": {
+      "id": "69957d93-2799-4317-9172-6fb5978e5045",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "FWD",
+      "squad_value": 8,
+      "display_name": "Randal Kolo Muani"
+    },
+    "0b838fec-f6c0-4af8-bf38-c0656bc82051": {
+      "id": "0b838fec-f6c0-4af8-bf38-c0656bc82051",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "GK",
+      "squad_value": 8,
+      "display_name": "Lucas Chevalier"
+    },
+    "92ec35c3-038b-49a8-ac6e-839587b05a40": {
+      "id": "92ec35c3-038b-49a8-ac6e-839587b05a40",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "GK",
+      "squad_value": 8,
+      "display_name": "Mike Maignan"
+    },
+    "93b4b765-6d21-4dda-adad-4734d2e2f9b3": {
+      "id": "93b4b765-6d21-4dda-adad-4734d2e2f9b3",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "GK",
+      "squad_value": 8,
+      "display_name": "Robin Risser"
+    },
+    "e22ef6fa-1634-438b-a460-37b1cb7167f6": {
+      "id": "e22ef6fa-1634-438b-a460-37b1cb7167f6",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "GK",
+      "squad_value": 7,
+      "display_name": "Brice Samba"
+    },
+    "e7dadf3a-668c-47a7-be96-32b03d0a17ae": {
+      "id": "e7dadf3a-668c-47a7-be96-32b03d0a17ae",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "MID",
+      "squad_value": 10,
+      "display_name": "Michael Olise"
+    },
+    "c756d078-0b77-4804-abdb-923a4857ccea": {
+      "id": "c756d078-0b77-4804-abdb-923a4857ccea",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "MID",
+      "squad_value": 9,
+      "display_name": "Aur\u00e9lien Tchouam\u00e9ni"
+    },
+    "437c739a-9f25-4a55-aa1d-e58153d89e90": {
+      "id": "437c739a-9f25-4a55-aa1d-e58153d89e90",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "MID",
+      "squad_value": 9,
+      "display_name": "Maghnes Akliouche"
+    },
+    "9d626667-9a2b-4cdd-a37f-114f48730d59": {
+      "id": "9d626667-9a2b-4cdd-a37f-114f48730d59",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "MID",
+      "squad_value": 9,
+      "display_name": "Rayan Cherki"
+    },
+    "8813b1de-0df0-4531-8725-b14da990a5a1": {
+      "id": "8813b1de-0df0-4531-8725-b14da990a5a1",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "MID",
+      "squad_value": 9,
+      "display_name": "Warren Za\u00efre-Emery"
+    },
+    "f76ceab8-58bf-4bf8-9d00-d9a7f7638bb8": {
+      "id": "f76ceab8-58bf-4bf8-9d00-d9a7f7638bb8",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Adrien Rabiot"
+    },
+    "475aaa99-c4a6-4d8b-9ffb-9d40fb874a6a": {
+      "id": "475aaa99-c4a6-4d8b-9ffb-9d40fb874a6a",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Eduardo Camavinga"
+    },
+    "0435c777-3270-48ee-ac00-24f20867f7bd": {
+      "id": "0435c777-3270-48ee-ac00-24f20867f7bd",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Manu Kon\u00e9"
+    },
+    "e1d87418-d459-4de7-b638-057707fa8a7f": {
+      "id": "e1d87418-d459-4de7-b638-057707fa8a7f",
+      "country": "France",
+      "team_id": "0a5b611d-0ef5-47a1-b201-c38ddf77c246",
+      "position": "MID",
+      "squad_value": 6,
+      "display_name": "N'Golo Kant\u00e9"
+    },
+    "873daf97-983e-4897-b68a-6de4df44f331": {
+      "id": "873daf97-983e-4897-b68a-6de4df44f331",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Konstantinos Koulierakis"
+    },
+    "da16af2d-fe5e-4f74-abd7-8a9b879886a1": {
+      "id": "da16af2d-fe5e-4f74-abd7-8a9b879886a1",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "DEF",
+      "squad_value": 7,
+      "display_name": "Georgios Vagiannidis"
+    },
+    "8446c4f9-08a2-450b-8f17-293d0ac88948": {
+      "id": "8446c4f9-08a2-450b-8f17-293d0ac88948",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "DEF",
+      "squad_value": 7,
+      "display_name": "Kostas Tsimikas"
+    },
+    "f83493e6-4c90-4a9b-b275-945a46d692cb": {
+      "id": "f83493e6-4c90-4a9b-b275-945a46d692cb",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "DEF",
+      "squad_value": 6,
+      "display_name": "Lazaros Rota"
+    },
+    "4e60f5b0-c7a3-4de7-8a55-45b188f44397": {
+      "id": "4e60f5b0-c7a3-4de7-8a55-45b188f44397",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "DEF",
+      "squad_value": 6,
+      "display_name": "Panagiotis Retsos"
+    },
+    "08257a4b-62ff-4f48-b161-93177c5aef07": {
+      "id": "08257a4b-62ff-4f48-b161-93177c5aef07",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "DEF",
+      "squad_value": 6,
+      "display_name": "Pantelis Hatzidiakos"
+    },
+    "037924fd-302c-4f50-a4db-306fec62f0f5": {
+      "id": "037924fd-302c-4f50-a4db-306fec62f0f5",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "FWD",
+      "squad_value": 8,
+      "display_name": "Vangelis Pavlidis"
+    },
+    "13294068-664e-4fa2-95e9-a169cdae914a": {
+      "id": "13294068-664e-4fa2-95e9-a169cdae914a",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "FWD",
+      "squad_value": 7,
+      "display_name": "Anastasios Douvikas"
+    },
+    "3b1a20f7-5d22-40cf-aaf1-94d521d9365a": {
+      "id": "3b1a20f7-5d22-40cf-aaf1-94d521d9365a",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "FWD",
+      "squad_value": 6,
+      "display_name": "Andreas Tetteh"
+    },
+    "a369113f-394d-495a-a406-3bac95ed0fda": {
+      "id": "a369113f-394d-495a-a406-3bac95ed0fda",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "GK",
+      "squad_value": 7,
+      "display_name": "Christos Mandas"
+    },
+    "d84d7f74-2c17-4b50-ab50-66ed9b7081bb": {
+      "id": "d84d7f74-2c17-4b50-ab50-66ed9b7081bb",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "GK",
+      "squad_value": 7,
+      "display_name": "Konstantinos Tzolakis"
+    },
+    "dd37f135-592e-4ee1-82e4-095da1270aff": {
+      "id": "dd37f135-592e-4ee1-82e4-095da1270aff",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "GK",
+      "squad_value": 6,
+      "display_name": "Odysseas Vlachodimos"
+    },
+    "b3756f4d-cd60-4184-8e1d-a1a04b95c9a5": {
+      "id": "b3756f4d-cd60-4184-8e1d-a1a04b95c9a5",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "GK",
+      "squad_value": 4,
+      "display_name": "Antonis Tsiftsis"
+    },
+    "e175c6a3-afd6-49fb-828f-36c5c2f58025": {
+      "id": "e175c6a3-afd6-49fb-828f-36c5c2f58025",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Christos Mouzakitis"
+    },
+    "01870dd9-00e4-4dbd-86e5-3ceecdcd8430": {
+      "id": "01870dd9-00e4-4dbd-86e5-3ceecdcd8430",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Christos Tzolis"
+    },
+    "14eb1dfd-afc2-439f-a1b6-ebb3351aae43": {
+      "id": "14eb1dfd-afc2-439f-a1b6-ebb3351aae43",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "MID",
+      "squad_value": 6,
+      "display_name": "Dimitrios Giannoulis"
+    },
+    "5947b72d-b25c-475b-9ce1-0a7a078f08cf": {
+      "id": "5947b72d-b25c-475b-9ce1-0a7a078f08cf",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "MID",
+      "squad_value": 6,
+      "display_name": "Tasos Bakasetas"
+    },
+    "cb6a3482-fd52-4903-b1ca-8a2811d8fe3a": {
+      "id": "cb6a3482-fd52-4903-b1ca-8a2811d8fe3a",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "MID",
+      "squad_value": 5,
+      "display_name": "Giorgos Masouras"
+    },
+    "08e95d7e-1517-454c-bfbf-619075d25ba9": {
+      "id": "08e95d7e-1517-454c-bfbf-619075d25ba9",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "MID",
+      "squad_value": 5,
+      "display_name": "Nectarios Triantis"
+    },
+    "d318992f-d195-4068-9e0a-9df9f90bd48d": {
+      "id": "d318992f-d195-4068-9e0a-9df9f90bd48d",
+      "country": "Greece",
+      "team_id": "3e0f8a17-c7ff-45b9-9364-c6beb11cb1fc",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Dimitris Kourbelis"
+    },
+    "5cbfb6dc-c96f-4ed7-9938-9101d717882d": {
+      "id": "5cbfb6dc-c96f-4ed7-9938-9101d717882d",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "DEF",
+      "squad_value": 6,
+      "display_name": "Sa\u00efdou Sow"
+    },
+    "470679ee-928b-4b24-9ad1-e3211f60ee6b": {
+      "id": "470679ee-928b-4b24-9ad1-e3211f60ee6b",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "DEF",
+      "squad_value": 5,
+      "display_name": "Ibrahim Diakit\u00e9"
+    },
+    "b951dc2a-00b6-40fa-b743-2ab72586b1b3": {
+      "id": "b951dc2a-00b6-40fa-b743-2ab72586b1b3",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "DEF",
+      "squad_value": 5,
+      "display_name": "Issiaga Sylla"
+    },
+    "7c749216-2725-4be4-b748-1f3804f617ad": {
+      "id": "7c749216-2725-4be4-b748-1f3804f617ad",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "DEF",
+      "squad_value": 4,
+      "display_name": "Ibrahima Fofana"
+    },
+    "0188b4bb-1b20-42de-ad47-4c5a0fc2f3d8": {
+      "id": "0188b4bb-1b20-42de-ad47-4c5a0fc2f3d8",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "DEF",
+      "squad_value": 4,
+      "display_name": "Mohamed Soumah"
+    },
+    "c023ecdb-5c99-4902-aeef-0e140ad99040": {
+      "id": "c023ecdb-5c99-4902-aeef-0e140ad99040",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "DEF",
+      "squad_value": 4,
+      "display_name": "Mory Konate"
+    },
+    "78e00692-b58d-4b6f-a053-b72e7c645183": {
+      "id": "78e00692-b58d-4b6f-a053-b72e7c645183",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Sekou Sylla"
+    },
+    "a94356bd-9056-475d-8074-7a1e9fa710a8": {
+      "id": "a94356bd-9056-475d-8074-7a1e9fa710a8",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "FWD",
+      "squad_value": 8,
+      "display_name": "Serhou Guirassy"
+    },
+    "aca47a81-9048-4645-a166-6507f46f54fc": {
+      "id": "aca47a81-9048-4645-a166-6507f46f54fc",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "FWD",
+      "squad_value": 4,
+      "display_name": "Mohamed Toure"
+    },
+    "31e6a89f-29ee-48d8-8c1b-c0181ad47798": {
+      "id": "31e6a89f-29ee-48d8-8c1b-c0181ad47798",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "FWD",
+      "squad_value": 4,
+      "display_name": "Yadaly Diaby"
+    },
+    "f3e12807-e761-4898-a3d3-f1d2dd51eabc": {
+      "id": "f3e12807-e761-4898-a3d3-f1d2dd51eabc",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "FWD",
+      "squad_value": 3,
+      "display_name": "Abdoulaye Camara"
+    },
+    "6aeba5aa-5ebd-433b-8b2d-8f4d9aa04596": {
+      "id": "6aeba5aa-5ebd-433b-8b2d-8f4d9aa04596",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "FWD",
+      "squad_value": 1,
+      "display_name": "Yakhouba Gnagna Barry"
+    },
+    "b782d8c6-ee53-48d7-8a65-de996484a674": {
+      "id": "b782d8c6-ee53-48d7-8a65-de996484a674",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "GK",
+      "squad_value": 1,
+      "display_name": "Ousmane Camara"
+    },
+    "009d16a2-6b62-4268-9057-b542165fa553": {
+      "id": "009d16a2-6b62-4268-9057-b542165fa553",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "GK",
+      "squad_value": 1,
+      "display_name": "Souma\u00efla Sylla"
+    },
+    "aa6df773-f4e7-4d98-9b7f-4954d189f564": {
+      "id": "aa6df773-f4e7-4d98-9b7f-4954d189f564",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "MID",
+      "squad_value": 6,
+      "display_name": "Seydouba Cisse"
+    },
+    "e7ff32b5-ed94-424d-9eb1-9ef6cc320338": {
+      "id": "e7ff32b5-ed94-424d-9eb1-9ef6cc320338",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "MID",
+      "squad_value": 5,
+      "display_name": "Morlaye Sylla"
+    },
+    "15289fd3-6176-47ed-99fa-b938819e9b55": {
+      "id": "15289fd3-6176-47ed-99fa-b938819e9b55",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Jocelyn Janneh"
+    },
+    "682f1b71-1e70-44f2-8375-7756b5df32df": {
+      "id": "682f1b71-1e70-44f2-8375-7756b5df32df",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Lass Kourouma"
+    },
+    "177e5a64-080e-4a3f-ba0a-ad4413be52cd": {
+      "id": "177e5a64-080e-4a3f-ba0a-ad4413be52cd",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Mamady Ciss\u00e9"
+    },
+    "8c91dd71-a9d1-468e-a51e-14be0ca982a8": {
+      "id": "8c91dd71-a9d1-468e-a51e-14be0ca982a8",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Ousmane Camara"
+    },
+    "a8c15c78-d678-48ed-8390-ebf74ee09ab0": {
+      "id": "a8c15c78-d678-48ed-8390-ebf74ee09ab0",
+      "country": "Guinea",
+      "team_id": "f597414d-a41e-4982-87a5-b5dc68895042",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Sekou Tidiany Bangoura"
+    },
+    "60bff315-d214-4b5f-91ef-8d3c36626be8": {
+      "id": "60bff315-d214-4b5f-91ef-8d3c36626be8",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Trai Hume"
+    },
+    "f8d14170-c637-4ac7-a0df-84397d4c408b": {
+      "id": "f8d14170-c637-4ac7-a0df-84397d4c408b",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "DEF",
+      "squad_value": 5,
+      "display_name": "Brodie Spencer"
+    },
+    "b0d7c182-9dc7-461f-8a56-481cec541f61": {
+      "id": "b0d7c182-9dc7-461f-8a56-481cec541f61",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "DEF",
+      "squad_value": 5,
+      "display_name": "Ciaron Brown"
+    },
+    "64336919-2615-4455-8182-2fc78800787c": {
+      "id": "64336919-2615-4455-8182-2fc78800787c",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "DEF",
+      "squad_value": 4,
+      "display_name": "Eoin Toal"
+    },
+    "4fae6320-bd6b-49e8-84cd-9d2a7e51c416": {
+      "id": "4fae6320-bd6b-49e8-84cd-9d2a7e51c416",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "DEF",
+      "squad_value": 4,
+      "display_name": "Terry Devlin"
+    },
+    "087aca11-d7fb-44e1-9efa-7f96ed574d65": {
+      "id": "087aca11-d7fb-44e1-9efa-7f96ed574d65",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "DEF",
+      "squad_value": 2,
+      "display_name": "Tom Atcheson"
+    },
+    "ad162bd5-c801-4b55-a7b8-6bb075e737f0": {
+      "id": "ad162bd5-c801-4b55-a7b8-6bb075e737f0",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "FWD",
+      "squad_value": 5,
+      "display_name": "Callum Marshall"
+    },
+    "4a172164-50c4-4c56-ad0f-2926d038d534": {
+      "id": "4a172164-50c4-4c56-ad0f-2926d038d534",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "FWD",
+      "squad_value": 4,
+      "display_name": "Dion Charles"
+    },
+    "9534bf71-9d43-46ef-97ca-d3d450146a92": {
+      "id": "9534bf71-9d43-46ef-97ca-d3d450146a92",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "FWD",
+      "squad_value": 3,
+      "display_name": "Jamie Reid"
+    },
+    "1d3fbbb6-2ffa-44dc-914e-759b86b6b941": {
+      "id": "1d3fbbb6-2ffa-44dc-914e-759b86b6b941",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "FWD",
+      "squad_value": 2,
+      "display_name": "Josh Magennis"
+    },
+    "5961a3c0-5a03-4e30-a04b-88257b844d33": {
+      "id": "5961a3c0-5a03-4e30-a04b-88257b844d33",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "GK",
+      "squad_value": 4,
+      "display_name": "Conor Hazard"
+    },
+    "35c3acb8-df30-4346-8c15-de09416ce67e": {
+      "id": "35c3acb8-df30-4346-8c15-de09416ce67e",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "GK",
+      "squad_value": 4,
+      "display_name": "Pierce Charles"
+    },
+    "96028443-3b86-4a3e-8d9d-5cf8699d3085": {
+      "id": "96028443-3b86-4a3e-8d9d-5cf8699d3085",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "GK",
+      "squad_value": 2,
+      "display_name": "Joshua Clarke"
+    },
+    "80a7df61-30b3-4b4a-a0a7-680968cf7c40": {
+      "id": "80a7df61-30b3-4b4a-a0a7-680968cf7c40",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "MID",
+      "squad_value": 7,
+      "display_name": "Isaac Price"
+    },
+    "b79b8824-3750-4d00-b3a7-4d2d2cca2deb": {
+      "id": "b79b8824-3750-4d00-b3a7-4d2d2cca2deb",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "MID",
+      "squad_value": 7,
+      "display_name": "Justin Devenny"
+    },
+    "16ad5cfe-d6e6-4b80-a3db-691b9e72d5ea": {
+      "id": "16ad5cfe-d6e6-4b80-a3db-691b9e72d5ea",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "MID",
+      "squad_value": 7,
+      "display_name": "Shea Charles"
+    },
+    "d688c3e0-b08d-4a0f-91d9-b79f6df479dd": {
+      "id": "d688c3e0-b08d-4a0f-91d9-b79f6df479dd",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "MID",
+      "squad_value": 5,
+      "display_name": "Ethan Galbraith"
+    },
+    "a4c40632-c11e-4417-9fa5-efcc54be9afc": {
+      "id": "a4c40632-c11e-4417-9fa5-efcc54be9afc",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "MID",
+      "squad_value": 5,
+      "display_name": "Jamie Donley"
+    },
+    "c56bedac-d0e8-4359-a566-6dad82b1b8db": {
+      "id": "c56bedac-d0e8-4359-a566-6dad82b1b8db",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "George Saville"
+    },
+    "69542e9c-3c37-45c5-a8d6-a466ba2ccea1": {
+      "id": "69542e9c-3c37-45c5-a8d6-a466ba2ccea1",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Jamie McDonnell"
+    },
+    "09535f30-cba3-45d5-9ae6-40c7d49af87c": {
+      "id": "09535f30-cba3-45d5-9ae6-40c7d49af87c",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Paul Smyth"
+    },
+    "8acc9b01-92c3-41ad-be9d-697495f84313": {
+      "id": "8acc9b01-92c3-41ad-be9d-697495f84313",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "MID",
+      "squad_value": 3,
+      "display_name": "Bradley Lyons"
+    },
+    "7b259d0e-8535-44e1-a7e5-914814b52a5e": {
+      "id": "7b259d0e-8535-44e1-a7e5-914814b52a5e",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "MID",
+      "squad_value": 3,
+      "display_name": "Patrick Kelly"
+    },
+    "7991b348-4453-4434-88aa-e89d1e15212d": {
+      "id": "7991b348-4453-4434-88aa-e89d1e15212d",
+      "country": "Northern Ireland",
+      "team_id": "ded4b9f6-7f1c-42c8-8768-587976d34f82",
+      "position": "MID",
+      "squad_value": 1,
+      "display_name": "Kieran Morrison"
+    },
+    "cb415f0c-a006-4196-8d61-d689c99782ed": {
+      "id": "cb415f0c-a006-4196-8d61-d689c99782ed",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 7,
+      "display_name": "Amir Murillo"
+    },
+    "846f0604-aad5-4956-90bc-2a454c8c1dda": {
+      "id": "846f0604-aad5-4956-90bc-2a454c8c1dda",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 6,
+      "display_name": "Jos\u00e9 C\u00f3rdoba"
+    },
+    "7a99ea57-2e32-402d-95db-156c8f6f4ad2": {
+      "id": "7a99ea57-2e32-402d-95db-156c8f6f4ad2",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 5,
+      "display_name": "Andr\u00e9s Andrade"
+    },
+    "7053f73f-ce4b-4e49-8fb0-20c54e3d64a9": {
+      "id": "7053f73f-ce4b-4e49-8fb0-20c54e3d64a9",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 5,
+      "display_name": "C\u00e9sar Blackman"
+    },
+    "c7ea277a-d6ea-45e2-9258-838fcee2bba1": {
+      "id": "c7ea277a-d6ea-45e2-9258-838fcee2bba1",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 4,
+      "display_name": "Jorge Guti\u00e9rrez"
+    },
+    "7662e8da-3449-4eb1-bbe5-08b17bca6d4c": {
+      "id": "7662e8da-3449-4eb1-bbe5-08b17bca6d4c",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Aimar S\u00e1nchez"
+    },
+    "34d207cc-56b3-41a4-abf3-a89620d6d837": {
+      "id": "34d207cc-56b3-41a4-abf3-a89620d6d837",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Daniel Aparicio"
+    },
+    "2351d102-a37c-4181-88cd-0744de652c89": {
+      "id": "2351d102-a37c-4181-88cd-0744de652c89",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Javier Rivera"
+    },
+    "fd6ae9c4-df83-482d-b4ba-4b119e776d2d": {
+      "id": "fd6ae9c4-df83-482d-b4ba-4b119e776d2d",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Jiovany Ramos"
+    },
+    "ddc40603-5652-4a3c-abc3-5278f1914a9e": {
+      "id": "ddc40603-5652-4a3c-abc3-5278f1914a9e",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Luis Asprilla"
+    },
+    "c8288a34-8895-4242-90be-403ab5fe88b9": {
+      "id": "c8288a34-8895-4242-90be-403ab5fe88b9",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Omar Cordoba"
+    },
+    "bd22e99a-2d9d-444b-8164-d1ac1d9b0161": {
+      "id": "bd22e99a-2d9d-444b-8164-d1ac1d9b0161",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Orman Davis"
+    },
+    "a04194cf-538c-4396-93f2-e9c75ad0f490": {
+      "id": "a04194cf-538c-4396-93f2-e9c75ad0f490",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Richard Peralta"
+    },
+    "5e50e122-4a66-4405-bf98-98c2b61d3fb6": {
+      "id": "5e50e122-4a66-4405-bf98-98c2b61d3fb6",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 3,
+      "display_name": "Roderick Miller"
+    },
+    "3f98257d-898a-4ff5-b487-5a2693c32cf7": {
+      "id": "3f98257d-898a-4ff5-b487-5a2693c32cf7",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 2,
+      "display_name": "\u00c9ric Davis"
+    },
+    "0114b7bd-35f8-4beb-9e8b-30126359d0d7": {
+      "id": "0114b7bd-35f8-4beb-9e8b-30126359d0d7",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 2,
+      "display_name": "Juan Hall"
+    },
+    "b508710a-348f-4a54-a984-74dedc10334e": {
+      "id": "b508710a-348f-4a54-a984-74dedc10334e",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 2,
+      "display_name": "Kevin Galv\u00e1n"
+    },
+    "0150ceb2-e20e-41d5-908f-63cdfd18a5da": {
+      "id": "0150ceb2-e20e-41d5-908f-63cdfd18a5da",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "DEF",
+      "squad_value": 2,
+      "display_name": "Mart\u00edn Krug"
+    },
+    "7bd2ed2a-fb49-479d-b049-3bd0c15ea28f": {
+      "id": "7bd2ed2a-fb49-479d-b049-3bd0c15ea28f",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "FWD",
+      "squad_value": 4,
+      "display_name": "Jos\u00e9 Fajardo"
+    },
+    "4d4268ad-9713-4c27-a62a-66904137eaa2": {
+      "id": "4d4268ad-9713-4c27-a62a-66904137eaa2",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "FWD",
+      "squad_value": 4,
+      "display_name": "Kadir Barr\u00eda"
+    },
+    "6cda793a-7e55-407f-ae3f-f7d47c931c66": {
+      "id": "6cda793a-7e55-407f-ae3f-f7d47c931c66",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "FWD",
+      "squad_value": 4,
+      "display_name": "Ricardo Phillips"
+    },
+    "0758dbd1-b541-428a-b414-a68947ec82a0": {
+      "id": "0758dbd1-b541-428a-b414-a68947ec82a0",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "FWD",
+      "squad_value": 3,
+      "display_name": "Cecilio Waterman"
+    },
+    "55a0eae3-ce07-4444-8dae-010d08e5055b": {
+      "id": "55a0eae3-ce07-4444-8dae-010d08e5055b",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "FWD",
+      "squad_value": 3,
+      "display_name": "Gustavo Herrera"
+    },
+    "9eef4471-8a37-4fe0-8913-b81406548aa3": {
+      "id": "9eef4471-8a37-4fe0-8913-b81406548aa3",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "FWD",
+      "squad_value": 2,
+      "display_name": "Giovany Herbert"
+    },
+    "31830510-0f7b-4847-ae9c-c32ef5f2d4c2": {
+      "id": "31830510-0f7b-4847-ae9c-c32ef5f2d4c2",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "GK",
+      "squad_value": 4,
+      "display_name": "Orlando Mosquera"
+    },
+    "2be0fb89-7c04-4e63-b113-06790435e02a": {
+      "id": "2be0fb89-7c04-4e63-b113-06790435e02a",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "GK",
+      "squad_value": 3,
+      "display_name": "C\u00e9sar Samudio"
+    },
+    "f8ab0b64-e245-4637-9d50-1f3fc177dbf5": {
+      "id": "f8ab0b64-e245-4637-9d50-1f3fc177dbf5",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "GK",
+      "squad_value": 3,
+      "display_name": "Eddie Roberts"
+    },
+    "7cc7fd78-5170-429a-931a-97d86a619743": {
+      "id": "7cc7fd78-5170-429a-931a-97d86a619743",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "GK",
+      "squad_value": 3,
+      "display_name": "Luis Mej\u00eda"
+    },
+    "e5ae2792-76ec-4035-a1c3-9fdc0ae7846b": {
+      "id": "e5ae2792-76ec-4035-a1c3-9fdc0ae7846b",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "GK",
+      "squad_value": 2,
+      "display_name": "JD Gunn"
+    },
+    "dcbabd3d-0840-4e2b-834d-59762199004f": {
+      "id": "dcbabd3d-0840-4e2b-834d-59762199004f",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "MID",
+      "squad_value": 6,
+      "display_name": "Adalberto Carrasquilla"
+    },
+    "fe446857-7eca-402c-839a-fa30a39fe2cf": {
+      "id": "fe446857-7eca-402c-839a-fa30a39fe2cf",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "MID",
+      "squad_value": 5,
+      "display_name": "Ismael D\u00edaz"
+    },
+    "c6b3c7ce-03f0-4956-85ef-65725981af9a": {
+      "id": "c6b3c7ce-03f0-4956-85ef-65725981af9a",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "MID",
+      "squad_value": 5,
+      "display_name": "Jos\u00e9 Luis Rodr\u00edguez"
+    },
+    "f29fdbf3-075b-4de1-8d57-62d93524473f": {
+      "id": "f29fdbf3-075b-4de1-8d57-62d93524473f",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Carlos Harvey"
+    },
+    "50baca23-1d27-4efe-a02a-1ceb35aa985c": {
+      "id": "50baca23-1d27-4efe-a02a-1ceb35aa985c",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Cristian Mart\u00ednez"
+    },
+    "843aa7c4-91a6-49ec-ae7b-ec7157dd1e2d": {
+      "id": "843aa7c4-91a6-49ec-ae7b-ec7157dd1e2d",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Yoel B\u00e1rcenas"
+    },
+    "7f62915c-2971-459f-9b40-b5fcc36f31cb": {
+      "id": "7f62915c-2971-459f-9b40-b5fcc36f31cb",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "MID",
+      "squad_value": 3,
+      "display_name": "Abdul Knight"
+    },
+    "590aa287-955c-4488-954f-19c62b5f53ec": {
+      "id": "590aa287-955c-4488-954f-19c62b5f53ec",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "MID",
+      "squad_value": 3,
+      "display_name": "\u00c1ngel Caicedo"
+    },
+    "54645c27-6035-4801-aa7f-459582427447": {
+      "id": "54645c27-6035-4801-aa7f-459582427447",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "MID",
+      "squad_value": 3,
+      "display_name": "Ariel Arroyo"
+    },
+    "3cb930cf-4d56-48ca-b72e-83a506a7dac1": {
+      "id": "3cb930cf-4d56-48ca-b72e-83a506a7dac1",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "MID",
+      "squad_value": 3,
+      "display_name": "C\u00e9sar Yanis"
+    },
+    "72ebc5ec-ab92-4726-97ce-50c86b04f055": {
+      "id": "72ebc5ec-ab92-4726-97ce-50c86b04f055",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "MID",
+      "squad_value": 3,
+      "display_name": "H\u00e9ctor Hurtado"
+    },
+    "e7a6cedb-b1dd-45f6-a59c-b132465064f6": {
+      "id": "e7a6cedb-b1dd-45f6-a59c-b132465064f6",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "MID",
+      "squad_value": 3,
+      "display_name": "Jos\u00e9 Manuel Murillo"
+    },
+    "9d920841-dc0f-4c4a-8273-dfd01081620e": {
+      "id": "9d920841-dc0f-4c4a-8273-dfd01081620e",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "MID",
+      "squad_value": 3,
+      "display_name": "Kahiser Lenis"
+    },
+    "838d6630-767c-4bb5-8ccb-d2e8394ba940": {
+      "id": "838d6630-767c-4bb5-8ccb-d2e8394ba940",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "MID",
+      "squad_value": 2,
+      "display_name": "An\u00edbal Godoy"
+    },
+    "4efdb1b1-b4a1-4546-8bde-cdb392291f4a": {
+      "id": "4efdb1b1-b4a1-4546-8bde-cdb392291f4a",
+      "country": "Panama",
+      "team_id": "b022e0ac-e713-4b0b-93ef-ac587df9c90e",
+      "position": "MID",
+      "squad_value": 2,
+      "display_name": "Jovani Welch"
+    },
+    "2ecd98d6-2204-40aa-a634-2b55a2c7e062": {
+      "id": "2ecd98d6-2204-40aa-a634-2b55a2c7e062",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "DEF",
+      "squad_value": 7,
+      "display_name": "Jaka Bijol"
+    },
+    "0fb3739e-b47c-4b6e-b022-2fb82752ff19": {
+      "id": "0fb3739e-b47c-4b6e-b022-2fb82752ff19",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "DEF",
+      "squad_value": 6,
+      "display_name": "Vanja Drku\u0161i\u0107"
+    },
+    "e1ba6e21-f649-4245-bf79-914b2cfcd328": {
+      "id": "e1ba6e21-f649-4245-bf79-914b2cfcd328",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "DEF",
+      "squad_value": 5,
+      "display_name": "David Zec"
+    },
+    "7a633b9a-3d85-43e3-9400-0f93c302f062": {
+      "id": "7a633b9a-3d85-43e3-9400-0f93c302f062",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "DEF",
+      "squad_value": 5,
+      "display_name": "Marcel Ratnik"
+    },
+    "77e6a7bc-14e8-4e4f-850c-25fae45a5b92": {
+      "id": "77e6a7bc-14e8-4e4f-850c-25fae45a5b92",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "DEF",
+      "squad_value": 4,
+      "display_name": "Erik Jan\u017ea"
+    },
+    "b40e9b7c-97ef-41b7-ab3c-0525c4e8e3e1": {
+      "id": "b40e9b7c-97ef-41b7-ab3c-0525c4e8e3e1",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "DEF",
+      "squad_value": 4,
+      "display_name": "Jo\u0161t Urban\u010di\u010d"
+    },
+    "ca4affe1-478f-4d8b-bb0f-e30b94ba0151": {
+      "id": "ca4affe1-478f-4d8b-bb0f-e30b94ba0151",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "DEF",
+      "squad_value": 4,
+      "display_name": "\u017dan Karni\u010dnik"
+    },
+    "784520de-741a-40bd-a4c3-a49b49be0034": {
+      "id": "784520de-741a-40bd-a4c3-a49b49be0034",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "FWD",
+      "squad_value": 7,
+      "display_name": "\u017dan Vipotnik"
+    },
+    "5019516c-efef-4729-86c7-1442b3cd7d76": {
+      "id": "5019516c-efef-4729-86c7-1442b3cd7d76",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "FWD",
+      "squad_value": 5,
+      "display_name": "Andra\u017e \u0160porar"
+    },
+    "b46c58fb-7790-478f-a28a-7185a41e00c8": {
+      "id": "b46c58fb-7790-478f-a28a-7185a41e00c8",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "FWD",
+      "squad_value": 5,
+      "display_name": "Tja\u0161 Begi\u0107"
+    },
+    "0d0c51c9-a445-41e7-839e-92baf598e4c3": {
+      "id": "0d0c51c9-a445-41e7-839e-92baf598e4c3",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "GK",
+      "squad_value": 5,
+      "display_name": "Matev\u017e Vidov\u0161ek"
+    },
+    "33dc80fb-018f-4a6e-ac70-7bbf9a6da1e3": {
+      "id": "33dc80fb-018f-4a6e-ac70-7bbf9a6da1e3",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "GK",
+      "squad_value": 4,
+      "display_name": "Igor Veki\u0107"
+    },
+    "10acded3-6d48-44fe-9cef-c4703584d816": {
+      "id": "10acded3-6d48-44fe-9cef-c4703584d816",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "GK",
+      "squad_value": 4,
+      "display_name": "\u017dan-Luk Leban"
+    },
+    "47029d7e-e9f4-463e-b723-4c0ad2353483": {
+      "id": "47029d7e-e9f4-463e-b723-4c0ad2353483",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "MID",
+      "squad_value": 7,
+      "display_name": "Timi Max El\u0161nik"
+    },
+    "afb1f3b4-288c-470e-a206-35a6d9446d28": {
+      "id": "afb1f3b4-288c-470e-a206-35a6d9446d28",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "MID",
+      "squad_value": 6,
+      "display_name": "Adam Gnezda \u010cerin"
+    },
+    "299a9de3-2a17-4b69-b3a0-92e591eb823c": {
+      "id": "299a9de3-2a17-4b69-b3a0-92e591eb823c",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "MID",
+      "squad_value": 6,
+      "display_name": "Jon Gorenc Stankovi\u0107"
+    },
+    "154ea477-ef39-4ead-bde3-197523f0edcb": {
+      "id": "154ea477-ef39-4ead-bde3-197523f0edcb",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "MID",
+      "squad_value": 6,
+      "display_name": "Tomi Horvat"
+    },
+    "a97aa307-c9d6-4957-b72f-425b4e1c79ca": {
+      "id": "a97aa307-c9d6-4957-b72f-425b4e1c79ca",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "MID",
+      "squad_value": 5,
+      "display_name": "Adrian Zeljkovi\u0107"
+    },
+    "3c2b698a-1d6d-4541-bd87-e5d0a68f9c73": {
+      "id": "3c2b698a-1d6d-4541-bd87-e5d0a68f9c73",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "MID",
+      "squad_value": 5,
+      "display_name": "Aljo\u0161a Matko"
+    },
+    "1f320be0-031f-4511-bb0a-c1c8bb2dad65": {
+      "id": "1f320be0-031f-4511-bb0a-c1c8bb2dad65",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "MID",
+      "squad_value": 5,
+      "display_name": "Danijel \u0160turm"
+    },
+    "9cf97dc3-45c5-49d6-8a3c-1a78d8940705": {
+      "id": "9cf97dc3-45c5-49d6-8a3c-1a78d8940705",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "MID",
+      "squad_value": 5,
+      "display_name": "Svit Se\u0161lar"
+    },
+    "e7af634d-10aa-4040-b32a-09d6c6b25988": {
+      "id": "e7af634d-10aa-4040-b32a-09d6c6b25988",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "MID",
+      "squad_value": 5,
+      "display_name": "Tamar Svetlin"
+    },
+    "85c869d2-7ee3-4cde-ba1a-5d3d198aa4d2": {
+      "id": "85c869d2-7ee3-4cde-ba1a-5d3d198aa4d2",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Benjamin Verbi\u010d"
+    },
+    "8ab38bbc-dca1-4e5a-898a-328e4d530122": {
+      "id": "8ab38bbc-dca1-4e5a-898a-328e4d530122",
+      "country": "Slovenia",
+      "team_id": "16e565da-838c-4a3f-b02e-019015d69a26",
+      "position": "MID",
+      "squad_value": 3,
+      "display_name": "Petar Stojanovi\u0107"
+    },
+    "7ecb8448-f020-4e0d-8de8-7502ac383483": {
+      "id": "7ecb8448-f020-4e0d-8de8-7502ac383483",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "DEF",
+      "squad_value": 9,
+      "display_name": "Dean Huijsen"
+    },
+    "75f06270-f03c-403e-879a-f46ce5dc22b2": {
+      "id": "75f06270-f03c-403e-879a-f46ce5dc22b2",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "DEF",
+      "squad_value": 9,
+      "display_name": "Marc Cucurella"
+    },
+    "c2dc179f-5890-4e9a-8437-b7507a424ae9": {
+      "id": "c2dc179f-5890-4e9a-8437-b7507a424ae9",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "DEF",
+      "squad_value": 9,
+      "display_name": "Pau Cubars\u00ed"
+    },
+    "e2997bf3-a722-448d-9e7f-44a0ea3e2d14": {
+      "id": "e2997bf3-a722-448d-9e7f-44a0ea3e2d14",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Cristhian Mosquera"
+    },
+    "0bff7438-f8a6-4360-bfb5-8f088581159e": {
+      "id": "0bff7438-f8a6-4360-bfb5-8f088581159e",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Eric Garc\u00eda"
+    },
+    "9c16ba53-fc66-42e3-a602-e190da3d7f0a": {
+      "id": "9c16ba53-fc66-42e3-a602-e190da3d7f0a",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Marc Pubill"
+    },
+    "aa337867-97ea-4d42-b1f5-4a9bb834c151": {
+      "id": "aa337867-97ea-4d42-b1f5-4a9bb834c151",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Marcos Llorente"
+    },
+    "81b9e41c-4458-4f00-9fe2-29d6ac9d2834": {
+      "id": "81b9e41c-4458-4f00-9fe2-29d6ac9d2834",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Pedro Porro"
+    },
+    "cd4c6dc7-6246-464d-acea-fb8947c4573d": {
+      "id": "cd4c6dc7-6246-464d-acea-fb8947c4573d",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "DEF",
+      "squad_value": 7,
+      "display_name": "Aymeric Laporte"
+    },
+    "a81ae365-328d-429d-8c74-bb5338395654": {
+      "id": "a81ae365-328d-429d-8c74-bb5338395654",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "FWD",
+      "squad_value": 9,
+      "display_name": "Ferran Torres"
+    },
+    "55a06a6e-8312-4a73-80ab-1676d6caf03f": {
+      "id": "55a06a6e-8312-4a73-80ab-1676d6caf03f",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "FWD",
+      "squad_value": 8,
+      "display_name": "Mikel Oyarzabal"
+    },
+    "8cb190b5-bbc6-4a3c-bfbc-74c5e2f98fcb": {
+      "id": "8cb190b5-bbc6-4a3c-bfbc-74c5e2f98fcb",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "FWD",
+      "squad_value": 8,
+      "display_name": "Victor Mu\u00f1oz"
+    },
+    "01d00ab1-d8ae-4795-a395-d24ad343e35e": {
+      "id": "01d00ab1-d8ae-4795-a395-d24ad343e35e",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "FWD",
+      "squad_value": 8,
+      "display_name": "Y\u00e9remy Pino"
+    },
+    "9f7c267a-2168-44f4-a896-df0f5af286bf": {
+      "id": "9f7c267a-2168-44f4-a896-df0f5af286bf",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "FWD",
+      "squad_value": 6,
+      "display_name": "Borja Iglesias"
+    },
+    "63203381-ab86-41f4-a6b0-a79a9efc4295": {
+      "id": "63203381-ab86-41f4-a6b0-a79a9efc4295",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "GK",
+      "squad_value": 8,
+      "display_name": "David Raya"
+    },
+    "caa5d137-8aa5-409c-a9e8-b0fa81df3636": {
+      "id": "caa5d137-8aa5-409c-a9e8-b0fa81df3636",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "GK",
+      "squad_value": 8,
+      "display_name": "Joan Garc\u00eda"
+    },
+    "890eaa07-7813-4526-a177-befe5d7c817a": {
+      "id": "890eaa07-7813-4526-a177-befe5d7c817a",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "GK",
+      "squad_value": 8,
+      "display_name": "Unai Sim\u00f3n"
+    },
+    "c0d7611f-7be4-4b32-8172-01ee22bee63c": {
+      "id": "c0d7611f-7be4-4b32-8172-01ee22bee63c",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "GK",
+      "squad_value": 7,
+      "display_name": "\u00c1lex Remiro"
+    },
+    "c40b7d48-e2b0-4fe7-b031-d35e574cb3f1": {
+      "id": "c40b7d48-e2b0-4fe7-b031-d35e574cb3f1",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "MID",
+      "squad_value": 10,
+      "display_name": "Lamine Yamal"
+    },
+    "c7c7f409-21a8-4add-baba-19ee8d290cde": {
+      "id": "c7c7f409-21a8-4add-baba-19ee8d290cde",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "MID",
+      "squad_value": 10,
+      "display_name": "Pedri"
+    },
+    "dd224fc6-51a9-4339-a50f-801a210753bd": {
+      "id": "dd224fc6-51a9-4339-a50f-801a210753bd",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "MID",
+      "squad_value": 9,
+      "display_name": "Dani Olmo"
+    },
+    "f03252f7-11b4-487a-b0f7-dcb028ee95d9": {
+      "id": "f03252f7-11b4-487a-b0f7-dcb028ee95d9",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "MID",
+      "squad_value": 9,
+      "display_name": "Ferm\u00edn L\u00f3pez"
+    },
+    "e4873123-dcae-4727-90c4-c0befaa685c1": {
+      "id": "e4873123-dcae-4727-90c4-c0befaa685c1",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "MID",
+      "squad_value": 9,
+      "display_name": "Mart\u00edn Zubimendi"
+    },
+    "824df4b4-a493-4a8c-8524-c38adf0c4d51": {
+      "id": "824df4b4-a493-4a8c-8524-c38adf0c4d51",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "MID",
+      "squad_value": 9,
+      "display_name": "Nico Williams"
+    },
+    "5b770c4c-adb9-47cf-9cbf-c66ad47c5409": {
+      "id": "5b770c4c-adb9-47cf-9cbf-c66ad47c5409",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "MID",
+      "squad_value": 9,
+      "display_name": "Rodri"
+    },
+    "0850c2b3-0197-4b34-b645-fd581b8c4434": {
+      "id": "0850c2b3-0197-4b34-b645-fd581b8c4434",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Alejandro Grimaldo"
+    },
+    "9d54e648-a78c-4ed2-96c8-f5fde748d038": {
+      "id": "9d54e648-a78c-4ed2-96c8-f5fde748d038",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Alex Baena"
+    },
+    "af4dd42a-d0d3-4d37-9de0-61e41281002b": {
+      "id": "af4dd42a-d0d3-4d37-9de0-61e41281002b",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Fabi\u00e1n Ruiz"
+    },
+    "d202282a-c1d9-449d-8252-9bf2cf8736a6": {
+      "id": "d202282a-c1d9-449d-8252-9bf2cf8736a6",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Mikel Merino"
+    },
+    "74c9e525-9283-4b00-9ea7-e28b3ac09497": {
+      "id": "74c9e525-9283-4b00-9ea7-e28b3ac09497",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Pablo Gavi"
+    },
+    "c50074f2-44f4-4126-b7ae-e673b10548c0": {
+      "id": "c50074f2-44f4-4126-b7ae-e673b10548c0",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "MID",
+      "squad_value": 7,
+      "display_name": "Ander Barrenetxea"
+    },
+    "6f40298a-182c-494b-834d-625103130c93": {
+      "id": "6f40298a-182c-494b-834d-625103130c93",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "MID",
+      "squad_value": 7,
+      "display_name": "Carlos Soler"
+    },
+    "d4c06710-6f35-47b8-8503-f27cb9fc4363": {
+      "id": "d4c06710-6f35-47b8-8503-f27cb9fc4363",
+      "country": "Spain",
+      "team_id": "8f39f1e3-8b52-4b88-86c3-e5bc7104b424",
+      "position": "MID",
+      "squad_value": 7,
+      "display_name": "Pablo Fornals"
+    },
+    "82470240-3bdc-4cbd-94a6-3511a1721bd7": {
+      "id": "82470240-3bdc-4cbd-94a6-3511a1721bd7",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Gabriel Gudmundsson"
+    },
+    "cd79b718-5e4d-4df2-943e-f3161e63de29": {
+      "id": "cd79b718-5e4d-4df2-943e-f3161e63de29",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "DEF",
+      "squad_value": 8,
+      "display_name": "Isak Hien"
+    },
+    "49ba256f-f228-47e0-9fb7-dccffc9eea65": {
+      "id": "49ba256f-f228-47e0-9fb7-dccffc9eea65",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "DEF",
+      "squad_value": 7,
+      "display_name": "Emil Holm"
+    },
+    "ae2c6c3b-2f44-42c7-93ea-e9ff6e0e15e2": {
+      "id": "ae2c6c3b-2f44-42c7-93ea-e9ff6e0e15e2",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "DEF",
+      "squad_value": 6,
+      "display_name": "Carl Starfelt"
+    },
+    "fe3b7ae8-9e04-4429-a2d1-025a4cf5a282": {
+      "id": "fe3b7ae8-9e04-4429-a2d1-025a4cf5a282",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "DEF",
+      "squad_value": 6,
+      "display_name": "Eric Smith"
+    },
+    "afc8349f-1025-4202-beda-fe968c4e3380": {
+      "id": "afc8349f-1025-4202-beda-fe968c4e3380",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "DEF",
+      "squad_value": 6,
+      "display_name": "Gustaf Lagerbielke"
+    },
+    "9fc89ed7-2cfc-4cf0-aa1c-06e2570afcd8": {
+      "id": "9fc89ed7-2cfc-4cf0-aa1c-06e2570afcd8",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "DEF",
+      "squad_value": 6,
+      "display_name": "Hjalmar Ekdal"
+    },
+    "aee05d05-0b8f-425f-81da-d3cf0fb85cf1": {
+      "id": "aee05d05-0b8f-425f-81da-d3cf0fb85cf1",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "DEF",
+      "squad_value": 6,
+      "display_name": "Victor Lindel\u00f6f"
+    },
+    "4f3df5a7-f7e8-43f7-b1bc-d5c183d5f179": {
+      "id": "4f3df5a7-f7e8-43f7-b1bc-d5c183d5f179",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "FWD",
+      "squad_value": 9,
+      "display_name": "Alexander Isak"
+    },
+    "d6a2f40f-5d77-483f-b495-d2c6d9ba1e22": {
+      "id": "d6a2f40f-5d77-483f-b495-d2c6d9ba1e22",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "FWD",
+      "squad_value": 9,
+      "display_name": "Viktor Gy\u00f6keres"
+    },
+    "7a816f4a-0eaa-4807-ac33-ce270172194d": {
+      "id": "7a816f4a-0eaa-4807-ac33-ce270172194d",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "FWD",
+      "squad_value": 8,
+      "display_name": "Anthony Elanga"
+    },
+    "c27948d5-604c-467a-a5e9-2f62c08fb65e": {
+      "id": "c27948d5-604c-467a-a5e9-2f62c08fb65e",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "FWD",
+      "squad_value": 7,
+      "display_name": "Benjamin Nygren"
+    },
+    "fc823349-f5a1-43b8-bb25-c9c50cdc3ba6": {
+      "id": "fc823349-f5a1-43b8-bb25-c9c50cdc3ba6",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "FWD",
+      "squad_value": 6,
+      "display_name": "Alexander Bernhardsson"
+    },
+    "b5ec93d8-49c3-4d79-9b40-0acb044a4bfb": {
+      "id": "b5ec93d8-49c3-4d79-9b40-0acb044a4bfb",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "FWD",
+      "squad_value": 5,
+      "display_name": "Gustaf Nilsson"
+    },
+    "b46b1a4a-23ab-4e4d-a7b8-831b10cb499e": {
+      "id": "b46b1a4a-23ab-4e4d-a7b8-831b10cb499e",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "GK",
+      "squad_value": 7,
+      "display_name": "Viktor Johansson"
+    },
+    "53ded6e8-0f05-49ff-a4fd-b6dd76a6d26d": {
+      "id": "53ded6e8-0f05-49ff-a4fd-b6dd76a6d26d",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "GK",
+      "squad_value": 5,
+      "display_name": "Jacob Widell Zetterstr\u00f6m"
+    },
+    "bd9fb0c0-95d3-4db8-bd69-422496fee040": {
+      "id": "bd9fb0c0-95d3-4db8-bd69-422496fee040",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "GK",
+      "squad_value": 3,
+      "display_name": "Kristoffer Nordfeldt"
+    },
+    "7b6c6c48-02cf-40d1-a947-0f55f136e255": {
+      "id": "7b6c6c48-02cf-40d1-a947-0f55f136e255",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Daniel Svensson"
+    },
+    "bd10c1f5-c116-4487-aed8-4651e045305e": {
+      "id": "bd10c1f5-c116-4487-aed8-4651e045305e",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Lucas Bergvall"
+    },
+    "e33e3b2d-0b05-4cb0-ba33-612e767d4e9d": {
+      "id": "e33e3b2d-0b05-4cb0-ba33-612e767d4e9d",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "MID",
+      "squad_value": 8,
+      "display_name": "Yasin Ayari"
+    },
+    "047e6c00-61b8-4fe7-b516-4c895eaef69d": {
+      "id": "047e6c00-61b8-4fe7-b516-4c895eaef69d",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "MID",
+      "squad_value": 7,
+      "display_name": "Mattias Svanberg"
+    },
+    "1b961c70-660b-4811-a0dc-2504c1fca212": {
+      "id": "1b961c70-660b-4811-a0dc-2504c1fca212",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "MID",
+      "squad_value": 6,
+      "display_name": "Besfort Zeneli"
+    },
+    "092bf9fc-1a12-41d5-bbdd-2be9e99761ae": {
+      "id": "092bf9fc-1a12-41d5-bbdd-2be9e99761ae",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "MID",
+      "squad_value": 6,
+      "display_name": "Elliot Stroud"
+    },
+    "a8687384-805d-4a27-b7e1-bfedf8707803": {
+      "id": "a8687384-805d-4a27-b7e1-bfedf8707803",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "MID",
+      "squad_value": 6,
+      "display_name": "Jesper Karlstr\u00f6m"
+    },
+    "c4996fde-4838-4164-8313-dccb19ca8ccf": {
+      "id": "c4996fde-4838-4164-8313-dccb19ca8ccf",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "MID",
+      "squad_value": 5,
+      "display_name": "Taha Abdi Ali"
+    },
+    "0d19134d-bffb-4c92-be56-26ec014ce703": {
+      "id": "0d19134d-bffb-4c92-be56-26ec014ce703",
+      "country": "Sweden",
+      "team_id": "ed6d8b03-004f-4ef1-bb21-8c575558338e",
+      "position": "MID",
+      "squad_value": 4,
+      "display_name": "Ken Sema"
+    }
+  },
+  "ownership": {
+    "tournament": "friendlies_2026",
+    "snapshot_from_round": "friendlies_2026_06_03",
+    "preparing_for_round": "friendlies_2026_06_04",
+    "computed_at": "2026-06-03T12:10:14.707+00:00",
+    "differential_threshold_pct": null,
+    "players": [
+      {
+        "player_id": "a89f66e1-f183-4ae6-a5c7-9048bcac2f49",
+        "display_name": "Bart Verbruggen",
+        "team": "Netherlands",
+        "position": "GK",
+        "squad_value": 8,
+        "ownership_pct": 80,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "30a71f36-f7d5-4cef-8998-040fa4dc7bf5",
+        "display_name": "Micky van de Ven",
+        "team": "Netherlands",
+        "position": "DEF",
+        "squad_value": 9,
+        "ownership_pct": 60,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "7407a3f5-4968-44c3-900d-6adca3c619f0",
+        "display_name": "Kim Min-jae",
+        "team": "South Korea",
+        "position": "DEF",
+        "squad_value": 8,
+        "ownership_pct": 100,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "79f04e35-269d-47c2-8877-9299fdd58fde",
+        "display_name": "Aaron Wan-Bissaka",
+        "team": "DR Congo",
+        "position": "DEF",
+        "squad_value": 8,
+        "ownership_pct": 60,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "9fb4b2a0-7888-4f30-9b1f-a62d39af642d",
+        "display_name": "Cody Gakpo",
+        "team": "Netherlands",
+        "position": "MID",
+        "squad_value": 9,
+        "ownership_pct": 100,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "5051732c-c947-4465-8186-ab2463a84188",
+        "display_name": "Kang-in Lee",
+        "team": "South Korea",
+        "position": "MID",
+        "squad_value": 8,
+        "ownership_pct": 60,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "d9cc4ef2-2977-4efc-85ff-924e2aaab69d",
+        "display_name": "Alex Iwobi",
+        "team": "Nigeria",
+        "position": "MID",
+        "squad_value": 8,
+        "ownership_pct": 80,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "4a996e2b-e14c-4816-b63a-1517cf7cdcb9",
+        "display_name": "Raphael Onyedika",
+        "team": "Nigeria",
+        "position": "MID",
+        "squad_value": 8,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "41bba3a3-eae3-4acb-b8b7-02eb83358d5a",
+        "display_name": "Son Heung-min",
+        "team": "South Korea",
+        "position": "FWD",
+        "squad_value": 7,
+        "ownership_pct": 80,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "02cfa302-76eb-4b97-b185-1ca13b56048f",
+        "display_name": "Amine Gouiri",
+        "team": "Algeria",
+        "position": "FWD",
+        "squad_value": 8,
+        "ownership_pct": 40,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "5e0ec022-07a7-4e45-8139-2ff4052b4758",
+        "display_name": "Yoane Wissa",
+        "team": "DR Congo",
+        "position": "FWD",
+        "squad_value": 8,
+        "ownership_pct": 40,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "090e9259-6132-48ea-8faf-678834ed9b13",
+        "display_name": "Geonathan Barrera",
+        "team": "El Salvador",
+        "position": "GK",
+        "squad_value": 2,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "7a167b66-e054-4e0c-ba0a-00630e3c516c",
+        "display_name": "Rayan A\u00eft-Nouri",
+        "team": "Algeria",
+        "position": "DEF",
+        "squad_value": 8,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "0f86af6f-ccd6-4b60-a26e-543cb7881adb",
+        "display_name": "Anis Hadj Moussa",
+        "team": "Algeria",
+        "position": "MID",
+        "squad_value": 8,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "c2f5640c-249f-4a98-8c04-6b72cd1acae2",
+        "display_name": "Gabriel Arnold",
+        "team": "El Salvador",
+        "position": "MID",
+        "squad_value": 1,
+        "ownership_pct": 40,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "a6fdb0d1-78ed-4bb1-b402-67b3d0f49ffd",
+        "display_name": "Berat Djimsiti",
+        "team": "Albania",
+        "position": "DEF",
+        "squad_value": 6,
+        "ownership_pct": 40,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "1a9c30a2-ecf2-4e67-b91c-b99389cf4211",
+        "display_name": "Mario Mitaj",
+        "team": "Albania",
+        "position": "DEF",
+        "squad_value": 6,
+        "ownership_pct": 40,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "32bc1206-07ed-45f3-88c8-d82d30eddb2a",
+        "display_name": "Kristjan Asllani",
+        "team": "Albania",
+        "position": "MID",
+        "squad_value": 7,
+        "ownership_pct": 40,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "9d7653bc-fdff-4312-ba34-be02a90901fc",
+        "display_name": "Ademola Lookman",
+        "team": "Nigeria",
+        "position": "FWD",
+        "squad_value": 8,
+        "ownership_pct": 40,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "ebb652f5-9e63-413b-80d7-822a4c621e76",
+        "display_name": "Kilian Belazzoug",
+        "team": "Algeria",
+        "position": "GK",
+        "squad_value": 1,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "4363e02e-c2a4-42aa-b9d4-2ff3774e8e5b",
+        "display_name": "Kenneth Igboke",
+        "team": "Nigeria",
+        "position": "DEF",
+        "squad_value": 1,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "16600521-3a84-43c2-b324-e21ba7ba29c6",
+        "display_name": "Aderemi Adeoye",
+        "team": "Nigeria",
+        "position": "MID",
+        "squad_value": 1,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "f0fa4f05-c20d-4eca-b79f-b539f80df79d",
+        "display_name": "Emmanuel Fernandez",
+        "team": "Nigeria",
+        "position": "DEF",
+        "squad_value": 7,
+        "ownership_pct": 40,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "dd4ee66a-e486-4fa9-a068-0748608463dc",
+        "display_name": "Artem Pryadkin",
+        "team": "Kyrgyzstan",
+        "position": "GK",
+        "squad_value": 3,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "1327d391-4dad-4a71-a48f-3d5e01f3c89e",
+        "display_name": "Christian Brauzman",
+        "team": "Kyrgyzstan",
+        "position": "DEF",
+        "squad_value": 4,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "fd8e0bc1-2835-44ad-9e78-449b887e795d",
+        "display_name": "Kayrat Zhyrgalbek uulu",
+        "team": "Kyrgyzstan",
+        "position": "MID",
+        "squad_value": 4,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "db1af23c-1424-4227-8c7d-7259857b9e3a",
+        "display_name": "Brayan Gil",
+        "team": "El Salvador",
+        "position": "FWD",
+        "squad_value": 5,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "ede708b7-2598-46db-aa04-def1a4e38fd3",
+        "display_name": "Tijjani Reijnders",
+        "team": "Netherlands",
+        "position": "MID",
+        "squad_value": 9,
+        "ownership_pct": 40,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "dc768a20-32c1-4753-a858-d3a66896f8b7",
+        "display_name": "Juljan Shehu",
+        "team": "Albania",
+        "position": "MID",
+        "squad_value": 6,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "283aa5cd-b9d2-4bfd-8292-e851823209d4",
+        "display_name": "Hwang Hee-chan",
+        "team": "South Korea",
+        "position": "FWD",
+        "squad_value": 7,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "50ddd665-48f5-40fb-a0b4-0486d561f0ed",
+        "display_name": "Armando Broja",
+        "team": "Albania",
+        "position": "FWD",
+        "squad_value": 6,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "c791de79-1f26-4f0b-9508-0da9a1c8f813",
+        "display_name": "Arthur Okonkwo",
+        "team": "Nigeria",
+        "position": "GK",
+        "squad_value": 6,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "d1672e28-8e2d-43d4-8197-0e95decf775b",
+        "display_name": "Oscar Gloukh",
+        "team": "Israel",
+        "position": "MID",
+        "squad_value": 7,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "afc4a06c-4b16-49e1-b083-1a366a3365d0",
+        "display_name": "Bright Osayi-Samuel",
+        "team": "Nigeria",
+        "position": "DEF",
+        "squad_value": 6,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "4ea15715-217c-4552-98d7-4fea9541e57e",
+        "display_name": "Roy Revivo",
+        "team": "Israel",
+        "position": "DEF",
+        "squad_value": 6,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "666a2a08-5d5f-48f7-9cc0-b6671d2262c1",
+        "display_name": "Josep G\u00f3mes",
+        "team": "Andorra",
+        "position": "GK",
+        "squad_value": 1,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "b84d88f5-4c84-4be5-b46c-d7d526ed26de",
+        "display_name": "Ian Rodriguez",
+        "team": "Bolivia",
+        "position": "DEF",
+        "squad_value": 1,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "613a5f49-9b7b-453c-81ed-c125755f694f",
+        "display_name": "Ryan Gravenberch",
+        "team": "Netherlands",
+        "position": "MID",
+        "squad_value": 9,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "f528a1ce-dda6-4545-ac22-03b287e39a3f",
+        "display_name": "Ibrahim Maza",
+        "team": "Algeria",
+        "position": "FWD",
+        "squad_value": 8,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "c4baacee-8278-48a0-99dc-8af6dc12c134",
+        "display_name": "Mohamed Amoura",
+        "team": "Algeria",
+        "position": "FWD",
+        "squad_value": 8,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "c17d7c8f-3898-4292-bfdb-fc5ed35a2c59",
+        "display_name": "Hasan Pritom Mahfuz",
+        "team": "Bangladesh",
+        "position": "GK",
+        "squad_value": 1,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "875396a0-cfc6-497e-a2d2-e2f694c0da72",
+        "display_name": "Botsile Sakana",
+        "team": "BOT",
+        "position": "DEF",
+        "squad_value": 1,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      },
+      {
+        "player_id": "5f711eb0-7d51-4026-be5d-5e9b0f032376",
+        "display_name": "Noah Sadiki",
+        "team": "DR Congo",
+        "position": "MID",
+        "squad_value": 8,
+        "ownership_pct": 20,
+        "differential_eligible": false
+      }
+    ]
+  },
+  "lineup": {
+    "id": "049f3c58-5547-4328-8668-75f9d71850da",
+    "agent_id": "43d06db7-89b8-4d96-a2e7-6d5fe471ffcb",
+    "tournament": "friendlies_2026",
+    "round": "friendlies_2026_06_04",
+    "round_display": "Friendlies Jun 04",
+    "formation": "4-3-3",
+    "player_ids": [
+      "890eaa07-7813-4526-a177-befe5d7c817a",
+      "c2dc179f-5890-4e9a-8437-b7507a424ae9",
+      "360e55da-b978-4765-b1a5-026b97829665",
+      "82470240-3bdc-4cbd-94a6-3511a1721bd7",
+      "2ecd98d6-2204-40aa-a634-2b55a2c7e062",
+      "c7c7f409-21a8-4add-baba-19ee8d290cde",
+      "e7dadf3a-668c-47a7-be96-32b03d0a17ae",
+      "bd10c1f5-c116-4487-aed8-4651e045305e",
+      "c2b02a7b-6e3d-4b06-9e96-7a0c0c67fabe",
+      "d6a2f40f-5d77-483f-b495-d2c6d9ba1e22",
+      "a94356bd-9056-475d-8074-7a1e9fa710a8"
+    ],
+    "bench_player_ids": [
+      "5961a3c0-5a03-4e30-a04b-88257b844d33",
+      "60bff315-d214-4b5f-91ef-8d3c36626be8",
+      "80a7df61-30b3-4b4a-a0a7-680968cf7c40",
+      "b985c11d-954e-492f-9eb9-176302fb87d9"
+    ],
+    "captain": "e7dadf3a-668c-47a7-be96-32b03d0a17ae",
+    "vice_captain": "c7c7f409-21a8-4add-baba-19ee8d290cde",
+    "chip": null,
+    "reasoning_trace_id": null,
+    "submitted_at": "2026-06-04T00:29:48.380736+00:00",
+    "locked_at": "2026-06-04T01:45:15.927+00:00",
+    "leaderboard_eligible": false
+  },
+  "predictions": {
+    "tournament": "friendlies_2026",
+    "round": "friendlies_2026_06_04",
+    "round_display": "Friendlies Jun 04",
+    "predictions": [
+      {
+        "fixture_id": "31804e2a-eff4-4b1b-b6a7-8cf02f3affac",
+        "predicted_home_score": 2,
+        "predicted_away_score": 0,
+        "inferred_winner": "home",
+        "locked": true,
+        "locked_at": "2026-06-04T00:45:00+00:00",
+        "submitted_at": "2026-06-04T00:22:29.990882+00:00",
+        "score": {
+          "points": 3,
+          "outcome": "correct_winner_and_diff"
+        }
+      },
+      {
+        "fixture_id": "974b778a-07de-44d0-919e-74f1bf67e19c",
+        "predicted_home_score": 2,
+        "predicted_away_score": 0,
+        "inferred_winner": "home",
+        "locked": true,
+        "locked_at": "2026-06-04T12:00:00+00:00",
+        "submitted_at": "2026-06-04T00:22:29.990882+00:00",
+        "score": {
+          "points": 1,
+          "outcome": "correct_winner"
+        }
+      },
+      {
+        "fixture_id": "aec34b9f-44ee-4680-84dd-73ecea568b85",
+        "predicted_home_score": 1,
+        "predicted_away_score": 2,
+        "inferred_winner": "away",
+        "locked": true,
+        "locked_at": "2026-06-04T16:00:00+00:00",
+        "submitted_at": "2026-06-04T00:22:29.990882+00:00",
+        "score": {
+          "points": 0,
+          "outcome": "wrong_winner"
+        }
+      },
+      {
+        "fixture_id": "8385d43f-4ad8-4eac-a8be-7f89e4ef7187",
+        "predicted_home_score": 2,
+        "predicted_away_score": 0,
+        "inferred_winner": "home",
+        "locked": true,
+        "locked_at": "2026-06-04T16:00:00+00:00",
+        "submitted_at": "2026-06-04T00:22:29.990882+00:00",
+        "score": {
+          "points": 0,
+          "outcome": "wrong_winner"
+        }
+      },
+      {
+        "fixture_id": "cbd62cc1-b437-4ea0-852f-41bc0479fc39",
+        "predicted_home_score": 2,
+        "predicted_away_score": 0,
+        "inferred_winner": "home",
+        "locked": true,
+        "locked_at": "2026-06-04T17:00:00+00:00",
+        "submitted_at": "2026-06-04T00:22:29.990882+00:00",
+        "score": {
+          "points": 5,
+          "outcome": "exact_score"
+        }
+      },
+      {
+        "fixture_id": "0d9c5676-31c8-481a-8baf-e567a3a9c4a6",
+        "predicted_home_score": 3,
+        "predicted_away_score": 0,
+        "inferred_winner": "home",
+        "locked": true,
+        "locked_at": "2026-06-04T17:00:00+00:00",
+        "submitted_at": "2026-06-04T00:22:29.990882+00:00",
+        "score": {
+          "points": 0,
+          "outcome": "wrong_winner"
+        }
+      },
+      {
+        "fixture_id": "928be514-fa51-4995-9b45-05fa5a0947ce",
+        "predicted_home_score": 4,
+        "predicted_away_score": 0,
+        "inferred_winner": "home",
+        "locked": true,
+        "locked_at": "2026-06-04T19:00:00+00:00",
+        "submitted_at": "2026-06-04T00:22:29.990882+00:00",
+        "score": {
+          "points": 0,
+          "outcome": "wrong_winner"
+        }
+      },
+      {
+        "fixture_id": "7ffaa2ff-e351-4d2a-a08e-af466f77d1d2",
+        "predicted_home_score": 2,
+        "predicted_away_score": 0,
+        "inferred_winner": "home",
+        "locked": true,
+        "locked_at": "2026-06-04T19:10:00+00:00",
+        "submitted_at": "2026-06-04T00:22:29.990882+00:00",
+        "score": {
+          "points": 0,
+          "outcome": "wrong_winner"
+        }
+      }
+    ],
+    "missed_fixture_ids": [],
+    "round_prediction_points": 9
+  },
+  "actual_scores": {
+    "31804e2a-eff4-4b1b-b6a7-8cf02f3affac": {
+      "home": 4,
+      "away": 2
+    },
+    "974b778a-07de-44d0-919e-74f1bf67e19c": {
+      "home": 4,
+      "away": 0
+    },
+    "aec34b9f-44ee-4680-84dd-73ecea568b85": {
+      "home": 1,
+      "away": 0
+    },
+    "8385d43f-4ad8-4eac-a8be-7f89e4ef7187": {
+      "home": 1,
+      "away": 1
+    },
+    "cbd62cc1-b437-4ea0-852f-41bc0479fc39": {
+      "home": 2,
+      "away": 0
+    },
+    "0d9c5676-31c8-481a-8baf-e567a3a9c4a6": {
+      "home": 2,
+      "away": 2
+    },
+    "928be514-fa51-4995-9b45-05fa5a0947ce": {
+      "home": 1,
+      "away": 1
+    }
+  },
+  "reasoning": null
+}

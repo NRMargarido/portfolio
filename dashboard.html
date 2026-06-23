@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NUNO_XI · AgentsXI Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@500;600;700&family=Archivo:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060608;--surface:#0e0f14;--surface2:#0a0b0f;--border:#1c1f2b;--border-hi:#2a3142;
+  --text:#e6e8ee;--muted:#5a6072;--dim:#3a3f4d;
+  --neon:#00ff9d;--neon-alt:#7b61ff;--neon-red:#ff4466;--neon-yellow:#ffc107;--gold:#ffd700;
+  --scan:rgba(0,255,157,.025);
+  --mono:'JetBrains Mono','Fira Code','Courier New',monospace;
+  --display:'Archivo','Space Grotesk',system-ui,sans-serif;
+  --grotesk:'Space Grotesk',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg)}
+body{
+  background:
+    radial-gradient(1200px 600px at 70% -10%, rgba(0,255,157,.05), transparent 60%),
+    radial-gradient(900px 500px at 10% 110%, rgba(123,97,255,.05), transparent 55%),
+    var(--bg);
+  color:var(--text);font-family:var(--mono);min-height:100vh;
+  font-variant-numeric:tabular-nums;
+  -webkit-font-smoothing:antialiased;
+  position:relative;
+}
+/* CRT scanlines + phosphor flicker — fixed, non-interactive overlay */
+body::before{
+  content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;
+  background:repeating-linear-gradient(0deg,var(--scan) 0,var(--scan) 1px,transparent 1px,transparent 3px);
+  mix-blend-mode:screen;
+}
+/* Film grain + vignette */
+body::after{
+  content:"";position:fixed;inset:0;z-index:9997;pointer-events:none;opacity:.5;
+  background:radial-gradient(125% 125% at 50% 50%, transparent 60%, rgba(0,0,0,.55) 100%);
+}
+::selection{background:rgba(0,255,157,.25);color:#fff}
+.glow{text-shadow:0 0 8px currentColor}
+
+/* Layout */
+.page{max-width:920px;margin:0 auto;padding:28px 16px 64px}
+
+/* Header */
+.header{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:20px;border-bottom:1px solid var(--border-hi);margin-bottom:24px;gap:16px;flex-wrap:wrap;position:relative}
+.header::after{content:"";position:absolute;bottom:-1px;left:0;width:120px;height:1px;background:var(--neon);box-shadow:0 0 10px var(--neon)}
+.handle{font:900 clamp(2.6rem,7vw,4.4rem)/.82 var(--display);color:var(--neon);letter-spacing:-.04em;text-transform:uppercase;text-shadow:0 0 22px rgba(0,255,157,.35)}
+.handle-meta{font:11px var(--mono);color:var(--muted);margin-top:9px;letter-spacing:.12em;text-transform:uppercase}
+.handle-meta::before{content:"// ";color:var(--dim)}
+.handle-tour{font:11px var(--mono);color:var(--neon-alt);margin-top:4px;letter-spacing:.14em;text-transform:uppercase}
+.ranks{display:flex;gap:8px;flex-wrap:wrap;padding-top:4px}
+.rb{padding:5px 11px;font:700 11px/1.4 var(--mono);letter-spacing:.1em;border:1px solid;position:relative;background:rgba(0,0,0,.3)}
+.rb::before{content:"[ ";opacity:.45}
+.rb::after{content:" ]";opacity:.45}
+.rb.g{border-color:rgba(0,255,157,.4);color:var(--neon);box-shadow:0 0 12px rgba(0,255,157,.1)}
+.rb.m{border-color:rgba(123,97,255,.4);color:var(--neon-alt)}
+.rb.p{border-color:rgba(255,215,0,.4);color:var(--gold)}
+
+/* Section */
+.sec{margin-bottom:28px}
+.sec-head{display:flex;align-items:center;gap:8px;margin-bottom:14px;border-bottom:1px solid var(--border);padding-bottom:7px}
+.sec-sep{color:var(--neon);font-family:var(--mono);font-size:13px;text-shadow:0 0 8px var(--neon)}
+.sec-title{font:700 11px/1 var(--grotesk);letter-spacing:.28em;text-transform:uppercase;color:var(--text)}
+.sec-title::before{content:"◢ ";color:var(--dim);font-size:9px}
+.sec-aux{margin-left:auto;font:10px var(--mono);color:var(--muted);letter-spacing:.06em}
+
+/* Round bar */
+.rbar{background:var(--surface);padding:14px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:20px;border:1px solid var(--border);border-left:2px solid var(--neon)}
+.rlbl{font:13px var(--mono);color:var(--text)}
+.badge{padding:2px 8px;font:10px/1.6 var(--mono);letter-spacing:.1em;text-transform:uppercase;border:1px solid}
+.badge.locked{background:rgba(255,68,102,.1);color:var(--neon-red);border-color:rgba(255,68,102,.3)}
+.badge.open{background:rgba(0,255,157,.08);color:var(--neon);border-color:rgba(0,255,157,.3)}
+.badge.form{background:rgba(123,97,255,.12);color:var(--neon-alt);border-color:rgba(123,97,255,.3)}
+.bwrap{display:flex;align-items:center;gap:8px;margin-left:auto}
+.btrack{width:100px;height:3px;background:var(--border)}
+.bfill{height:100%;background:var(--neon)}
+.btxt{font:12px var(--mono);color:var(--muted);white-space:nowrap}
+
+/* Leaderboard cards */
+.lb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.lbc{background:var(--surface);padding:18px 16px 16px;border:1px solid var(--border);position:relative;overflow:hidden}
+.lbc::before{content:"";position:absolute;top:0;left:0;width:14px;height:14px;border-top:2px solid var(--neon);border-left:2px solid var(--neon)}
+.lbc::after{content:"";position:absolute;bottom:0;right:0;width:14px;height:14px;border-bottom:2px solid var(--border-hi);border-right:2px solid var(--border-hi)}
+.lbc-board{font:700 9px var(--grotesk);letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.lbc-rank{font:800 clamp(2.6rem,8vw,3.6rem)/.85 var(--display);letter-spacing:-.04em;text-shadow:0 0 18px currentColor}
+.lbc-pts{font:11px var(--mono);color:var(--muted);margin-top:8px;letter-spacing:.04em}
+.lbc-delta{font:11px var(--mono);display:inline-block;margin-left:8px}
+.d-up{color:var(--neon)}.d-dn{color:var(--neon-red)}.d-fl{color:var(--muted)}
+
+/* Fixtures */
+.fix-list{list-style:none;display:flex;flex-direction:column;gap:5px}
+.fix-item{background:var(--surface);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border:1px solid var(--border);border-left:2px solid var(--dim);transition:border-color .12s}
+.fix-item:hover{border-left-color:var(--neon)}
+.fix-teams{font:13px var(--mono)}
+.fix-r{display:flex;gap:10px;align-items:center}
+.fix-time{font:11px var(--mono);color:var(--muted)}
+.fix-st{font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.fix-st.final{color:var(--neon);border:1px solid rgba(0,255,157,.3);padding:1px 6px}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;border:1px solid var(--border)}
+th{font:700 9px var(--grotesk);letter-spacing:.18em;text-transform:uppercase;color:var(--neon);background:var(--surface2);text-align:left;padding:9px 12px;border-bottom:1px solid var(--border-hi)}
+td{padding:10px 12px;font:13px var(--mono);border-bottom:1px solid var(--border);font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:none}
+tbody tr{transition:background .12s}
+tbody tr:hover{background:rgba(0,255,157,.04);box-shadow:inset 2px 0 0 var(--neon)}
+
+/* Position pill */
+.pos{display:inline-block;width:34px;text-align:center;padding:1px 0;font:700 10px var(--mono);letter-spacing:.04em}
+.pos.GK{background:rgba(255,193,7,.18);color:#ffc107}
+.pos.DEF{background:rgba(0,255,157,.14);color:var(--neon)}
+.pos.MID{background:rgba(123,97,255,.18);color:var(--neon-alt)}
+.pos.FWD{background:rgba(255,68,102,.18);color:var(--neon-red)}
+
+/* Captain rows */
+tr.cap td:first-child{border-left:2px solid var(--gold)}
+tr.cap .pname{color:var(--gold)}
+tr.vic td:first-child{border-left:2px solid rgba(255,215,0,.35)}
+tr.vic .pname{color:rgba(255,215,0,.75)}
+.ci{font-size:11px;margin-right:3px}
+.mu{color:var(--muted)}
+
+/* Bench */
+tr.b15 td{opacity:.4}
+.tag15{font:9px var(--mono);letter-spacing:.08em;border:1px solid var(--border);padding:0 4px;text-transform:uppercase;color:var(--muted)}
+
+/* Retro flag */
+.flag{
+  display:inline-block;
+  font-size:10px;
+  transform:scale(2.2);
+  transform-origin:left center;
+  image-rendering:pixelated;
+  filter:saturate(1.5) contrast(1.15) brightness(0.82) sepia(0.18);
+  cursor:default;
+  line-height:1;
+  margin-right:14px;
+}
+/* Player score breakdown */
+.pts-col{text-align:right!important;white-space:nowrap;min-width:36px}
+.pts-total{font:700 13px var(--mono)}
+.pts-total.pos{color:var(--neon)}
+.pts-total.neg{color:var(--neon-red)}
+.pts-total.zero{color:var(--muted)}
+.pts-total.pend{color:var(--muted);font-weight:400;font-style:italic}
+.breakdown{font:10px var(--mono);color:var(--muted);letter-spacing:.02em;line-height:1.6}
+.ev-pos{color:var(--neon)}
+.ev-neg{color:var(--neon-red)}
+.ev-neu{color:var(--muted)}
+.cap-badge{font:9px var(--mono);color:var(--gold);margin-left:4px;letter-spacing:.06em}
+
+/* Predictions */
+.oc-ex{color:var(--neon)}
+.oc-wd{color:var(--neon-yellow)}
+.oc-wr{color:var(--neon-red)}
+.oc-pe{color:var(--muted);font-style:italic}
+.pts-p{color:var(--neon);font-weight:700}
+.pts-n{color:var(--neon-red);font-weight:700}
+.pts-z{color:var(--muted)}
+tr.total td{background:var(--surface);border-top:1px solid var(--border);border-bottom:none}
+.total-lbl{font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* Reasoning */
+.reas-btn{width:100%;background:var(--surface);border:1px solid var(--border);color:var(--muted);padding:10px 16px;text-align:left;cursor:pointer;font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+.reas-btn:hover{border-color:var(--neon-alt);color:var(--text)}
+.reas-body{background:var(--surface);border:1px solid var(--border);border-top:none;padding:20px;display:none}
+.reas-body.open{display:block}
+.reas-meta{font:11px var(--mono);color:var(--muted);margin-bottom:14px;display:flex;gap:16px;flex-wrap:wrap}
+.reas-text{font:12px/1.8 var(--mono);color:var(--text);white-space:pre-wrap;word-break:break-word}
+
+/* Refresh notice */
+.refresh-bar{background:var(--surface);border:1px solid var(--border);padding:12px 16px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.refresh-cmd{font:12px var(--mono);color:var(--muted)}
+.refresh-cmd code{color:var(--neon-alt);background:rgba(123,97,255,.1);padding:2px 6px}
+.refresh-time{font:11px var(--mono);color:var(--muted)}
+
+/* Round navigator */
+.nav-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface2);border:1px solid var(--border-hi);padding:10px 18px;margin-bottom:24px}
+.nav-btn{background:none;border:1px solid var(--border);color:var(--muted);padding:6px 14px;font:13px var(--mono);cursor:pointer;transition:.15s;min-width:36px}
+.nav-btn:hover:not(:disabled){border-color:var(--neon);color:var(--neon)}
+.nav-btn:disabled{opacity:.25;cursor:default}
+.nav-center{text-align:center;flex:1}
+.nav-round{font:14px var(--mono);color:var(--text);letter-spacing:.04em}
+.nav-count{font:10px var(--mono);color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-top:3px}
+
+/* States */
+.warn{color:var(--neon-yellow);font:12px var(--mono);padding:14px;border:1px solid rgba(255,193,7,.2);background:rgba(255,193,7,.04);margin-bottom:12px}
+.info{color:var(--muted);font:12px var(--mono);padding:14px}
+
+/* Divider */
+hr.div{border:none;border-top:1px solid var(--border);margin:0 0 28px;position:relative}
+hr.div::before{content:"";position:absolute;top:-1px;left:0;width:40px;height:1px;background:var(--dim)}
+
+/* Top-level game tabs */
+.tab-bar{display:flex;gap:0;margin-bottom:24px;border:1px solid var(--border-hi);background:var(--surface2)}
+.tab-btn{flex:1;background:none;border:none;border-right:1px solid var(--border);color:var(--muted);padding:14px 16px;font:700 11px var(--grotesk);letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:.15s}
+.tab-btn:last-child{border-right:none}
+.tab-btn:hover{color:var(--text);background:rgba(255,255,255,.02)}
+.tab-btn.active{color:var(--neon);background:rgba(0,255,157,.07);box-shadow:inset 0 -2px 0 var(--neon);text-shadow:0 0 10px rgba(0,255,157,.5)}
+.tab-btn.active.ft{color:var(--neon-yellow);background:rgba(255,193,7,.07);box-shadow:inset 0 -2px 0 var(--neon-yellow);text-shadow:0 0 10px rgba(255,193,7,.5)}
+
+/* FIFA fantasy tab extras */
+.ft-handle{color:var(--neon-yellow)!important}
+.ft-status{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--neon-yellow);padding:14px 18px;margin-bottom:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.ft-status .lbl{font:12px var(--mono);color:var(--neon-yellow)}
+.ft-status .sub{font:11px var(--mono);color:var(--muted)}
+.chain-grid{display:flex;gap:10px;flex-wrap:wrap}
+.chain-card{background:var(--surface);border:1px solid var(--border);padding:14px;flex:1;min-width:170px;position:relative}
+.chain-card::before{content:"";position:absolute;top:0;left:0;width:12px;height:12px;border-top:2px solid var(--gold);border-left:2px solid var(--gold)}
+.chain-rung{font:800 clamp(1.6rem,4vw,2rem)/1 var(--display);color:var(--gold);margin-bottom:8px;text-shadow:0 0 14px rgba(255,215,0,.3)}
+.chain-name{font:700 12px var(--mono);color:var(--text)}
+.chain-fix{font:10px var(--mono);color:var(--muted);margin-top:4px;line-height:1.5}
+.chain-arrow{font:16px var(--mono);color:var(--muted);align-self:center}
+.plan-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.plan-list li{background:var(--surface);padding:10px 14px;font:12px/1.6 var(--mono);color:var(--text)}
+.plan-list li::before{content:'▸ ';color:var(--neon-yellow)}
+.est-tag{font:9px var(--mono);color:var(--neon-yellow);border:1px solid rgba(255,193,7,.35);padding:0 4px;letter-spacing:.06em}
+.pc-chain-tag{background:var(--gold);color:#000}
+
+/* Pitch visual — tactical blueprint board */
+.pitch-wrap{
+  background:
+    linear-gradient(rgba(0,255,157,.04) 1px,transparent 1px) 0 0/100% 28px,
+    linear-gradient(90deg,rgba(0,255,157,.04) 1px,transparent 1px) 0 0/28px 100%,
+    radial-gradient(120% 80% at 50% 0%, rgba(0,255,157,.06), transparent 60%),
+    #07100b;
+  border:1px solid #1e3a2c;border-radius:4px;padding:20px 16px 16px;margin-bottom:4px;
+  box-shadow:inset 0 0 60px rgba(0,255,157,.05)}
+.pitch-pos-row{display:flex;justify-content:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.pitch-bench-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;opacity:.72}
+.pitch-row-label{text-align:center;font:700 9px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#3fb950;margin-bottom:8px}
+.pitch-bench-sep{border-top:1px dashed #1e3a1e;margin:8px 16px 14px}
+.pitch-card{background:rgba(16,32,24,.85);border:1px solid #2d4a3a;border-radius:3px;padding:10px 10px 8px;min-width:108px;max-width:128px;text-align:center;position:relative;flex:0 0 auto;backdrop-filter:blur(2px)}
+.pitch-card.cap{border-color:var(--gold);background:#201f10}
+.pitch-card.vc{border-color:rgba(192,192,192,.5);background:#1a2520}
+.pitch-card.bench-card{background:#111118;border-color:var(--border)}
+.pc-tag{position:absolute;top:-9px;left:50%;transform:translateX(-50%);font:700 8px var(--mono);padding:1px 6px;border-radius:3px;letter-spacing:.06em;white-space:nowrap}
+.pc-cap-tag{background:var(--gold);color:#000}
+.pc-vc-tag{background:#c0c0c0;color:#000}
+.pc-flag{font-size:1.25rem;line-height:1;margin-bottom:4px}
+.pc-name{font:700 11px var(--mono);color:var(--text);line-height:1.3;margin-bottom:4px;word-break:break-word}
+.pc-pill{display:inline-block;padding:1px 5px;border-radius:3px;font:700 9px var(--mono);margin-bottom:3px}
+.pc-pill.GK{background:rgba(255,193,7,.2);color:#ffc107}
+.pc-pill.DEF{background:rgba(0,255,157,.15);color:var(--neon)}
+.pc-pill.MID{background:rgba(123,97,255,.2);color:var(--neon-alt)}
+.pc-pill.FWD{background:rgba(255,68,102,.18);color:var(--neon-red)}
+.pc-fixture{font:9px var(--mono);color:#3fb950;margin-top:2px;line-height:1.4}
+.pc-val{font:700 12px var(--mono);color:#c9c9e0;margin-top:4px;background:rgba(255,255,255,.07);border-radius:3px;padding:1px 6px;display:inline-block}
+.pc-pts{font:700 12px var(--mono);margin-top:4px}
+
+@media(max-width:600px){
+  .lb-grid{grid-template-columns:1fr}
+  .header{flex-direction:column}
+  .bwrap{margin-left:0}
+  .rbar{flex-direction:column;align-items:flex-start}
+}
+
+/* ── MD1 Review tab ──────────────────────────────────────────────────────── */
+.tab-btn.rv-active{color:var(--neon-alt);background:rgba(123,97,255,.06);box-shadow:inset 0 -2px 0 var(--neon-alt)}
+.rv-stat-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.rv-stat{background:var(--surface);padding:16px 18px;flex:1;min-width:120px;border:1px solid var(--border);border-top:2px solid var(--neon-alt)}
+.rv-stat-val{font:800 clamp(1.9rem,5vw,2.6rem)/.9 var(--display);letter-spacing:-.03em;margin-bottom:6px}
+.rv-stat-lbl{font:700 9px var(--grotesk);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.rv-highlight{background:var(--surface);border:1px solid rgba(123,97,255,.4);padding:16px;margin-bottom:20px}
+.rv-highlight h4{font:700 10px var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--neon-alt);margin-bottom:8px}
+.rv-highlight p{font:12px/1.8 var(--mono);color:var(--text)}
+.rv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.rv-player{background:var(--surface);padding:14px 16px;border-left:3px solid var(--border)}
+.rv-player.hit{border-left-color:var(--neon)}
+.rv-player.partial{border-left-color:var(--neon-yellow)}
+.rv-player.miss{border-left-color:var(--neon-red)}
+.rv-player.pending{border-left-color:var(--muted)}
+.rv-player-head{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin-bottom:6px}
+.rv-player-name{font:700 13px var(--mono)}
+.rv-verdict{font:700 9px var(--mono);padding:2px 6px;letter-spacing:.08em;border:1px solid;white-space:nowrap}
+.rv-match{font:11px var(--mono);color:var(--neon-alt);margin-bottom:4px}
+.rv-result{font:700 11px var(--mono);margin-bottom:4px}
+.rv-pts{font:11px var(--mono);color:var(--gold);margin-bottom:5px}
+.rv-note{font:12px/1.7 var(--mono);color:var(--text)}
+.rv-cap-badge{font:9px var(--mono);color:var(--gold);border:1px solid rgba(255,215,0,.5);padding:0 4px;margin-left:4px}
+.rv-vc-badge{font:9px var(--mono);color:#c0c0c0;border:1px solid rgba(192,192,192,.4);padding:0 4px;margin-left:4px}
+.bench-section{opacity:.75}
+.rv-col2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:0}
+.rv-list{background:var(--surface);padding:16px}
+.rv-list h4{font:700 10px var(--mono);letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}
+.rv-list h4.good{color:var(--neon)}.rv-list h4.bad{color:var(--neon-red)}
+.rv-list ul{list-style:none}
+.rv-list li{font:12px/1.8 var(--mono);color:var(--text);padding:3px 0;border-bottom:1px solid var(--border)}
+.rv-list li:last-child{border-bottom:none}
+.rv-list li::before{content:'▸ ';color:var(--muted)}
+.surprise-tag{font:9px var(--mono);color:var(--neon-red);letter-spacing:.06em;margin-left:4px;vertical-align:middle}
+td.rv-why{max-width:220px;font-size:11px!important;line-height:1.5;color:#9898b8!important}
+@media(max-width:600px){.rv-col2{grid-template-columns:1fr}}
+
+/* ── MD2 Plan tab ──────────────────────────────────────────────────────────── */
+.tab-btn.md2-active{color:var(--neon-yellow);background:rgba(255,193,7,.06);box-shadow:inset 0 -2px 0 var(--neon-yellow)}
+.xfer-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-bottom:20px}
+.xfer-card{background:var(--surface);padding:16px;border-left:3px solid var(--neon-yellow)}
+.xfer-card.free-swap{border-left-color:var(--neon-alt)}
+.xfer-card.saved{border-left-color:var(--muted)}
+.xfer-move{font:700 13px var(--mono);margin-bottom:6px}
+.xfer-out{color:var(--neon-red)}.xfer-in{color:var(--neon)}
+.xfer-arrow{color:var(--muted);margin:0 6px}
+.xfer-reason{font:12px/1.7 var(--mono);color:var(--text)}
+.xfer-tag{font:9px var(--mono);letter-spacing:.1em;padding:1px 6px;border:1px solid;margin-bottom:8px;display:inline-block}
+.xfer-tag.transfer{color:var(--neon-yellow);border-color:rgba(255,193,7,.4)}
+.xfer-tag.swap{color:var(--neon-alt);border-color:rgba(123,97,255,.4)}
+.xfer-tag.save{color:var(--muted);border-color:var(--border)}
+.md2-pitch-wrap{
+  background:
+    linear-gradient(rgba(0,255,157,.04) 1px,transparent 1px) 0 0/100% 28px,
+    linear-gradient(90deg,rgba(0,255,157,.04) 1px,transparent 1px) 0 0/28px 100%,
+    radial-gradient(120% 80% at 50% 0%, rgba(0,255,157,.06), transparent 60%),
+    #07100b;
+  border:1px solid #1e3a2c;border-radius:4px;padding:20px 16px 16px;margin-bottom:4px;
+  box-shadow:inset 0 0 60px rgba(0,255,157,.05)}
+.md2-card{background:rgba(16,32,24,.85);border:1px solid #2d4a3a;border-radius:3px;padding:10px 10px 8px;min-width:108px;max-width:132px;text-align:center;position:relative;flex:0 0 auto;backdrop-filter:blur(2px)}
+.md2-card.cap{border-color:var(--gold);background:#201f10}
+.md2-card.vc{border-color:rgba(192,192,192,.5);background:#1a2520}
+.md2-card.bench-card{background:#111118;border-color:var(--border)}
+.md2-card.new-in{border-color:var(--neon);box-shadow:0 0 8px rgba(0,255,157,.15)}
+.md2-card.free-moved{border-color:var(--neon-alt);box-shadow:0 0 6px rgba(123,97,255,.12)}
+.md2-ko{font:9px var(--mono);color:#3fb950;margin-top:2px;line-height:1.4}
+.reasoning-box{background:var(--surface2);border:1px solid var(--border);border-left:2px solid var(--neon-yellow);padding:20px;font:12px/1.9 var(--mono);color:var(--text);white-space:pre-wrap;word-break:break-word;margin-bottom:0;position:relative}
+.reasoning-box::before{content:"> TRACE";position:absolute;top:-1px;right:10px;font:700 8px var(--grotesk);letter-spacing:.2em;color:var(--neon-yellow);background:var(--bg);padding:2px 6px;transform:translateY(-50%)}
+.reasoning-box strong{color:var(--neon-yellow)}
+.pred2-draw{color:var(--muted);font-style:italic}
+td.pred2-why{max-width:200px;font-size:11px!important;line-height:1.5;color:#9898b8!important}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- GAME TABS -->
+  <div class="tab-bar">
+    <button class="tab-btn active" id="tab-btn-axi" onclick="switchTab('axi')">⚡ AgentsXI · NUNO_XI</button>
+    <button class="tab-btn" id="tab-btn-ft" onclick="switchTab('ft')">🏆 FIFA Fantasy · NUNO_FT</button>
+    <button class="tab-btn" id="tab-btn-rv" onclick="switchTab('rv')">📊 MD1 Review</button>
+    <button class="tab-btn" id="tab-btn-md2" onclick="switchTab('md2')">📋 MD2 Plan</button>
+  </div>
+
+<div id="tab-axi">
+
+  <!-- REFRESH NOTICE -->
+  <div class="refresh-bar">
+    <span class="refresh-cmd">To update: <code>python3 refresh.py</code> · then reload this page</span>
+    <span class="refresh-time" id="fetch-time">—</span>
+  </div>
+
+  <!-- ROUND NAVIGATOR -->
+  <div class="nav-bar" id="nav-bar" style="display:none">
+    <button class="nav-btn" id="nav-prev" onclick="navigate(-1)" title="Older round">◀</button>
+    <div class="nav-center">
+      <div class="nav-round" id="nav-label">—</div>
+      <div class="nav-count" id="nav-count">—</div>
+    </div>
+    <button class="nav-btn" id="nav-next" onclick="navigate(1)" title="Newer round">▶</button>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <div class="handle">NUNO_XI</div>
+      <div class="handle-meta" id="hdr-meta">claude-sonnet-4-6 · BYOK</div>
+      <div class="handle-tour" id="hdr-tour">—</div>
+    </div>
+    <div class="ranks">
+      <div class="rb g" id="rb-g">— GLOBAL</div>
+      <div class="rb m" id="rb-m">— MANAGER</div>
+      <div class="rb p" id="rb-p">— PREDICTOR</div>
+    </div>
+  </div>
+
+  <!-- LEADERBOARD -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-sep">▌</span><span class="sec-title">Leaderboard</span></div>
+    <div class="lb-grid" id="lb-grid"><div class="info">Loading…</div></div>
+  </div>
+
+  <hr class="div">
+
+  <!-- ROUND BAR -->
+  <div id="round-section" style="display:none">
+    <div class="rbar">
+      <span class="rlbl" id="rlbl">—</span>
+      <span class="badge" id="rstatus">—</span>
+      <span class="badge form" id="rform" style="display:none">—</span>
+      <div class="bwrap" id="bwrap" style="display:none">
+        <div class="btrack"><div class="bfill" id="bfill" style="width:0%"></div></div>
+        <span class="btxt" id="btxt">—/120</span>
+      </div>
+    </div>
+
+    <!-- FIXTURES -->
+    <div class="sec">
+      <div class="sec-head">
+        <span class="sec-sep">▌</span><span class="sec-title">Fixtures</span>
+        <span class="sec-aux" id="lock-txt"></span>
+      </div>
+      <ul class="fix-list" id="fix-list"></ul>
+    </div>
+
+    <hr class="div">
+
+    <!-- STARTING XI -->
+    <div class="sec">
+      <div class="sec-head"><span class="sec-sep">▌</span><span class="sec-title">Starting XI</span><span class="sec-aux" id="xi-confirmed"></span></div>
+      <div id="xi"></div>
+    </div>
+
+    <hr class="div">
+
+    <!-- PREDICTIONS -->
+    <div class="sec">
+      <div class="sec-head">
+        <span class="sec-sep">▌</span><span class="sec-title">Predictions</span>
+        <span class="sec-aux" id="pred-total"></span>
+      </div>
+      <div id="pred"></div>
+    </div>
+
+    <hr class="div">
+
+    <!-- REASONING -->
+    <div class="sec">
+      <div class="sec-head"><span class="sec-sep">▌</span><span class="sec-title">Reasoning Trace</span></div>
+      <div id="reas"></div>
+    </div>
+
+  </div><!-- /round-section -->
+
+  <div id="no-round" style="display:none">
+    <div class="warn">No round data found. Run <code style="color:var(--neon-alt)">python3 refresh.py</code> to fetch today's data.</div>
+  </div>
+
+</div><!-- /tab-axi -->
+
+<!-- ══════════════ FIFA FANTASY TAB ══════════════ -->
+<div id="tab-ft" style="display:none">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <div class="handle ft-handle">NUNO_FT</div>
+      <div class="handle-meta">play.fifa.com/fantasy · MANUAL ENTRY</div>
+      <div class="handle-tour" id="ft-round" style="color:var(--neon-yellow)">—</div>
+    </div>
+    <div class="ranks">
+      <div class="rb p" id="ft-budget">— / $100m</div>
+      <div class="rb p" id="ft-chip">CHIP: —</div>
+    </div>
+  </div>
+
+  <!-- STATUS / DEADLINE -->
+  <div class="ft-status" id="ft-status"></div>
+
+  <!-- PITCH -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-sep" style="color:var(--neon-yellow)">▌</span><span class="sec-title">Squad · 4-5-1</span><span class="sec-aux" id="ft-est-note"></span></div>
+    <div id="ft-pitch"></div>
+  </div>
+
+  <hr class="div">
+
+  <!-- CAPTAIN CHAIN -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-sep" style="color:var(--neon-yellow)">▌</span><span class="sec-title">Live Captain Chain</span><span class="sec-aux">switch armband only if current rung blanks</span></div>
+    <div class="chain-grid" id="ft-chain"></div>
+    <div class="info" id="ft-chain-rule"></div>
+  </div>
+
+  <hr class="div">
+
+  <!-- PLANS -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-sep" style="color:var(--neon-yellow)">▌</span><span class="sec-title">Transfer &amp; Chip Plan</span></div>
+    <ul class="plan-list" id="ft-plans"></ul>
+  </div>
+
+  <div id="ft-error" style="display:none" class="warn"></div>
+
+</div><!-- /tab-ft -->
+
+<!-- ══════════════ MD1 REVIEW TAB ══════════════ -->
+<div id="tab-rv" style="display:none">
+
+  <div class="header">
+    <div>
+      <div class="handle" style="color:var(--neon-alt)">MD1 REVIEW</div>
+      <div class="handle-meta">Group Stage · Matchday 1 · 24 of 24 completed · FINAL</div>
+      <div class="handle-tour" style="color:var(--neon-alt)">POST-MORTEM — LINEUP · PREDICTIONS · WHAT HIT · WHAT MISSED</div>
+    </div>
+    <div class="ranks">
+      <div class="rb g">45 FANTASY PTS</div>
+      <div class="rb p">26 PRED PTS</div>
+      <div class="rb m">71 TOTAL · #1</div>
+    </div>
+  </div>
+
+  <div id="rv-content"><div class="info">Loading…</div></div>
+
+</div><!-- /tab-rv -->
+
+<!-- ══════════════ MD2 PLAN TAB ══════════════ -->
+<div id="tab-md2" style="display:none">
+
+  <div class="header">
+    <div>
+      <div class="handle" style="color:var(--neon-yellow)">MD2 PLAN</div>
+      <div class="handle-meta">Group Stage · Matchday 2 · NUNO_XI · LIVE · 20/24 final (Jun 23)</div>
+      <div class="handle-tour" style="color:var(--neon-yellow)">PRED 13/20 RIGHT (2 EXACT) · MD2 +23 PTS · 130 TOTAL · RANK #1 GLOBAL</div>
+    </div>
+    <div class="ranks">
+      <div class="rb g">119 / 120 BUDGET</div>
+      <div class="rb m">3-4-3 FORMATION</div>
+      <div class="rb p">1 ROLLOVER → MD3</div>
+    </div>
+  </div>
+
+  <div id="md2-content"><div class="info">Loading…</div></div>
+
+</div><!-- /tab-md2 -->
+
+</div><!-- /page -->
+
+<script>
+const h = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+function posOrder(p){return {GK:0,DEF:1,MID:2,FWD:3}[p]??4}
+
+// ── Country → flag emoji ────────────────────────────────────────────────────
+const FLAGS = {
+  'Afghanistan':'🇦🇫','Albania':'🇦🇱','Algeria':'🇩🇿','Andorra':'🇦🇩','Angola':'🇦🇴',
+  'Argentina':'🇦🇷','Armenia':'🇦🇲','Australia':'🇦🇺','Austria':'🇦🇹','Azerbaijan':'🇦🇿',
+  'Bahrain':'🇧🇭','Bangladesh':'🇧🇩','Belgium':'🇧🇪','Bhutan':'🇧🇹','Bolivia':'🇧🇴',
+  'Bosnia':'🇧🇦','Bosnia and Herzegovina':'🇧🇦','Bosnia & Herzegovina':'🇧🇦',
+  'Botswana':'🇧🇼','Brazil':'🇧🇷','British Virgin Islands':'🇻🇬',
+  'Burkina Faso':'🇧🇫','Burundi':'🇧🇮','Cambodia':'🇰🇭','Cameroon':'🇨🇲',
+  'Canada':'🇨🇦','Cape Verde':'🇨🇻','Cabo Verde':'🇨🇻',
+  'Chile':'🇨🇱','China':'🇨🇳','Colombia':'🇨🇴','Congo':'🇨🇬','DR Congo':'🇨🇩',
+  'Costa Rica':'🇨🇷','Côte d\'Ivoire':'🇨🇮','Ivory Coast':'🇨🇮','Croatia':'🇭🇷',
+  'Cuba':'🇨🇺','Curacao':'🇨🇼','Cyprus':'🇨🇾','Czech Republic':'🇨🇿','Czechia':'🇨🇿',
+  'Denmark':'🇩🇰','Dominican Republic':'🇩🇴','Ecuador':'🇪🇨','Egypt':'🇪🇬',
+  'El Salvador':'🇸🇻','England':'🏴󠁧󠁢󠁥󠁮󠁧󠁿','Estonia':'🇪🇪','Ethiopia':'🇪🇹',
+  'Finland':'🇫🇮','France':'🇫🇷','Gabon':'🇬🇦','Georgia':'🇬🇪','Germany':'🇩🇪',
+  'Ghana':'🇬🇭','Gibraltar':'🇬🇮','Greece':'🇬🇷','Guam':'🇬🇺','Guatemala':'🇬🇹',
+  'Guinea':'🇬🇳','Honduras':'🇭🇳','Hungary':'🇭🇺','Iceland':'🇮🇸','India':'🇮🇳',
+  'Indonesia':'🇮🇩','Iran':'🇮🇷','Iraq':'🇮🇶','Ireland':'🇮🇪','Israel':'🇮🇱',
+  'Italy':'🇮🇹','Jamaica':'🇯🇲','Japan':'🇯🇵','Jordan':'🇯🇴','Kazakhstan':'🇰🇿',
+  'Kenya':'🇰🇪','Kuwait':'🇰🇼','Kyrgyzstan':'🇰🇬','Latvia':'🇱🇻','Lebanon':'🇱🇧',
+  'Libya':'🇱🇾','Liechtenstein':'🇱🇮','Lithuania':'🇱🇹','Luxembourg':'🇱🇺',
+  'Mali':'🇲🇱','Malta':'🇲🇹','Mexico':'🇲🇽','Moldova':'🇲🇩','Montenegro':'🇲🇪',
+  'Morocco':'🇲🇦','Mozambique':'🇲🇿','Netherlands':'🇳🇱','New Zealand':'🇳🇿',
+  'Nicaragua':'🇳🇮','Nigeria':'🇳🇬','North Macedonia':'🇲🇰','Northern Ireland':'🇬🇧',
+  'Norway':'🇳🇴','Oman':'🇴🇲','Pakistan':'🇵🇰','Palestine':'🇵🇸','Panama':'🇵🇦',
+  'Paraguay':'🇵🇾','Peru':'🇵🇪','Philippines':'🇵🇭','Poland':'🇵🇱','Portugal':'🇵🇹',
+  'Qatar':'🇶🇦','Romania':'🇷🇴','Russia':'🇷🇺','Saudi Arabia':'🇸🇦','Scotland':'🏴󠁧󠁢󠁳󠁣󠁴󠁿',
+  'Senegal':'🇸🇳','Serbia':'🇷🇸','Slovakia':'🇸🇰','Slovenia':'🇸🇮','South Africa':'🇿🇦',
+  'South Korea':'🇰🇷','Spain':'🇪🇸','Sweden':'🇸🇪','Switzerland':'🇨🇭','Syria':'🇸🇾',
+  'Tanzania':'🇹🇿','Thailand':'🇹🇭','Tunisia':'🇹🇳','Turkey':'🇹🇷','Turkiye':'🇹🇷',
+  'Uganda':'🇺🇬','Ukraine':'🇺🇦','United Arab Emirates':'🇦🇪','Uruguay':'🇺🇾',
+  'USA':'🇺🇸','United States':'🇺🇸','Uzbekistan':'🇺🇿','Venezuela':'🇻🇪',
+  'Vietnam':'🇻🇳','Wales':'🏴󠁧󠁢󠁷󠁬󠁳󠁿','Zambia':'🇿🇲','Zimbabwe':'🇿🇼',
+  'Haiti':'🇭🇹','Kosovo':'🇽🇰','Georgia':'🇬🇪',
+};
+
+function countryFlag(name){
+  const emoji = FLAGS[name];
+  if(!emoji) return `<span class="mu">${h(name||'—')}</span>`;
+  return `<span class="flag" title="${h(name)}">${emoji}</span>`;
+}
+
+// ── Player score engine ─────────────────────────────────────────────────────
+const PTS_PLAYED_60  = {GK:2, DEF:2, MID:2, FWD:2};
+const PTS_PLAYED_159 = {GK:1, DEF:1, MID:1, FWD:1};
+const PTS_GOAL       = {GK:6, DEF:6, MID:5, FWD:4};
+const PTS_ASSIST     = 3;
+const PTS_CS         = {GK:4, DEF:4, MID:1, FWD:0};
+const PTS_GC_PER2    = {GK:-1, DEF:-1};
+const PTS_YELLOW     = -1;
+const PTS_RED        = -3;
+const PTS_OG         = -2;
+const PTS_MOTM       = 3;
+const PTS_PEN_SAVE   = 5;
+const PTS_PEN_MISS   = -2;
+const DIFF_MULT      = 1.5;
+const CAP_MULT       = 2;
+
+function buildTeamResultMap(fixtures, actualScores){
+  const map = {};
+  (fixtures||[]).forEach(f => {
+    const sc = (actualScores||{})[f.id];
+    if(!sc) return;
+    map[f.home_team.id] = {scored:sc.home, conceded:sc.away, final:f.status==='final'};
+    map[f.away_team.id] = {scored:sc.away, conceded:sc.home, final:f.status==='final'};
+  });
+  return map;
+}
+
+function calcPlayerScore(pid, player, lineup, teamResultMap, ownershipMap){
+  const tid   = player.team_id;
+  const res   = teamResultMap[tid];
+  const isCap = pid === lineup.captain;
+  const isVic = pid === lineup.vice_captain;
+
+  if(!res) return null;           // match not in round
+  if(!res.final) return 'pending'; // match in progress
+
+  // Per-player stats (minutes, goals, assists) are not available from
+  // scorelines alone — showing individual estimates is misleading because
+  // friendly rotations mean nobody plays 90 min. Return null so each cell
+  // shows "—"; the confirmed total is shown in the section header instead.
+  return null;
+}
+
+function fmtBreakdown(score){
+  if(!score) return '<span class="ev-neu">—</span>';
+  if(score === 'pending') return '<span class="ev-neu">in progress</span>';
+  const parts = score.evs.map(e => {
+    const cls = e.pts > 0 ? 'ev-pos' : e.pts < 0 ? 'ev-neg' : 'ev-neu';
+    const sign = e.pts > 0 ? '+' : '';
+    return `<span class="${cls}">${e.label} ${sign}${e.pts}${e.est?' <span style="opacity:.5">(est.)</span>':''}</span>`;
+  });
+  return parts.join('<span class="ev-neu"> · </span>');
+}
+
+function fmtTotal(score, isCap){
+  if(!score) return '<span class="pts-total pend">—</span>';
+  if(score === 'pending') return '<span class="pts-total pend">…</span>';
+  const v = score.adj;
+  const cls = v > 0 ? 'pos' : v < 0 ? 'neg' : 'zero';
+  const capBadge = isCap ? '<span class="cap-badge">C×2</span>' : '';
+  const diffBadge = score.diffEligible ? '<span class="cap-badge" style="color:var(--neon-alt)">×1.5</span>' : '';
+  return `<span class="pts-total ${cls}">${v}${capBadge}${diffBadge}</span>`;
+}
+
+function fmtLisbon(d, timeOnly=false){
+  if(!(d instanceof Date) || isNaN(d)) return '—';
+  if(timeOnly) return d.toLocaleTimeString('en-GB',{timeZone:'Europe/Lisbon',hour:'2-digit',minute:'2-digit'})+' Lisbon';
+  return d.toLocaleString('en-GB',{timeZone:'Europe/Lisbon',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})+' Lisbon';
+}
+
+let manifest = null;
+let currentIndex = 0;
+
+async function init(){
+  // Load manifest of all available rounds
+  try{
+    const r = await fetch(`data/manifest.json?t=${Date.now()}`);
+    if(!r.ok) throw new Error(`HTTP ${r.status}`);
+    manifest = await r.json();
+  }catch(e){
+    document.getElementById('no-round').style.display='block';
+    document.getElementById('no-round').innerHTML=
+      `<div class="warn">Could not load data/manifest.json: ${h(e.message)}<br>
+       Run <code style="color:var(--neon-alt)">python3 refresh.py</code> then serve via
+       <code style="color:var(--neon-alt)">python3 -m http.server 8080</code></div>`;
+    return;
+  }
+
+  const rounds = manifest.rounds || [];
+  if(rounds.length === 0){
+    document.getElementById('no-round').style.display='block';
+    return;
+  }
+
+  // Show navigator only when there are multiple rounds
+  if(rounds.length > 1){
+    document.getElementById('nav-bar').style.display='flex';
+  }
+
+  // Default to newest round (index 0, rounds are sorted newest-first)
+  currentIndex = 0;
+  await loadRound(rounds[currentIndex].label);
+}
+
+async function loadRound(label){
+  const rounds = manifest?.rounds || [];
+  let data;
+  try{
+    const r = await fetch(`data/${label}.json?t=${Date.now()}`);
+    if(!r.ok) throw new Error(`HTTP ${r.status}`);
+    data = await r.json();
+  }catch(e){
+    document.getElementById('no-round').style.display='block';
+    document.getElementById('no-round').innerHTML=
+      `<div class="warn">Could not load data/${h(label)}.json: ${h(e.message)}</div>`;
+    return;
+  }
+
+  document.getElementById('no-round').style.display='none';
+  renderHeader(data);
+  renderLeaderboard(data);
+  updateNavigator();
+
+  if(data.round && data.fixtures){
+    renderRound(data);
+  }else{
+    document.getElementById('round-section').style.display='none';
+    document.getElementById('no-round').style.display='block';
+    document.getElementById('no-round').innerHTML=
+      `<div class="info">No round data in this file.</div>`;
+  }
+}
+
+async function navigate(dir){
+  const rounds = manifest?.rounds || [];
+  // rounds[0] = newest, rounds[n-1] = oldest
+  // ◀ PREV (older) → higher index; ▶ NEXT (newer) → lower index
+  const newIdx = currentIndex - dir;
+  if(newIdx < 0 || newIdx >= rounds.length) return;
+  currentIndex = newIdx;
+  await loadRound(rounds[currentIndex].label);
+}
+
+function updateNavigator(){
+  const rounds = manifest?.rounds || [];
+  if(rounds.length === 0) return;
+  const r = rounds[currentIndex];
+  document.getElementById('nav-label').textContent = r.display || r.label;
+  document.getElementById('nav-count').textContent =
+    `${currentIndex + 1} of ${rounds.length} rounds`;
+  // ◀ PREV (older) = higher index; disable if already at oldest
+  document.getElementById('nav-prev').disabled = currentIndex >= rounds.length - 1;
+  // ▶ NEXT (newer) = lower index; disable if already at newest
+  document.getElementById('nav-next').disabled = currentIndex <= 0;
+}
+
+function renderHeader(data){
+  const p = data.profile || {};
+  document.getElementById('hdr-meta').textContent = `${p.declared_model||'claude-sonnet-4-6'} · BYOK`;
+  document.getElementById('hdr-tour').textContent =
+    data.tournament==='summer26' ? 'SUMMER26 · FIFA WORLD CUP 2026' : 'FRIENDLIES 2026 · SOFT LAUNCH';
+
+  if(data.fetched_at){
+    const t = new Date(data.fetched_at);
+    const r = manifest?.rounds?.[currentIndex];
+    const label = r ? `data/${r.label}.json` : 'data';
+    document.getElementById('fetch-time').textContent = `Fetched ${label} · ${fmtLisbon(t)}`;
+  }
+
+  const lb = data.leaderboard || {};
+  const ge = lb.global?.entry;
+  const me = lb.best_manager?.entry;
+  const pe = lb.best_predictor?.entry;
+  if(ge) document.getElementById('rb-g').textContent = `#${ge.rank} GLOBAL`;
+  if(me) document.getElementById('rb-m').textContent = `#${me.rank} MANAGER`;
+  if(pe) document.getElementById('rb-p').textContent = `#${pe.rank} PREDICTOR`;
+}
+
+function renderLeaderboard(data){
+  const lb = data.leaderboard || {};
+  const boards = [
+    {key:'global',     label:'GLOBAL',       color:'var(--neon)',   ptKey:'points_total'},
+    {key:'best_manager',  label:'BEST MANAGER', color:'var(--neon-alt)', ptKey:'fantasy_points_total'},
+    {key:'best_predictor',label:'BEST PREDICTOR',color:'var(--gold)',  ptKey:'prediction_points_total'},
+  ];
+  const grid = document.getElementById('lb-grid');
+  grid.innerHTML = boards.map(b=>{
+    const e = lb[b.key]?.entry;
+    if(!e) return `<div class="lbc"><div class="lbc-board">${b.label}</div><div class="lbc-pts">—</div></div>`;
+    const delta = e.rank_delta||0;
+    const dHtml = delta>0?`<span class="lbc-delta d-up">↑${delta}</span>`:
+                  delta<0?`<span class="lbc-delta d-dn">↓${Math.abs(delta)}</span>`:
+                          `<span class="lbc-delta d-fl">—</span>`;
+    const pts = e[b.ptKey]??0;
+    const last = e.points_last_round??0;
+    const ptsCls = pts>0?'pts-p':pts<0?'pts-n':'pts-z';
+    return `<div class="lbc">
+      <div class="lbc-board">${b.label}</div>
+      <div class="lbc-rank" style="color:${b.color}">#${e.rank}${dHtml}</div>
+      <div class="lbc-pts"><span class="${ptsCls}">${pts>0?'+':''}${pts}</span> pts · ${last>0?'+':''}${last} last round</div>
+    </div>`;
+  }).join('');
+}
+
+function renderRound(data){
+  document.getElementById('round-section').style.display='block';
+  const fd = data.fixtures;
+  const lbl = fd.round_display || data.round;
+  document.getElementById('rlbl').textContent = lbl;
+
+  const lockTime = fd.lineup_lock_at ? new Date(fd.lineup_lock_at) : null;
+  const isLocked = lockTime && new Date() > lockTime;
+  const stEl = document.getElementById('rstatus');
+  stEl.className=`badge ${isLocked?'locked':'open'}`;
+  stEl.textContent = isLocked?'LOCKED':'OPEN';
+  if(lockTime) document.getElementById('lock-txt').textContent =
+    `Lock: ${fmtLisbon(lockTime)}`;
+
+  renderFixtures(fd.fixtures||[]);
+
+  const lineup = data.lineup;
+  const confirmedPts = data.leaderboard?.best_manager?.entry?.points_last_round;
+  const hasFinalResults = Object.keys(data.actual_scores || {}).length > 0;
+  const confirmedEl = document.getElementById('xi-confirmed');
+  if(confirmedPts != null && confirmedPts > 0 && hasFinalResults){
+    confirmedEl.innerHTML = `<span class="pts-p">+${confirmedPts} pts confirmed</span>`;
+  } else {
+    confirmedEl.textContent = '';
+  }
+  if(lineup){
+    document.getElementById('rform').style.display='';
+    document.getElementById('rform').textContent = lineup.formation||'—';
+    const ownershipMap = {};
+    (data.ownership?.players||[]).forEach(p=>{ ownershipMap[p.player_id]=p; });
+    renderLineup(lineup, data.players||{}, fd.fixtures||[], data.actual_scores||{}, ownershipMap);
+  }else{
+    document.getElementById('xi').innerHTML='<div class="info">No lineup submitted for this round.</div>';
+    document.getElementById('bench').innerHTML='';
+  }
+
+  renderPredictions(data.predictions, fd.fixtures||[], data.actual_scores||{});
+  renderReasoning(data.reasoning, lineup);
+}
+
+function renderFixtures(fixtures){
+  const list = document.getElementById('fix-list');
+  list.innerHTML = fixtures.map(f=>{
+    const home = f.home_team?.name||'?';
+    const away = f.away_team?.name||'?';
+    const ko = f.kickoff_at ? new Date(f.kickoff_at) : null;
+    const time = ko ? fmtLisbon(ko, true) : '';
+    const st = f.status==='final'?'final':'scheduled';
+    const stTxt = f.status==='final'?'FINAL':f.status?.toUpperCase()||'SCHEDULED';
+    return `<li class="fix-item">
+      <span class="fix-teams">${h(home)} <span class="mu">vs</span> ${h(away)}</span>
+      <span class="fix-r"><span class="fix-time">${time}</span><span class="fix-st ${st}">${stTxt}</span></span>
+    </li>`;
+  }).join('');
+}
+
+function renderLineup(lineup, players, fixtures, actualScores, ownershipMap){
+  const cap=lineup.captain, vic=lineup.vice_captain;
+  const starters=(lineup.player_ids||[]).map(id=>({id,...players[id]}));
+  const bench=(lineup.bench_player_ids||[]).map((id,i)=>({id,...players[id],bi:i}));
+
+  // Budget
+  const all=[...(lineup.player_ids||[]),...(lineup.bench_player_ids||[])];
+  const budget=all.reduce((s,id)=>s+(players[id]?.squad_value||0),0);
+  document.getElementById('bwrap').style.display='flex';
+  document.getElementById('bfill').style.width=`${(budget/120)*100}%`;
+  document.getElementById('btxt').textContent=`${budget}/120`;
+
+  starters.sort((a,b)=>posOrder(a.position)-posOrder(b.position));
+
+  const teamRes = buildTeamResultMap(fixtures, actualScores);
+
+  // Build country → fixture label map
+  const countryFix = {};
+  (fixtures||[]).forEach(f=>{
+    const ko = f.kickoff_at ? fmtLisbon(new Date(f.kickoff_at), true) : '';
+    if(f.home_team?.name) countryFix[f.home_team.name] = `vs ${f.away_team?.name||'?'} · ${ko}`;
+    if(f.away_team?.name) countryFix[f.away_team.name] = `vs ${f.home_team?.name||'?'} · ${ko}`;
+  });
+
+  function makeCard(p, isCap, isVic, isBench, bi){
+    const score = calcPlayerScore(p.id, p, lineup, teamRes, ownershipMap);
+    const total = score?.total ?? null;
+    const flag = countryFlag(p.country);
+    const fixture = countryFix[p.country] || '';
+    const pos = p.position || '?';
+    const capTag = isCap ? `<div class="pc-tag pc-cap-tag">CAPTAIN 2×</div>` :
+                   isVic ? `<div class="pc-tag pc-vc-tag">VICE-CAP</div>` : '';
+    const cls = ['pitch-card', isCap?'cap':isVic?'vc':isBench?'bench-card':''].filter(Boolean).join(' ');
+    const ptsHtml = total!=null
+      ? `<div class="pc-pts ${total>0?'pts-p':total<0?'pts-n':'pts-z'}">${total>0?'+':''}${total} pts</div>` : '';
+    const biLabel = isBench ? `<div class="pc-val" style="color:var(--border-muted)">B${bi+1}</div>` : '';
+    return `<div class="${cls}">
+      ${capTag}
+      <div class="pc-flag">${flag}</div>
+      <div class="pc-name">${h(p.display_name||p.id||'?')}</div>
+      <span class="pc-pill ${h(pos)}">${h(pos)}</span>
+      <div class="pc-fixture">${h(fixture)}</div>
+      <div class="pc-val">val ${p.squad_value??'?'}</div>
+      ${ptsHtml}${biLabel}
+    </div>`;
+  }
+
+  // Group starters by position
+  const grouped = {GK:[],DEF:[],MID:[],FWD:[]};
+  starters.forEach(p=>{ (grouped[p.position]||grouped.FWD).push(p); });
+
+  let html = '<div class="pitch-wrap">';
+  ['GK','DEF','MID','FWD'].forEach(pos=>{
+    const group = grouped[pos];
+    if(!group.length) return;
+    html += `<div class="pitch-row-label">${pos}</div><div class="pitch-pos-row">`;
+    group.forEach(p => { html += makeCard(p, p.id===cap, p.id===vic, false, 0); });
+    html += '</div>';
+  });
+
+  // Bench
+  html += '<div class="pitch-bench-sep"></div>';
+  html += '<div class="pitch-row-label">BENCH</div>';
+  html += '<div class="pitch-bench-row">';
+  bench.forEach((p,i) => { html += makeCard(p, false, false, true, i); });
+  html += '</div></div>';
+
+  document.getElementById('xi').innerHTML = html;
+}
+
+function renderPredictions(preds, fixtures, actualScores){
+  const el=document.getElementById('pred');
+  if(!preds){el.innerHTML='<div class="info">No predictions data.</div>';return;}
+  const fixMap={};
+  fixtures.forEach(f=>{fixMap[f.id]=f;});
+  const ps=preds.predictions||[];
+  const missed=preds.missed_fixture_ids||[];
+  const total=preds.round_prediction_points??0;
+
+  actualScores = actualScores || {};
+  const rows=ps.map(p=>{
+    const f=fixMap[p.fixture_id];
+    const home=f?.home_team?.name||'?', away=f?.away_team?.name||'?';
+    const pred=`${p.predicted_home_score}–${p.predicted_away_score}`;
+    const s=p.score;
+    const ac=actualScores[p.fixture_id];
+    const actualScore = ac!=null ? `${ac.home}–${ac.away}` : null;
+    let icon='',cls='oc-pe',pHtml='<span class="pts-z">—</span>',actualHtml='<span class="mu">—</span>';
+    if(s){
+      const pts=s.points??0;
+      // Colour the actual score based on how close the prediction was
+      if(s.outcome==='exact_score'){
+        icon='✅';cls='oc-ex';
+        actualHtml=actualScore?`<span class="oc-ex">${h(actualScore)}</span>`:`<span class="oc-ex">${h(pred)}</span>`;
+      }else if(s.outcome==='correct_winner_and_diff'){
+        icon='✅';cls='oc-wd';
+        actualHtml=actualScore?`<span class="oc-wd">${h(actualScore)}</span>`:'<span class="mu">—</span>';
+      }else if(s.outcome==='correct_winner'){
+        icon='✓';cls='oc-wd';
+        actualHtml=actualScore?`<span class="oc-wd">${h(actualScore)}</span>`:'<span class="mu">—</span>';
+      }else{
+        icon='✗';cls='oc-wr';
+        actualHtml=actualScore?`<span class="oc-wr">${h(actualScore)}</span>`:'<span class="mu">—</span>';
+      }
+      const pc=pts>0?'pts-p':pts<0?'pts-n':'pts-z';
+      pHtml=`<span class="${pc}">${pts>0?'+':''}${pts}</span>`;
+    }else if(p.locked===false){
+      icon='🕐';cls='oc-pe';
+    }else{
+      icon='⏳';cls='oc-pe';
+    }
+    return `<tr><td>${h(home)} <span class="mu">vs</span> ${h(away)}</td>
+      <td>${h(pred)}</td>
+      <td>${actualHtml}</td>
+      <td><span class="${cls}">${icon}</span></td>
+      <td>${pHtml}</td></tr>`;
+  });
+
+  const missRows=missed.map(id=>{
+    const f=fixMap[id];
+    const home=f?.home_team?.name||'?', away=f?.away_team?.name||'?';
+    return `<tr><td>${h(home)} <span class="mu">vs</span> ${h(away)}</td>
+      <td class="mu">—</td>
+      <td class="mu">—</td>
+      <td><span class="oc-wr">✗ MISSED</span></td>
+      <td><span class="pts-n">-2</span></td></tr>`;
+  });
+
+  const tc=total>0?'pts-p':total<0?'pts-n':'pts-z';
+  document.getElementById('pred-total').textContent = total!==0 ? `${total>0?'+':''}${total} PTS` : '';
+
+  el.innerHTML=`<table>
+    <thead><tr><th>Match</th><th>Predicted</th><th>Actual</th><th>Outcome</th><th>Pts</th></tr></thead>
+    <tbody>
+      ${rows.join('')}
+      ${missRows.join('')}
+      <tr class="total"><td colspan="4"><span class="total-lbl">Round total</span></td>
+        <td><span class="${tc}">${total>0?'+':''}${total}</span></td></tr>
+    </tbody>
+  </table>`;
+}
+
+function renderReasoning(reasoning, lineup){
+  const el=document.getElementById('reas');
+  if(!reasoning){
+    const tid=lineup?.reasoning_trace_id;
+    el.innerHTML=`<div class="info">${
+      tid ? 'Reasoning trace not yet public (published after round lock).' : 'No reasoning trace.'
+    }</div>`;
+    return;
+  }
+  const t=reasoning.trace||reasoning;
+  const sub=lineup?.submitted_at ? fmtLisbon(new Date(lineup.submitted_at)) : '—';
+  el.innerHTML=`
+    <button class="reas-btn" onclick="toggleReas()">
+      <span id="reas-lbl">SHOW REASONING</span><span id="reas-chev">▾</span>
+    </button>
+    <div class="reas-body" id="reas-body">
+      <div class="reas-meta">
+        <span>MODEL · ${h(t.declared_model||'—')}</span>
+        <span>SUBMITTED · ${h(sub)}</span>
+        <span>ELIGIBLE · ${t.leaderboard_eligible?'✓ YES':'✗ NO'}</span>
+      </div>
+      <div class="reas-text">${h(t.text||'')}</div>
+    </div>`;
+}
+
+function toggleReas(){
+  const body=document.getElementById('reas-body');
+  const open=body.classList.toggle('open');
+  document.getElementById('reas-chev').textContent=open?'▴':'▾';
+  document.getElementById('reas-lbl').textContent=open?'HIDE REASONING':'SHOW REASONING';
+}
+
+// ── FIFA Fantasy (NUNO_FT) tab ──────────────────────────────────────────────
+let ftLoaded = false;
+
+function switchTab(which){
+  document.getElementById('tab-axi').style.display  = which==='axi'  ? '' : 'none';
+  document.getElementById('tab-ft').style.display   = which==='ft'   ? '' : 'none';
+  document.getElementById('tab-rv').style.display   = which==='rv'   ? '' : 'none';
+  document.getElementById('tab-md2').style.display  = which==='md2'  ? '' : 'none';
+  document.getElementById('tab-btn-axi').className  = 'tab-btn' + (which==='axi'  ? ' active'     : '');
+  document.getElementById('tab-btn-ft').className   = 'tab-btn' + (which==='ft'   ? ' active ft'  : '');
+  document.getElementById('tab-btn-rv').className   = 'tab-btn' + (which==='rv'   ? ' rv-active'  : '');
+  document.getElementById('tab-btn-md2').className  = 'tab-btn' + (which==='md2'  ? ' md2-active' : '');
+  if(which==='ft'  && !ftLoaded)  loadFifa();
+  if(which==='rv'  && !rvLoaded)  loadReview();
+  if(which==='md2' && !md2Loaded) renderMD2Plan();
+}
+
+async function loadFifa(){
+  let d;
+  try{
+    const r = await fetch(`data/nuno_ft.json?t=${Date.now()}`);
+    if(!r.ok) throw new Error(`HTTP ${r.status}`);
+    d = await r.json();
+  }catch(e){
+    const el = document.getElementById('ft-error');
+    el.style.display = 'block';
+    el.textContent = `Could not load data/nuno_ft.json: ${e.message}`;
+    return;
+  }
+  ftLoaded = true;
+  renderFifa(d);
+}
+
+function renderFifa(d){
+  document.getElementById('ft-round').textContent =
+    `WC 2026 · ${d.round||'—'} · ${d.formation||''}`;
+  document.getElementById('ft-budget').textContent =
+    `$${(d.budget_used_est??0).toFixed(1)} / $${(d.budget_total??100).toFixed(0)}m`;
+  document.getElementById('ft-chip').textContent = `CHIP: ${h(d.chip||'—')}`;
+
+  // Status / deadline bar
+  const dl = d.deadline_at ? new Date(d.deadline_at) : null;
+  const past = dl && new Date() > dl;
+  const pending = d.status === 'pending_manual_entry';
+  document.getElementById('ft-status').innerHTML = `
+    <div>
+      <div class="lbl">${pending
+        ? (past ? '⚠ DEADLINE PASSED — confirm whether squad was entered'
+                : '⚠ PENDING MANUAL ENTRY at play.fifa.com/fantasy')
+        : '✓ SQUAD ENTERED'}</div>
+      <div class="sub">Deadline: ${dl ? fmtLisbon(dl) : '—'} · no API — all moves are manual</div>
+    </div>
+    <span class="badge ${past?'locked':'open'}">${past?'LOCKED':'OPEN'}</span>`;
+
+  // Pitch — same visual language as the AgentsXI tab
+  const xi    = (d.squad||[]).filter(p=>p.slot==='xi');
+  const bench = (d.squad||[]).filter(p=>p.slot==='bench')
+                  .sort((a,b)=>(a.bench_order||0)-(b.bench_order||0));
+  const grouped = {GK:[],DEF:[],MID:[],FWD:[]};
+  xi.forEach(p=>{ (grouped[p.pos]||grouped.FWD).push(p); });
+
+  function ftCard(p, isBench, bi){
+    const flag = countryFlag(p.country);
+    const ko = p.kickoff_at ? new Date(p.kickoff_at) : null;
+    const fixture = p.opponent ? `vs ${p.opponent}${ko?' · '+fmtLisbon(ko):''}` : '';
+    const chainTag = p.chain
+      ? `<div class="pc-tag pc-chain-tag">${p.chain===1?'CAPTAIN':'CHAIN'} C${p.chain}</div>` : '';
+    const est = p.confirmed_price===false ? ' <span class="est-tag">EST</span>' : '';
+    const cls = ['pitch-card', p.chain===1?'cap':p.chain?'vc':isBench?'bench-card':''].filter(Boolean).join(' ');
+    return `<div class="${cls}">
+      ${chainTag}
+      <div class="pc-flag">${flag}</div>
+      <div class="pc-name">${h(p.name)}</div>
+      <span class="pc-pill ${h(p.pos)}">${h(p.pos)}</span>
+      <div class="pc-fixture">${h(fixture)}</div>
+      <div class="pc-val">$${(p.price??0).toFixed(1)}m${est}</div>
+      ${p.note?`<div class="pc-fixture" style="color:#c7c9d6">${h(p.note)}</div>`:''}
+      ${isBench?`<div class="pc-val">B${bi+1}</div>`:''}
+    </div>`;
+  }
+
+  let html = '<div class="pitch-wrap">';
+  ['GK','DEF','MID','FWD'].forEach(pos=>{
+    const g = grouped[pos];
+    if(!g.length) return;
+    html += `<div class="pitch-row-label">${pos}</div><div class="pitch-pos-row">`;
+    g.forEach(p=>{ html += ftCard(p,false,0); });
+    html += '</div>';
+  });
+  const twelfth = (d.squad||[]).filter(p=>p.slot==='twelfth');
+  if(twelfth.length){
+    html += '<div class="pitch-bench-sep"></div><div class="pitch-row-label" style="color:var(--gold)">12TH MAN · CHIP</div><div class="pitch-pos-row">';
+    twelfth.forEach(p=>{ html += ftCard(p,false,0); });
+    html += '</div>';
+  }
+  html += '<div class="pitch-bench-sep"></div><div class="pitch-row-label">BENCH (live-sub options · all play late)</div><div class="pitch-bench-row">';
+  bench.forEach((p,i)=>{ html += ftCard(p,true,i); });
+  html += '</div></div>';
+  document.getElementById('ft-pitch').innerHTML = html;
+
+  const nEst = (d.squad||[]).filter(p=>p.confirmed_price===false).length;
+  document.getElementById('ft-est-note').innerHTML = nEst
+    ? `<span class="est-tag">EST</span> = price estimate — verify on site` : '';
+
+  // Captain chain
+  document.getElementById('ft-chain').innerHTML = (d.captain_chain||[]).map((c,i,arr)=>{
+    const ko = c.kickoff_at ? fmtLisbon(new Date(c.kickoff_at)) : '—';
+    const card = `<div class="chain-card">
+      <div class="chain-rung">C${c.rung}</div>
+      <div class="chain-name">${h(c.name)}</div>
+      <div class="chain-fix">${h(c.fixture)}<br>${h(ko)}</div>
+    </div>`;
+    return card + (i<arr.length-1?'<span class="chain-arrow">→</span>':'');
+  }).join('');
+  document.getElementById('ft-chain-rule').textContent = d.chain_rule||'';
+
+  // Plans
+  document.getElementById('ft-plans').innerHTML =
+    (d.plans||[]).map(p=>`<li>${h(p)}</li>`).join('') +
+    (d.fallbacks?`<li>${h(d.fallbacks)}</li>`:'');
+}
+
+// ── MD1 Review ──────────────────────────────────────────────────────────────
+let rvLoaded = false;
+
+const PLAYER_REVIEW = [
+  // ── XI ──
+  {name:'Unai Simón',       pos:'GK',  country:'Spain',     slot:'xi',    match:'Spain 0–0 Cabo Verde',       result:'CS · 0 GA · key save (Borges header)', estPts:'6', verdict:'HIT',     note:'0 goals, 0 assists — GK. CS 4pts + app 2pts = 6pts. Prediction was 4-0 (wrong), fantasy outcome was fine. Spain had 27 shots and scored zero; Simón kept his first WC clean sheet.'},
+  {name:'Cristian Romero',  pos:'DEF', country:'Argentina', slot:'xi',    match:'Argentina 3–0 Algeria',      result:'CS · 0 GA · played ~80\'',    estPts:'6',    verdict:'HIT',     note:'0 goals, 0 assists — DEF. CS 4pts + app 2pts = 6pts. Subbed off at 80\' for Otamendi. Core spine pick, ARG 57% CS delivered immediately.'},
+  {name:'Nuno Mendes',      pos:'DEF', country:'Portugal',  slot:'xi',    match:'Portugal 1–1 DR Congo',      result:'no CS · 0G 0A · conceded 1', estPts:'2', verdict:'MISS',    note:'Portugal flopped — just 0.57 xG, held 1-1 by DR Congo. No clean sheet (the 59% CS call missed), no attacking returns from the corner threat. Appearance points only.'},
+  {name:'David Raum',       pos:'DEF', country:'Germany',   slot:'xi',    match:'Germany 7–1 Curaçao',        result:'SUB ON 73\' · 0G 0A',  estPts:'1',    verdict:'MISS',    note:"0 goals, 0 assists. Sub at 73' = ~17 mins played = 1pt only. Goal at 38' was Schlotterbeck (assist: Brown) — Raum wasn't even on yet. The FK+corner logic assumed he'd start. Selection error."},
+  {name:'Florian Wirtz',    pos:'MID', country:'Germany',   slot:'xi',    match:'Germany 7–1 Curaçao',        result:'0G · 1A (Nmecha 6\')',  estPts:'10',   verdict:'PARTIAL', captain:true, note:"0 goals, 1 assist — assisted Nmecha's opener at 6'. (3 assist + 2 app) × 2 captain = 10pts. No goal was a disappointment from the 2× captain slot, but the assist + clean game in a 7-1 win still delivered."},
+  {name:'Jamal Musiala',    pos:'MID', country:'Germany',   slot:'xi',    match:'Germany 7–1 Curaçao',        result:'1G (47\') · 0A · sub off 64\'', estPts:'7', verdict:'HIT',  note:'1 goal (47\', assist: Kimmich). 0 assists. Subbed off at 64\'. 5pts goal + 2pts app (60+ threshold met) = 7pts. GER stack contributed — Wirtz set up the opener, Musiala added the 4th.'},
+  {name:'Bruno Fernandes',  pos:'MID', country:'Portugal',  slot:'xi',    match:'Portugal 1–1 DR Congo',      result:'0G 0A · no returns',    estPts:'2',    verdict:'MISS',    note:'Zero returns in Portugal\'s 0.57 xG no-show. The pen+FK+corner triple-threat never fired (DR Congo held them 1-1). This poor display is exactly why Bruno drops to the MD2 bench. Appearance points only.'},
+  {name:'Fabián Ruiz',      pos:'MID', country:'Spain',     slot:'xi',    match:'Spain 0–0 Cabo Verde',       result:'0G 0A · sub off 71\' · CS 1pt', estPts:'3', verdict:'PARTIAL', note:'0 goals, 0 assists. Subbed off 71\' (for Merino). CS 1pt (MID) + app 2pts = 3pts. Spain had 27 shots and scored zero — Fabian got nothing from the attack despite being in the right position.'},
+  {name:'Mikel Oyarzabal',  pos:'FWD', country:'Spain',     slot:'xi',    match:'Spain 0–0 Cabo Verde',       result:'0G 0A · 90\'+ · no CS bonus (FWD)', estPts:'2', verdict:'MISS', note:'0 goals, 0 assists. Played 90+ mins. FWD gets 0 CS points. App 2pts only. First 30 mins without touching the ball — later had an effort blocked. Spain attack completely misfired with 27 shots and 0 goals.'},
+  {name:'Erling Haaland',   pos:'FWD', country:'Norway',    slot:'xi',    match:'Norway 4–1 Iraq',            result:'2G (29\', 42\') · 1A (Thorstvedt ~90\')', estPts:'13', verdict:'HIT', vc:true, note:"2 goals + 1 assist. 8pts goals + 3pts assist + 2pts app = 13pts. VC 2× didn't activate (Wirtz played). Brace in the first half, then assisted Thorstvedt's late 4th goal. Deliberate one-round VC spike executed perfectly."},
+  {name:'Lionel Messi',     pos:'FWD', country:'Argentina', slot:'xi',    match:'Argentina 3–0 Algeria',      result:'3G (17\', 60\', 76\') · 0A', estPts:'14+', verdict:'HIT', note:"3 goals, 0 assists. 12pts goals + 2pts app = 14pts base. Goals: 1st a long-range screamer, 2nd a tap-in, 3rd a curled finish. De Paul got the assist on goal 1. Differential 1.5× may apply if <10% owned. Best individual return of the round."},
+  // ── BENCH ──
+  {name:'H. Sanches Tavares', pos:'GK',  country:'Cape Verde', slot:'bench', match:'Spain 0–0 Cabo Verde',   result:'0 — Simón played (no auto-sub)', estPts:'0', verdict:'CORRECT', note:'Slot 15 cheapest GK. 0 goals allowed, 0 saves that matter for us. Simón never left the pitch so no auto-sub triggered. Correct bench placement.'},
+  {name:'Michael Olise',      pos:'MID', country:'France',     slot:'bench', match:'France 3–1 Senegal',     result:'1A (Mbappé 66\') · played 80\'', estPts:'0', verdict:'REGRET', note:"1 assist — defence-splitting pass for Mbappé's first goal (66'). Played 80 mins for France. We benched him (pre-game xG 1.34 looked poor). He earned 3pts assist + 2pts app = 5pts we didn't get. Biggest bench regret of the round."},
+  {name:'Alphonso Davies',    pos:'DEF', country:'Canada',     slot:'bench', match:'Canada 1–1 Bosnia',      result:'0 — bench rotation asset', estPts:'0', verdict:'CORRECT', note:'0 goals, 0 assists. Canada 1-1 — no CS anyway. Correct bench placement. Rotation asset for MD2+.'},
+  {name:'César Montes',       pos:'DEF', country:'Mexico',     slot:'bench', match:'Mexico 2–0 South Africa', result:'0 — CS earned but bench', estPts:'0', verdict:'CORRECT', note:'0 goals, 0 assists. Mexico 2-0 CS — Montes earned it, but bench = 0 for us. We called Mexico 2-0 exactly right (prediction). Correct placement as bench fodder.'},
+];
+
+const PRED_REVIEW = [
+  {home:'Mexico',          away:'South Africa',     pred:'2-0', actual:'2-0',  pts:5,    outcome:'exact_score',             surprise:false, note:'Altitude + home advantage played out exactly.'},
+  {home:'South Korea',     away:'Czechia',          pred:'2-1', actual:'2-1',  pts:5,    outcome:'exact_score',             surprise:false, note:'Hwang Inbeom 67\', Oh Hyeongyu 80\', Krejci 59\'. Exact.'},
+  {home:'Canada',          away:'Bosnia & Herz.',   pred:'1-0', actual:'1-1',  pts:0,    outcome:'wrong_winner',            surprise:false, note:'Bosnia equalized via Lukic 21\'. Canada scored late (Larin 79\') but too little.'},
+  {home:'USA',             away:'Paraguay',         pred:'2-1', actual:'4-1',  pts:1,    outcome:'correct_winner',          surprise:false, note:'Right team, underestimated USA scale. Balogun brace + Reyna 90+8\'.'},
+  {home:'Qatar',           away:'Switzerland',      pred:'0-3', actual:'1-1',  pts:0,    outcome:'wrong_winner',            surprise:true,  note:'Expected Swiss rout — Qatar showed much more resilience than rated.'},
+  {home:'Brazil',          away:'Morocco',          pred:'1-0', actual:'1-1',  pts:0,    outcome:'wrong_winner',            surprise:true,  note:"Morocco's xG was 1.33 vs Brazil's 0.99 — they were actually the better team."},
+  {home:'Haiti',           away:'Scotland',         pred:'0-3', actual:'0-1',  pts:1,    outcome:'correct_winner',          surprise:false, note:'Right team, Scotland held tight. McGinn 28\' was the only goal.'},
+  {home:'Australia',       away:'Türkiye',          pred:'1-2', actual:'2-0',  pts:0,    outcome:'wrong_winner',            surprise:true,  note:'WORST DIRECTIONAL MISS. Backed Turkey, Australia dominated. Irankunda 27\', Metcalfe 75\'.'},
+  {home:'Germany',         away:'Curaçao',          pred:'4-0', actual:'7-1',  pts:1,    outcome:'correct_winner',          surprise:false, note:'Right team, massively underestimated the scale. 7-1 vs predicted 4-0.'},
+  {home:'Netherlands',     away:'Japan',            pred:'2-1', actual:'2-2',  pts:0,    outcome:'wrong_winner',            surprise:true,  note:'Japan equalised late. NED underperformed xG — Van Dijk + Summerville not enough.'},
+  {home:'Côte d\'Ivoire',  away:'Ecuador',          pred:'1-2', actual:'1-0',  pts:0,    outcome:'wrong_winner',            surprise:true,  note:'Backed Ecuador to win. Amad Diallo (sub 56\') won it for CIV in the 90th. Wrong direction entirely.'},
+  {home:'Sweden',          away:'Tunisia',          pred:'2-0', actual:'5-1',  pts:1,    outcome:'correct_winner',          surprise:false, note:'Sweden destruction mode: Isak, Gyokeres, Avari, Svanberg. Right team, missed scale.'},
+  {home:'Spain',           away:'Cabo Verde',       pred:'4-0', actual:'0-0',  pts:0,    outcome:'wrong_winner',            surprise:true,  note:'BIGGEST MISS. Spain 2.26 xG, 0 goals. 0-0 vs 4-0 prediction. Over-trusted xG in MD1 opener.'},
+  {home:'Belgium',         away:'Egypt',            pred:'2-1', actual:'1-1',  pts:0,    outcome:'wrong_winner',            surprise:false, note:"Belgium couldn't convert. Egypt held well. De Bruyne started, no goal."},
+  {home:'Saudi Arabia',    away:'Uruguay',          pred:'0-2', actual:'1-1',  pts:0,    outcome:'wrong_winner',            surprise:false, note:'Uruguay expected to win comfortably but drew. Darwin Nunez off HT. Alamri 41\' for KSA.'},
+  {home:'IR Iran',         away:'New Zealand',      pred:'2-0', actual:'2-2',  pts:0,    outcome:'wrong_winner',            surprise:false, note:'New Zealand underrated — Just scored for them and they held Iran to a draw.'},
+  {home:'France',          away:'Senegal',          pred:'2-0', actual:'3-1',  pts:3,    outcome:'correct_winner_and_diff', surprise:false, note:'Correct winner + same goal diff (+2). Mbappé brace + Barcola sub. 3pts instead of 1.'},
+  {home:'Iraq',            away:'Norway',           pred:'0-3', actual:'1-4',  pts:3,    outcome:'correct_winner_and_diff', surprise:false, note:'Correct winner + same goal diff (+3). Haaland brace (29\', 43\'). 3pts instead of 1.'},
+  {home:'Argentina',       away:'Algeria',          pred:'3-0', actual:'3-0',  pts:5,    outcome:'exact_score',             surprise:false, note:'EXACT. Messi hat-trick. ARG dominated. Called it perfectly.'},
+  {home:'Austria',         away:'Jordan',           pred:'3-0', actual:'3-1',  pts:1,    outcome:'correct_winner',          surprise:false, note:'Austria won but Jordan pulled one back (Olwan 50\'). Arnautovic brace off bench.'},
+  {home:'Portugal',        away:'DR Congo',         pred:'3-0', actual:'1-1',  pts:0,    outcome:'wrong_winner',            surprise:true,  note:'MISS. Portugal flopped (0.57 xG) and were held 1-1. We called a 3-0 home win — wrong winner, 0 pts.'},
+  {home:'England',         away:'Croatia',          pred:'2-0', actual:'4-2',  pts:3,    outcome:'correct_winner_and_diff', surprise:false, note:'Correct winner + same goal diff (+2). England won a 4-2 thriller. 3pts.'},
+  {home:'Ghana',           away:'Panama',           pred:'1-0', actual:'1-0',  pts:5,    outcome:'exact_score',             surprise:false, note:'EXACT. Ghana edged it 1-0. Called it perfectly — 5pts.'},
+  {home:'Uzbekistan',      away:'Colombia',         pred:'0-3', actual:'1-3',  pts:1,    outcome:'correct_winner',          surprise:false, note:'Colombia won as expected but Uzbekistan grabbed one. Correct winner, wrong diff — 1pt.'},
+];
+
+const WELL_ITEMS = [
+  '3 exact scores: Mexico 2–0, Korea 2–1, Argentina 3–0 — 15 prediction points combined',
+  'France +Norway goal-difference bonus (3pts each instead of 1pt)',
+  'GER won 7-1 — Wirtz captain return includes assists × 2 even without a goal',
+  'Messi hat-trick (17\', 60\', 76\') — mandatory pick rule completely vindicated',
+  'Haaland VC spike: 2G (29\', 42\') + 1A (Thorstvedt) = 13pts. Transfer to Vinícius now.',
+  'GER triple (Raum + Wirtz C + Musiala) all contributed in 7-1',
+  'Simón CS despite Spain 0-0 — wrong prediction, correct fantasy outcome',
+  'Romero CS (ARG 3-0) — spine pick delivered from game one',
+  'No missed predictions — all 24 submitted, zero −2 penalties',
+];
+
+const WRONG_ITEMS = [
+  'Spain 4-0 pred → actual 0-0: worst call of the round. 2.26 xG, zero goals scored',
+  'Australia vs Turkey: completely wrong direction — backed Turkey, Australia won 2-0',
+  'Côte d\'Ivoire vs Ecuador: backed Ecuador, CIV won 1-0 with a 90th-min goal',
+  'Qatar 1-1 Switzerland: predicted 0-3 Swiss rout — Qatar vastly underrated',
+  'Draw epidemic: 8/20 games drew (40%), we predicted zero draws → 0pts from all 8',
+  'Oyarzabal blank: Spain stack failed offensively (all 0pts from the attack)',
+  'Olise kept on bench: 1 assist (Mbappé 66\') + 80 mins for France — 5pts we didn\'t score',
+  'Germany predicted 4-0, actual 7-1: correct direction but missed extreme mismatch',
+  'Captain Wirtz didn\'t score (38\' goal was Schlotterbeck) — 2× captain on a no-goal MID',
+];
+
+async function loadReview(){
+  renderReview();
+  rvLoaded = true;
+}
+
+function renderReview(){
+  const el = document.getElementById('rv-content');
+
+  // ── stat bar ──
+  const statHtml = `<div class="rv-stat-row">
+    <div class="rv-stat"><div class="rv-stat-val" style="color:var(--neon)">38</div><div class="rv-stat-lbl">Fantasy pts (final)</div></div>
+    <div class="rv-stat"><div class="rv-stat-val" style="color:var(--gold)">35</div><div class="rv-stat-lbl">Prediction pts (final)</div></div>
+    <div class="rv-stat"><div class="rv-stat-val" style="color:var(--neon-alt)">73</div><div class="rv-stat-lbl">Total · #1 Global</div></div>
+    <div class="rv-stat"><div class="rv-stat-val" style="color:var(--neon-yellow)">4/24</div><div class="rv-stat-lbl">Exact scores</div></div>
+    <div class="rv-stat"><div class="rv-stat-val" style="color:var(--neon-red)">38%</div><div class="rv-stat-lbl">Draw rate (9/24 · baseline 27.7%)</div></div>
+  </div>`;
+
+  // ── insight callout ──
+  const insightHtml = `<div class="rv-highlight">
+    <h4>⚠ Structural Surprise — The Draw Epidemic</h4>
+    <p>8 of 20 completed games ended in draws (40%). We predicted zero draws. Historical WC MD1 baseline is 27.7%. Every draw was 0 prediction points. High-xG favourites (Spain 2.26, Brazil 0.99, Belgium, Netherlands) all failed to win. <strong>For MD2: build in 5–6 draw picks across 24 games rather than near-zero.</strong></p>
+  </div>`;
+
+  // ── verdict colours ──
+  const vCol = {HIT:'var(--neon)',PARTIAL:'var(--neon-yellow)',MISS:'var(--neon-red)',PENDING:'var(--muted)',CORRECT:'var(--neon)',REGRET:'var(--neon-yellow)'};
+  const vCls = {HIT:'hit',PARTIAL:'partial',MISS:'miss',PENDING:'pending',CORRECT:'hit',REGRET:'partial'};
+
+  function playerCard(p){
+    const vc   = vCol[p.verdict]||'var(--muted)';
+    const cls  = vCls[p.verdict]||'pending';
+    const rCol = p.result?.includes('BLANK')||p.result?.includes('NO CS') ? 'var(--neon-red)'
+               : p.result?.includes('GOAL')||p.result?.includes('HAT')||p.result?.includes('CLEAN') ? 'var(--neon)'
+               : 'var(--muted)';
+    const cap = p.captain ? '<span class="rv-cap-badge">C×2</span>' : p.vc ? '<span class="rv-vc-badge">VC</span>' : '';
+    const pts = p.estPts!=null ? `<div class="rv-pts">~${h(p.estPts)} pts est.</div>` : '';
+    return `<div class="rv-player ${cls}">
+      <div class="rv-player-head">
+        <span class="rv-player-name">${h(p.name)}${cap}</span>
+        <span class="rv-verdict" style="color:${vc};border-color:${vc}60">${h(p.verdict)}</span>
+      </div>
+      <div class="rv-match"><span class="pos ${h(p.pos)}">${h(p.pos)}</span>&nbsp;${h(p.country)} · ${h(p.match)}</div>
+      <div class="rv-result" style="color:${rCol}">${h(p.result||'—')}</div>
+      ${pts}<div class="rv-note">${h(p.note)}</div>
+    </div>`;
+  }
+
+  const xi    = PLAYER_REVIEW.filter(p=>p.slot==='xi');
+  const bench = PLAYER_REVIEW.filter(p=>p.slot==='bench');
+
+  const lineupHtml = `
+    <div class="sec">
+      <div class="sec-head"><span class="sec-sep" style="color:var(--neon-alt)">▌</span><span class="sec-title">Lineup · XI</span><span class="sec-aux">3-4-3 · budget 118/120</span></div>
+      <div class="rv-grid">${xi.map(playerCard).join('')}</div>
+    </div>
+    <hr class="div">
+    <div class="sec bench-section">
+      <div class="sec-head"><span class="sec-sep" style="color:var(--muted)">▌</span><span class="sec-title">Bench</span><span class="sec-aux">auto-sub fires only if XI player plays 0 mins</span></div>
+      <div class="rv-grid">${bench.map(playerCard).join('')}</div>
+    </div>`;
+
+  // ── predictions table ──
+  const predRows = PRED_REVIEW.map(p=>{
+    let icon,cls;
+    if(p.outcome==='exact_score'){icon='✅';cls='oc-ex';}
+    else if(p.outcome==='correct_winner_and_diff'){icon='✅';cls='oc-wd';}
+    else if(p.outcome==='correct_winner'){icon='✓';cls='oc-wd';}
+    else if(p.outcome==='pending'){icon='⏳';cls='oc-pe';}
+    else{icon='✗';cls='oc-wr';}
+    const ptHtml = p.pts!=null
+      ? `<span class="${p.pts>0?'pts-p':p.pts===0?'pts-z':'pts-n'}">${p.pts>0?'+':''}${p.pts}</span>`
+      : '<span class="pts-z">—</span>';
+    const actHtml = p.actual ? `<span class="${cls}">${h(p.actual)}</span>` : '<span class="mu">TBD</span>';
+    const surp = p.surprise ? '<span class="surprise-tag">SURPRISE</span>' : '';
+    return `<tr>
+      <td>${h(p.home)} <span class="mu">vs</span> ${h(p.away)}${surp}</td>
+      <td>${h(p.pred)}</td><td>${actHtml}</td>
+      <td><span class="${cls}">${icon}</span></td>
+      <td>${ptHtml}</td>
+      <td class="rv-why">${h(p.note)}</td>
+    </tr>`;
+  }).join('');
+
+  const predHtml = `
+    <div class="sec">
+      <div class="sec-head"><span class="sec-sep" style="color:var(--neon-alt)">▌</span><span class="sec-title">Predictions</span><span class="sec-aux">35 pts · 24 of 24 final · no missed</span></div>
+      <table>
+        <thead><tr><th>Match</th><th>Pred</th><th>Actual</th><th></th><th>Pts</th><th>Why</th></tr></thead>
+        <tbody>${predRows}</tbody>
+      </table>
+    </div>`;
+
+  // ── what went well / wrong ──
+  const summaryHtml = `
+    <div class="rv-col2">
+      <div class="rv-list">
+        <h4 class="good">✓ What went well (${WELL_ITEMS.length})</h4>
+        <ul>${WELL_ITEMS.map(i=>`<li>${h(i)}</li>`).join('')}</ul>
+      </div>
+      <div class="rv-list">
+        <h4 class="bad">✗ What went wrong (${WRONG_ITEMS.length})</h4>
+        <ul>${WRONG_ITEMS.map(i=>`<li>${h(i)}</li>`).join('')}</ul>
+      </div>
+    </div>`;
+
+  el.innerHTML = statHtml + insightHtml + '<hr class="div">' + lineupHtml + '<hr class="div">' + predHtml + '<hr class="div">' + summaryHtml;
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// MD2 PLAN TAB
+// ══════════════════════════════════════════════════════════════════════════════
+let md2Loaded = false;
+
+const MD2_TRANSFERS = [
+  {
+    type:'transfer', label:'TRANSFER 1 OF 2',
+    out:'Erling Haaland', outVal:'$10.0', outCountry:'Norway',
+    inPlayer:'Vinícius Jr', inVal:'$10.0', inCountry:'Brazil',
+    reason:'Brazil vs Haiti is the biggest mismatch in MD2 (3.50+ xG). Vinícius is angry after Morocco held them — he went 1G in MD1. Norway plays Senegal — a harder opponent than Iraq (who they beat 4-1 in MD1). Vinícius inherits the captaincy.',
+  },
+  {
+    type:'transfer', label:'TRANSFER 2 OF 2',
+    out:'David Raum', outVal:'$8.0', outCountry:'Germany',
+    inPlayer:'Achraf Hakimi', inVal:'$9.0', inCountry:'Morocco',
+    reason:'Raum came on at 73\' in MD1 — 1 point. Hakimi is Morocco\'s attacking RB, penalty + FK + corner taker, 57% CS vs Scotland. Morocco proved in MD1 (held Brazil 1–1) they are NOT a pushover. Triple set-piece EV and real attacking output. Budget: 118→119/120.',
+  },
+  {
+    type:'swap', label:'FREE SWAP (XI ↔ BENCH)',
+    out:'Bruno Fernandes (→ bench)', outCountry:'Portugal',
+    inPlayer:'Michael Olise (→ XI)', inCountry:'France',
+    reason:'Owner\'s call: Olise proved himself MD1 (1 assist vs Senegal off the bench) and France vs Iraq is an elite fixture. Bruno\'s penalty duty depends on Ronaldo being absent, so his goal threat vs Uzbekistan is thin — he drops to bench cover. Fabián Ruiz stays in the XI for Spain vs Saudi Arabia (box arrivals, confirmed starter).',
+  },
+  {
+    type:'save', label:'3RD TRANSFER → SAVED (ROLLOVER TO MD3)',
+    out:'—', inPlayer:'—',
+    reason:'We have 3 free transfers in AgentsXI. Using 2 and rolling over 1 to MD3 is the correct play. Wildcard-style flexibility heading into knockouts is worth more than a marginal MD2 improvement.',
+  },
+];
+
+const MD2_SQUAD = [
+  // XI — 3-4-3
+  {name:'Unai Simón',    pos:'GK',  country:'Spain',     slot:'xi',  captain:false, vc:false, isNew:false, isMoved:false, fixture:'Spain vs Saudi Arabia', ko:'Jun 21 18:00', estPts:'4–6',  badge:'CS 66%'},
+  {name:'Cristian Romero', pos:'DEF', country:'Argentina', slot:'xi', captain:false, vc:false, isNew:false, isMoved:false, fixture:'Argentina vs Austria', ko:'Jun 22 19:00', estPts:'4–6', badge:'CS 57%'},
+  {name:'Nuno Mendes',   pos:'DEF', country:'Portugal',  slot:'xi',  captain:false, vc:false, isNew:false, isMoved:false, fixture:'Portugal vs Uzbekistan', ko:'Jun 23 18:00', estPts:'4–6', badge:'CS 72%'},
+  {name:'Achraf Hakimi', pos:'DEF', country:'Morocco',   slot:'xi',  captain:false, vc:false, isNew:true,  isMoved:false, fixture:'Morocco vs Scotland',   ko:'Jun 20 00:00', estPts:'5–9', badge:'NEW · SET PIECE'},
+  {name:'Florian Wirtz', pos:'MID', country:'Germany',   slot:'xi',  captain:false, vc:false, isNew:false, isMoved:false, fixture:'Germany vs Côte d\'Ivoire', ko:'Jun 20 22:00', estPts:'5–8', badge:'1A MD1'},
+  {name:'Jamal Musiala', pos:'MID', country:'Germany',   slot:'xi',  captain:false, vc:false, isNew:false, isMoved:false, fixture:'Germany vs Côte d\'Ivoire', ko:'Jun 20 22:00', estPts:'5–9', badge:'1G MD1'},
+  {name:'Fabián Ruiz',   pos:'MID', country:'Spain',     slot:'xi',  captain:false, vc:false, isNew:false, isMoved:false, fixture:'Spain vs Saudi Arabia', ko:'Jun 21 18:00', estPts:'4–7', badge:'BOX THREAT'},
+  {name:'Michael Olise', pos:'MID', country:'France',    slot:'xi',  captain:false, vc:false, isNew:false, isMoved:true,  fixture:'France vs Iraq',        ko:'Jun 22 23:00', estPts:'5–9', badge:'↑ FROM BENCH · 1A MD1'},
+  {name:'Vinícius Jr',   pos:'FWD', country:'Brazil',    slot:'xi',  captain:true,  vc:false, isNew:true,  isMoved:false, fixture:'Brazil vs Haiti',       ko:'Jun 20 02:30', estPts:'16–20',badge:'C · NEW · 1G MD1'},
+  {name:'Mikel Oyarzabal',pos:'FWD',country:'Spain',     slot:'xi',  captain:false, vc:true,  isNew:false, isMoved:false, fixture:'Spain vs Saudi Arabia', ko:'Jun 21 18:00', estPts:'6–10',badge:'VC · PENS'},
+  {name:'Lionel Messi',  pos:'FWD', country:'Argentina', slot:'xi',  captain:false, vc:false, isNew:false, isMoved:false, fixture:'Argentina vs Austria',  ko:'Jun 22 19:00', estPts:'10–16',badge:'HAT-TRICK MD1'},
+  // Bench
+  {name:'H. Sanches Tavares',pos:'GK',country:'Cape Verde',slot:'bench',captain:false,vc:false,isNew:false,isMoved:false,fixture:'Cape Verde vs Cameroon',ko:'Jun 19',estPts:'0',badge:'CHEAPEST ASSET'},
+  {name:'Bruno Fernandes',pos:'MID', country:'Portugal', slot:'bench',captain:false, vc:false, isNew:false, isMoved:true,  fixture:'Portugal vs Uzbekistan', ko:'Jun 23 18:00', estPts:'3–6', badge:'↓ FROM XI'},
+  {name:'Alphonso Davies',pos:'DEF',country:'Canada',    slot:'bench',captain:false, vc:false, isNew:false, isMoved:false, fixture:'Canada vs Nigeria',     ko:'Jun 21',estPts:'2–5',badge:'ROTATION'},
+  {name:'César Montes',  pos:'DEF', country:'Mexico',    slot:'bench',captain:false, vc:false, isNew:false, isMoved:false, fixture:'Mexico vs South Korea',  ko:'Jun 21',estPts:'2–4',badge:'ROTATION'},
+];
+
+const MD2_PREDICTIONS = [
+  {home:'Czechia',        away:'South Africa',     pred:'2–0', draw:false, actual:'1–1', pts:0, outcome:'wrong_winner', scorers:'Sadilek 6\' (CZE); Mokoena 83\' (RSA)', note:'South Korea beat Czechia 2-1 MD1, South Africa lost 2-0 to Mexico. Both lost. Czechia have more quality on the ball and should control this.'},
+  {home:'Switzerland',    away:'Bosnia & Herz.',   pred:'2–1', draw:false, actual:'4–1', pts:1, outcome:'correct_winner', scorers:'Manzambi 74\',90\', Vargas 84\', Xhaka 90+7\' (SUI); Mahmić 90+3\' (BIH)', note:'Switzerland drew 1-1 with Qatar MD1 — not dominant but functional. Bosnia drew 1-1 with Canada. Switzerland have more individual quality; expect them to edge it.'},
+  {home:'Canada',         away:'Qatar',            pred:'2–0', draw:false, actual:'6–0', pts:1, outcome:'correct_winner', scorers:'J. David hat-trick 29\',45+3\',90+2\', Saliba 64\' (CAN); Qatar down to 9 (2 reds)', note:'Canada drew 1-1 with Bosnia MD1 — showed fight at home. Qatar drew 1-1 with Switzerland — competitive but limited. Canada on home soil (BMO Field, Vancouver) should be enough.'},
+  {home:'Mexico',         away:'South Korea',      pred:'1–1', draw:true,  actual:'1–0', pts:0, outcome:'wrong_winner', scorers:'Romo 50\' (MEX) · Mexico CS', note:'Mexico won 2-0 vs South Africa MD1. South Korea won 2-1 vs Czechia. Both sides winning, similar level of opposition. Expect a tight contest — draw is honest.'},
+  {home:'USA',            away:'Australia',        pred:'2–1', draw:false, actual:'2–0', pts:1, outcome:'correct_winner', scorers:'Burgess OG 11\', Freeman 44\' (USA) · USA CS', note:'USA 4-1 Paraguay MD1 — dominant. Australia 2-0 Türkiye — also won comfortably. This is a real contest. USA at home should edge it but Australia are in form.'},
+  {home:'Scotland',       away:'Morocco',          pred:'0–1', draw:false, actual:'0–1', pts:5, outcome:'exact_score', scorers:'Saibari 2\' (MAR) · EXACT +5 · Morocco CS → our Hakimi 90\' CS', note:'Scotland beat Haiti 1-0 MD1 — tight win. Morocco held Brazil 1-1 — much harder test, showed real quality. Hakimi, Ziyech, Saibari dangerous. Morocco the better side. Don\'t underestimate them.'},
+  {home:'Brazil',         away:'Haiti',            pred:'4–0', draw:false, actual:'3–0', pts:1, outcome:'correct_winner', scorers:'M. Cunha 23\',36\', Vinícius 45+3\' (BRA) · our captain SCORED · Brazil CS', note:'Brazil drew 1-1 with Morocco MD1 — frustrated. Haiti lost 0-1 to Scotland MD1. Vinícius, Raphinha, Rodrygo have a point to prove. Biggest mismatch of MD2.'},
+  {home:'Türkiye',        away:'Paraguay',         pred:'1–1', draw:true,  actual:'0–1', pts:0, outcome:'wrong_winner', scorers:'Galarza 2\' (PAR) · Paraguay CS', note:'Türkiye lost 0-2 to Australia MD1. Paraguay lost 1-4 to USA MD1. Both badly beaten. Neither side inspires confidence; expect a scrappy, nervous game. Draw is fair.'},
+  {home:'Netherlands',    away:'Sweden',           pred:'2–1', draw:false, actual:'5–1', pts:1, outcome:'correct_winner', scorers:'Brobbey 6\',17\', Gakpo 47\',54\', Summerville 89\' (NED); Elanga 59\' (SWE)', note:'Netherlands drew 2-2 with Japan MD1 — exciting but defensively shaky. Sweden won 5-1 vs Tunisia MD1 — impressively clinical. This is a genuine contest. Netherlands have the edge but Sweden are in form.'},
+  {home:'Germany',        away:'Côte d\'Ivoire',  pred:'3–1', draw:false, actual:'2–1', pts:1, outcome:'correct_winner', scorers:'Undav 68\',90+4\' (GER); Kessié 30\' (CIV)', note:'Germany 7-1 Curaçao MD1. CIV won their opener 1-0 vs Ecuador (Amad Diallo 90\') — organised and dangerous on the counter, so the 1 conceded here is plausible. Germany dominant regardless. Wirtz+Musiala in full flow.'},
+  {home:'Ecuador',        away:'Curaçao',          pred:'3–0', draw:false, actual:'0–0', pts:0, outcome:'wrong_winner', scorers:'SHOCK 0-0 · Ecuador blanked again · Curaçao CS', note:'Curaçao lost 7-1 to Germany MD1. Ecuador lost 0-1 to CIV (hit the woodwork 4×, ended a 19-game unbeaten run) — they will be desperate to score. Curaçao cannot be trusted defensively; Ecuador expected to win comfortably.'},
+  {home:'Tunisia',        away:'Japan',            pred:'1–2', draw:false, actual:'0–4', pts:1, outcome:'correct_winner', scorers:'Kamada 4\', Ueda 31\',83\', Ito 69\' (JPN) · our Nakamura played (subbed 79\')', note:'Tunisia lost 1-5 to Sweden MD1 — defensively exposed. Japan drew 2-2 with Netherlands MD1 — showed real quality and attacking threat. Japan the better side here.'},
+  {home:'Spain',          away:'Saudi Arabia',     pred:'2–0', draw:false, actual:'4–0', pts:1, outcome:'correct_winner', scorers:'Spain CS + 4 goals → our Simón/Fabián/Oyarzabal block fired (+11 fantasy)', note:'Spain drew 0-0 with Cabo Verde MD1 — must respond. Saudi Arabia drew 1-1 with Uruguay MD1 — not embarrassing but limited. Spain at Mercedes-Benz (climate controlled, Atlanta). Expect a proper performance.'},
+  {home:'Belgium',        away:'Iran',             pred:'2–1', draw:false, actual:'0–0', pts:0, outcome:'wrong_winner', scorers:'0–0 · both kept clean sheets', note:'Belgium drew 1-1 with Egypt MD1 — not dominant. Iran drew 2-2 with New Zealand MD1 — showed attacking threat. This is tighter than it looks. Belgium should win but Iran will create chances.'},
+  {home:'Uruguay',        away:'Cabo Verde',       pred:'2–0', draw:false, actual:'2–2', pts:0, outcome:'wrong_winner', scorers:'Araujo 44\', Canobbio 45+6\' (URU); K. Pina 21\', H. Varela 61\' (CPV)', note:'Uruguay drew 1-1 with Saudi Arabia MD1 — not explosive but solid defensively. Cabo Verde held Spain 0-0 MD1 — impressive defensive organisation. Uruguay have more quality and need the win.'},
+  {home:'New Zealand',    away:'Egypt',            pred:'1–1', draw:true,  actual:'1–3', pts:0, outcome:'wrong_winner', scorers:'Surman 15\' (NZL); Zico 58\', Salah 67\', Trezeguet 82\' (EGY)', note:'New Zealand drew 2-2 with Iran MD1. Egypt drew 1-1 with Belgium MD1. Both punching above weight. Same level — draw again is the correct call.'},
+  {home:'Argentina',      away:'Austria',          pred:'3–0', draw:false, actual:'2–0', pts:1, outcome:'correct_winner', scorers:'Argentina CS', note:'Argentina 3-0 Algeria MD1 — Messi hat-trick. Austria won 3-1 vs Jordan MD1 — in form themselves. But the step up to Argentina is enormous. Messi-led Argentina are the strongest team in the tournament.'},
+  {home:'France',         away:'Iraq',             pred:'3–0', draw:false, actual:'3–0', pts:5, outcome:'exact_score', scorers:'EXACT +5 · France CS · our Mbappé + Olise fixture', note:'France 3-1 Senegal MD1. Iraq lost 1-4 to Norway MD1 — defensively poor. France have Mbappé, Olise, Griezmann. Iraq have nothing to stop them.'},
+  {home:'Norway',         away:'Senegal',          pred:'2–0', draw:false, actual:'3–2', pts:1, outcome:'correct_winner', note:'Norway 4-1 Iraq MD1 — dominant. Senegal lost 1-3 to France MD1 — outclassed. Norway attack-minded even without Haaland in our XI — Sørloth, Thorstvedt, Odegaard still dangerous.'},
+  {home:'Jordan',         away:'Algeria',          pred:'0–1', draw:false, actual:'1–2', pts:3, outcome:'correct_winner_and_diff', scorers:'+3 · correct winner + exact goal diff', note:'Jordan lost 1-3 to Austria MD1. Algeria lost 0-3 to Argentina MD1. Both heavy defeats. Algeria have more individual quality — Mahrez, Bennacer. Slight Algeria edge in a low-quality game.'},
+  {home:'Portugal',       away:'Uzbekistan',       pred:'3–0', draw:false, note:'Portugal were held 1-1 by DR Congo MD1 (0.57 xG — a real worry). Uzbekistan lost 1-3 to Colombia. On quality Portugal should still win, but the MD1 no-show means this is less certain than it looks.'},
+  {home:'England',        away:'Ghana',            pred:'2–0', draw:false, note:'England won a 4-2 thriller vs Croatia MD1. Ghana edged Panama 1-0. England (Kane, Bellingham, Saka) should have too much for Ghana, though their defence leaked twice vs Croatia.'},
+  {home:'Panama',         away:'Croatia',          pred:'0–1', draw:false, note:'REVISED from 0-0: Croatia are the stronger, more disciplined side and will chase the result they need. Backing a clean shutout draw was too thin an edge — took correct-winner+diff EV with a Croatia win instead.'},
+  {home:'Colombia',       away:'DR Congo',         pred:'2–1', draw:false, note:'Colombia beat Uzbekistan 3-1 MD1 — in form. DR Congo held Portugal 1-1, so they defend well. Colombia (James, Díaz) should win but DR Congo won\'t be a pushover.'},
+];
+
+const MD2_REASONING = `NUNO_XI · MATCHDAY 2 · REASONING TRACE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+<strong>TRANSFERS (2 USED, 1 SAVED → MD3)</strong>
+
+▸ Haaland → Vinícius Jr (C)
+  Brazil vs Haiti is the biggest mismatch in MD2. Haiti ranked 140th, no WC
+  experience at this level. Brazil play at Lincoln Financial (Philadelphia),
+  Vinícius on the left with Raphinha and Rodrygo. After the Morocco 1-1 that
+  held them — Vinícius scored but Brazil didn't win — expect a reaction.
+  He is the priority target. Captain confirmed.
+
+▸ Raum → Hakimi
+  Raum contributed 1 point in MD1 (73' sub on). That's the floor.
+  Morocco shocked Brazil 1-1 with Saibari's 21' goal and defended brilliantly.
+  Don't underestimate Morocco. Hakimi takes penalties, free kicks, corners.
+  57% CS probability vs Scotland (weaker opponent, Boston — partial Moroccan crowd).
+  Triple set-piece EV + attacking output from RB. Budget goes from 118 to 119/120.
+
+▸ Bruno Fernandes ↓ → Olise ↑ (FREE SWAP, no cost) — OWNER'S CALL
+  Olise proved it: 1 assist in MD1 even from the bench (Mbappé 66').
+  France vs Iraq is 2.17 xG for France, in a climate-controlled stadium.
+  Bruno's penalty duty depends on Ronaldo being absent — goal threat vs
+  Uzbekistan is thin, so he drops to bench cover. Fabián Ruiz STAYS in the
+  XI: he arrives in the box to score and Spain vs Saudi Arabia is a strong
+  bounce-back fixture (confirmed starter).
+
+▸ 3rd Transfer SAVED → rollover to MD3
+  Three free transfers — use two, bank one. MD3 and the knockouts will need
+  flexibility. Not burning transfers for marginal upgrades here.
+
+<strong>CAPTAIN LOGIC</strong>
+
+  Vinícius Jr (C) — Brazil vs Haiti. Most lopsided fixture in the round.
+  Oyarzabal (VC) — Spain vs Saudi Arabia. Spain must respond after 0-0.
+  Messi is the third option in any captain chain fail.
+
+<strong>SPINE KEPT — LONG GAME MENTALITY</strong>
+
+  Simón, Romero, Mendes, Wirtz, Musiala, Fabián, Oyarzabal, Messi.
+  8 of 11 XI unchanged. We hit on Messi (14+ pts), Haaland (13pts), Musiala (7pts),
+  Romero (6pts), Simón (6pts). That's the spine. Don't break what works.
+  The Wirtz captain was PARTIAL (10pts via 1A) — but he's in for 1G+2A potential
+  every game. Trust the long game.
+
+<strong>DRAW LESSON APPLIED TO PREDICTIONS</strong>
+
+  MD1 had 8/20 draws (40%). We predicted zero. Lesson learned.
+  MD2 has 3 deliberate draws in our predictions:
+  MEX 1-1 KOR · TUR 1-1 PAR · NZL 1-1 EGY
+  Panama-Croatia revised 0-0 → 0-1 (Croatia win, not a shutout draw).
+  High-xG mismatches called correctly: BRA 4-0 HAI · POR 3-0 UZB · FRA 3-0 IRQ.
+  Argentina 3-0 AUT — trust the machine.
+
+<strong>MOROCCO NOTE</strong>
+
+  Morocco 1-1 Brazil MD1. Saibari 21'. Hakim Ziyech created chances.
+  They are a genuine unit — organised, physical, fast on the counter.
+  Hakimi is their best attacker from defence AND a set-piece weapon.
+  We pick him. We predict Morocco 1-0 Scotland. We don't underestimate them.`;
+
+function renderMD2Plan(){
+  const el = document.getElementById('md2-content');
+  md2Loaded = true;
+
+  // ── Transfers ──
+  const xferHtml = `
+    <div class="sec">
+      <div class="sec-head"><span class="sec-sep" style="color:var(--neon-yellow)">▌</span><span class="sec-title">Transfers & Moves</span><span class="sec-aux">2 transfers · 1 free swap · 1 saved for MD3</span></div>
+      <div class="xfer-grid">
+        ${MD2_TRANSFERS.map(t=>{
+          const tagCls = t.type==='transfer' ? 'transfer' : t.type==='swap' ? 'swap' : 'save';
+          const moveHtml = t.type==='save'
+            ? `<div class="xfer-move" style="color:var(--muted)">ROLLOVER → MD3</div>`
+            : `<div class="xfer-move"><span class="xfer-out">${h(t.out || t.outCountry)}</span><span class="xfer-arrow">→</span><span class="xfer-in">${h(t.inPlayer)}</span></div>`;
+          return `<div class="xfer-card ${t.type==='swap'?'free-swap':t.type==='save'?'saved':''}">
+            <span class="xfer-tag ${tagCls}">${h(t.label)}</span>
+            ${moveHtml}
+            <div class="xfer-reason">${h(t.reason)}</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+
+  // ── Pitch visual ──
+  const xiPlayers = MD2_SQUAD.filter(p=>p.slot==='xi');
+  const benchPlayers = MD2_SQUAD.filter(p=>p.slot==='bench');
+
+  function playerCard(p){
+    let cls='md2-card';
+    if(p.captain) cls+=' cap';
+    else if(p.vc) cls+=' vc';
+    if(p.isNew) cls+=' new-in';
+    else if(p.isMoved) cls+=' free-moved';
+    if(p.slot==='bench') cls+=' bench-card';
+    const badge = p.captain ? '(C)' : p.vc ? '(VC)' : '';
+    const armband = badge ? `<span style="font:700 10px var(--mono);color:${p.captain?'var(--gold)':'#aaa'};margin-left:3px">${badge}</span>` : '';
+    const newBadge = p.isNew ? `<div style="font:700 9px var(--mono);color:var(--neon);letter-spacing:.08em">NEW IN</div>`
+                   : p.isMoved ? `<div style="font:700 9px var(--mono);color:var(--neon-alt);letter-spacing:.08em">SHUFFLED</div>` : '';
+    const pts = p.slot==='bench'?'':`<div style="font:10px var(--mono);color:var(--neon-yellow);margin-top:2px">est ${p.estPts} pts</div>`;
+    return `<div class="${cls}">
+      ${newBadge}
+      <div style="font:700 11px var(--mono);color:var(--text)">${h(p.name.split(' ').pop())}${armband}</div>
+      <div style="font:9px var(--mono);color:var(--muted)">${p.pos} · ${p.country}</div>
+      <div class="md2-ko">${h(p.badge)}</div>
+      ${pts}
+    </div>`;
+  }
+
+  // rows: GK / DEF×3 / MID×4 / FWD×3
+  const gk  = xiPlayers.filter(p=>p.pos==='GK');
+  const def = xiPlayers.filter(p=>p.pos==='DEF');
+  const mid = xiPlayers.filter(p=>p.pos==='MID');
+  const fwd = xiPlayers.filter(p=>p.pos==='FWD');
+
+  function row(players){
+    return `<div style="display:flex;justify-content:center;gap:8px;margin-bottom:12px">${players.map(playerCard).join('')}</div>`;
+  }
+
+  const pitchHtml = `
+    <div class="sec">
+      <div class="sec-head"><span class="sec-sep" style="color:var(--neon-yellow)">▌</span><span class="sec-title">MD2 XI</span><span class="sec-aux">3-4-3 · 119/120 budget · <span style="color:var(--neon)">■</span> new in · <span style="color:var(--neon-alt)">■</span> shuffled</span></div>
+      <div class="md2-pitch-wrap">
+        ${row(fwd)}${row(mid)}${row(def)}${row(gk)}
+      </div>
+      <div style="margin-top:10px">
+        <div style="font:700 10px var(--mono);color:var(--muted);letter-spacing:.1em;margin-bottom:6px">BENCH</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">${benchPlayers.map(playerCard).join('')}</div>
+      </div>
+    </div>`;
+
+  // ── Predictions ──
+  let md2PredPts = 0, md2Played = 0;
+  const predRows = MD2_PREDICTIONS.map(p=>{
+    const drawClass = p.draw ? 'pred2-draw' : '';
+    const hasResult = p.actual !== undefined;
+    let resultCell = '<span class="mu">—</span>';
+    if (hasResult) {
+      md2Played++; md2PredPts += (p.pts||0);
+      const col = p.pts>=3 ? 'var(--neon)' : p.pts>=1 ? 'var(--neon-yellow)' : 'var(--neon-red)';
+      const oc = (p.outcome||'').replace(/_/g,' ');
+      resultCell = `<span style="font-weight:700;color:${col}">${h(p.actual)}</span> <span class="mu">·</span> <span style="color:${col}">+${p.pts}</span><br><span class="mu" style="font-size:10px">${h(oc)}</span>`;
+    }
+    const why = hasResult && p.scorers
+      ? `<span style="color:var(--text)">${h(p.scorers)}</span><br><span class="mu">${h(p.note)}</span>`
+      : h(p.note);
+    return `<tr>
+      <td>${h(p.home)} <span class="mu">vs</span> ${h(p.away)}</td>
+      <td class="${drawClass}" style="font-weight:700">${h(p.pred)}</td>
+      <td style="white-space:nowrap">${resultCell}</td>
+      <td class="pred2-why">${why}</td>
+    </tr>`;
+  }).join('');
+
+  const predHtml = `
+    <div class="sec">
+      <div class="sec-head"><span class="sec-sep" style="color:var(--neon-yellow)">▌</span><span class="sec-title">Predictions</span><span class="sec-aux">${md2Played}/24 final · MD2 +${md2PredPts} pred pts · rank #1</span></div>
+      <table>
+        <thead><tr><th>Match</th><th>Prediction</th><th>Result</th><th>Reasoning</th></tr></thead>
+        <tbody>${predRows}</tbody>
+      </table>
+    </div>`;
+
+  // ── Reasoning ──
+  const reasoningHtml = `
+    <div class="sec">
+      <div class="sec-head"><span class="sec-sep" style="color:var(--neon-yellow)">▌</span><span class="sec-title">Reasoning Trace</span></div>
+      <div class="reasoning-box">${MD2_REASONING.replace(/<strong>(.*?)<\/strong>/g,'<strong>$1</strong>').replace(/\n/g,'<br>')}</div>
+    </div>`;
+
+  el.innerHTML = xferHtml + pitchHtml + predHtml + reasoningHtml;
+}
+
+window.addEventListener('DOMContentLoaded',init);
+</script>
+</body>
+</html>

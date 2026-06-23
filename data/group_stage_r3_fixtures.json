@@ -1,0 +1,392 @@
+{
+  "tournament": "summer26",
+  "round": "group_stage_r3",
+  "round_display": "Group Stage \u00b7 Matchday 3",
+  "lineup_lock_at": "2026-06-24T19:00:00+00:00",
+  "fixtures": [
+    {
+      "id": "04922006-e590-4bc9-a826-90086fa98a00",
+      "kickoff_at": "2026-06-24T19:00:00+00:00",
+      "prediction_lock_at": "2026-06-24T19:00:00+00:00",
+      "home_team": {
+        "id": "55f5d768-5320-43e0-b302-6023c1dfc641",
+        "name": "Bosnia & Herzegovina",
+        "short_code": "BiH"
+      },
+      "away_team": {
+        "id": "31b5da38-fbca-4753-bbbd-1c5a4db5ce2c",
+        "name": "Qatar",
+        "short_code": "Qatar"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "eef7ef25-762d-46ff-a1ed-baa9b4f1f1d5",
+      "kickoff_at": "2026-06-24T19:00:00+00:00",
+      "prediction_lock_at": "2026-06-24T19:00:00+00:00",
+      "home_team": {
+        "id": "844b489a-76ea-43ff-81ad-399c4fa88221",
+        "name": "Switzerland",
+        "short_code": "Switzerland"
+      },
+      "away_team": {
+        "id": "6b45efd4-0a78-494c-9c52-232fee5566a2",
+        "name": "Canada",
+        "short_code": "Canada"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "fec986bc-374f-4663-a8c1-c27f2b144d60",
+      "kickoff_at": "2026-06-24T22:00:00+00:00",
+      "prediction_lock_at": "2026-06-24T22:00:00+00:00",
+      "home_team": {
+        "id": "3a474be4-cd09-40fb-abe9-f2d155828953",
+        "name": "Scotland",
+        "short_code": "Scotland"
+      },
+      "away_team": {
+        "id": "4bc23b74-a3d7-442f-bfa8-b88fb34fcad2",
+        "name": "Brazil",
+        "short_code": "Brazil"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "9cbb227e-920d-4a59-a669-e7dc3b05824a",
+      "kickoff_at": "2026-06-24T22:00:00+00:00",
+      "prediction_lock_at": "2026-06-24T22:00:00+00:00",
+      "home_team": {
+        "id": "670812a8-eccb-497b-b0ed-007a747efc2f",
+        "name": "Morocco",
+        "short_code": "Morocco"
+      },
+      "away_team": {
+        "id": "d3738da2-e7bd-44a7-a31d-daf387970638",
+        "name": "Haiti",
+        "short_code": "Haiti"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "6d65df57-4f0f-4349-a184-7ac418d9d26c",
+      "kickoff_at": "2026-06-25T01:00:00+00:00",
+      "prediction_lock_at": "2026-06-25T01:00:00+00:00",
+      "home_team": {
+        "id": "c49a84b0-c282-46d3-badb-8c9165a7fc66",
+        "name": "South Africa",
+        "short_code": "South Africa"
+      },
+      "away_team": {
+        "id": "c403a56a-3a03-43f9-9a6c-25f7158018a2",
+        "name": "South Korea",
+        "short_code": "South Korea"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "c4efbd7c-ba1b-4f10-a577-aa899c8c0281",
+      "kickoff_at": "2026-06-25T01:00:00+00:00",
+      "prediction_lock_at": "2026-06-25T01:00:00+00:00",
+      "home_team": {
+        "id": "8dc8d86d-d6e1-47d5-825a-a20f57fd25b9",
+        "name": "Czechia",
+        "short_code": "Czechia"
+      },
+      "away_team": {
+        "id": "8af42f36-d0b5-4535-b834-90e8fc9b8b4a",
+        "name": "Mexico",
+        "short_code": "Mexico"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "71dc09ec-78a1-479f-825a-e73d5df29d68",
+      "kickoff_at": "2026-06-25T20:00:00+00:00",
+      "prediction_lock_at": "2026-06-25T20:00:00+00:00",
+      "home_team": {
+        "id": "b870ac9c-7f14-4cc2-88ce-fa4dac116fed",
+        "name": "Cura\u00e7ao",
+        "short_code": "Cura\u00e7ao"
+      },
+      "away_team": {
+        "id": "3a6e98d6-032a-4377-a6ff-2f597586690d",
+        "name": "C\u00f4te d'Ivoire",
+        "short_code": "C\u00f4te d'Ivoire"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "9da8cd8a-bba4-4a90-95cd-b3598642b253",
+      "kickoff_at": "2026-06-25T20:00:00+00:00",
+      "prediction_lock_at": "2026-06-25T20:00:00+00:00",
+      "home_team": {
+        "id": "165bcab2-ff88-4fb2-9fd3-0849ed475ce5",
+        "name": "Ecuador",
+        "short_code": "Ecuador"
+      },
+      "away_team": {
+        "id": "67dfcb5d-af0d-4dec-8c7b-15b2dc0f2702",
+        "name": "Germany",
+        "short_code": "Germany"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "5d7c4cb9-e1ff-4531-adf0-cd5a845ed085",
+      "kickoff_at": "2026-06-25T23:00:00+00:00",
+      "prediction_lock_at": "2026-06-25T23:00:00+00:00",
+      "home_team": {
+        "id": "4bdc86dd-c8bf-47bb-abe5-33f799a72136",
+        "name": "Japan",
+        "short_code": "Japan"
+      },
+      "away_team": {
+        "id": "f247a2f3-f5a7-4dd6-a013-2b2d985b9dbc",
+        "name": "Sweden",
+        "short_code": "Sweden"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "dff42253-a74e-4d16-84e3-7a750f8fd7ca",
+      "kickoff_at": "2026-06-25T23:00:00+00:00",
+      "prediction_lock_at": "2026-06-25T23:00:00+00:00",
+      "home_team": {
+        "id": "771d955c-77da-4906-9f09-894257c3839e",
+        "name": "Tunisia",
+        "short_code": "Tunisia"
+      },
+      "away_team": {
+        "id": "a1b337e9-d0b6-4809-be55-d9fba4cb23ff",
+        "name": "Netherlands",
+        "short_code": "Netherlands"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "cd881d5c-72c1-4e30-94b0-951448b1f34b",
+      "kickoff_at": "2026-06-26T02:00:00+00:00",
+      "prediction_lock_at": "2026-06-26T02:00:00+00:00",
+      "home_team": {
+        "id": "13719c70-32ca-4fcb-909e-f6de4205a274",
+        "name": "T\u00fcrkiye",
+        "short_code": "T\u00fcrkiye"
+      },
+      "away_team": {
+        "id": "f29d13a6-ba03-42ad-ba47-32b5bc86dfe5",
+        "name": "USA",
+        "short_code": "USA"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "27636622-d61f-4a65-8d58-4aae44b8b8bf",
+      "kickoff_at": "2026-06-26T02:00:00+00:00",
+      "prediction_lock_at": "2026-06-26T02:00:00+00:00",
+      "home_team": {
+        "id": "35891cc4-d975-4bbd-a75c-28e2a6e71212",
+        "name": "Paraguay",
+        "short_code": "Paraguay"
+      },
+      "away_team": {
+        "id": "2c1c26af-e7a0-4d0b-a88c-ed987b68e715",
+        "name": "Australia",
+        "short_code": "Australia"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "ab0a9dd8-b224-4f2e-a241-500b746e92b0",
+      "kickoff_at": "2026-06-26T19:00:00+00:00",
+      "prediction_lock_at": "2026-06-26T19:00:00+00:00",
+      "home_team": {
+        "id": "d52843cd-1c8f-4ef4-ba76-75b8c15c02a1",
+        "name": "Senegal",
+        "short_code": "Senegal"
+      },
+      "away_team": {
+        "id": "21b94aaa-c498-4b7e-a36f-79845ab4dc60",
+        "name": "Iraq",
+        "short_code": "Iraq"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "7a9369db-b414-451f-a2f9-a3438e1da70c",
+      "kickoff_at": "2026-06-26T19:00:00+00:00",
+      "prediction_lock_at": "2026-06-26T19:00:00+00:00",
+      "home_team": {
+        "id": "47a4fded-1345-41f4-9f49-5a5d7e521cff",
+        "name": "Norway",
+        "short_code": "Norway"
+      },
+      "away_team": {
+        "id": "220b5544-7e6c-4d2d-aed1-4d6accd87926",
+        "name": "France",
+        "short_code": "France"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "2a55e4f5-730e-427f-a8ca-bb45bb3b341c",
+      "kickoff_at": "2026-06-27T00:00:00+00:00",
+      "prediction_lock_at": "2026-06-27T00:00:00+00:00",
+      "home_team": {
+        "id": "3f3eefe3-cee9-4714-b3ed-af5dde05131c",
+        "name": "Cabo Verde",
+        "short_code": "Cabo Verde"
+      },
+      "away_team": {
+        "id": "0fcc086d-a3c7-43b5-83a9-c4993516d111",
+        "name": "Saudi Arabia",
+        "short_code": "Saudi Arabia"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "e46e56e6-8c7f-4d9a-b8ab-ef0c9f5cdb5d",
+      "kickoff_at": "2026-06-27T00:00:00+00:00",
+      "prediction_lock_at": "2026-06-27T00:00:00+00:00",
+      "home_team": {
+        "id": "3184fab4-dec8-4c9c-9852-d4e38e55fa24",
+        "name": "Uruguay",
+        "short_code": "Uruguay"
+      },
+      "away_team": {
+        "id": "ed635d3a-8e46-4bb9-8cda-b14bf0e1e48d",
+        "name": "Spain",
+        "short_code": "Spain"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "0d4f9f7e-93dd-4722-aa8c-874ab65ba04c",
+      "kickoff_at": "2026-06-27T03:00:00+00:00",
+      "prediction_lock_at": "2026-06-27T03:00:00+00:00",
+      "home_team": {
+        "id": "c0e27f74-89dd-4c11-aad9-be4fe83e9954",
+        "name": "Egypt",
+        "short_code": "Egypt"
+      },
+      "away_team": {
+        "id": "08b867fc-3a17-4a24-b864-27f5d6c75ebb",
+        "name": "Iran",
+        "short_code": "Iran"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "f1074b01-a331-4cfc-82b6-c0cc0f5fa008",
+      "kickoff_at": "2026-06-27T03:00:00+00:00",
+      "prediction_lock_at": "2026-06-27T03:00:00+00:00",
+      "home_team": {
+        "id": "f9aab8dd-dfc3-47a6-8cf8-3d8a301df0d3",
+        "name": "New Zealand",
+        "short_code": "New Zealand"
+      },
+      "away_team": {
+        "id": "1fcd924f-1eeb-4827-a493-1b861afd342b",
+        "name": "Belgium",
+        "short_code": "Belgium"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "a26fc411-b589-456b-b400-b0dda83f08e6",
+      "kickoff_at": "2026-06-27T21:00:00+00:00",
+      "prediction_lock_at": "2026-06-27T21:00:00+00:00",
+      "home_team": {
+        "id": "e323402d-5336-4597-9eeb-27504eb19b8c",
+        "name": "Panama",
+        "short_code": "Panama"
+      },
+      "away_team": {
+        "id": "55e87d27-d4f8-459b-8667-afbee930f78c",
+        "name": "England",
+        "short_code": "England"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "f87635a9-8399-401e-a916-bdf7ebde40da",
+      "kickoff_at": "2026-06-27T21:00:00+00:00",
+      "prediction_lock_at": "2026-06-27T21:00:00+00:00",
+      "home_team": {
+        "id": "0f51a672-6a6b-49d0-8a99-3128f0869268",
+        "name": "Croatia",
+        "short_code": "Croatia"
+      },
+      "away_team": {
+        "id": "9d3943a2-0f64-4ae3-93b3-10ec8b736b4c",
+        "name": "Ghana",
+        "short_code": "Ghana"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "66b5b245-b3ce-4f96-8bdb-4f2745b56b56",
+      "kickoff_at": "2026-06-27T23:30:00+00:00",
+      "prediction_lock_at": "2026-06-27T23:30:00+00:00",
+      "home_team": {
+        "id": "49fe46d7-7748-4c91-a3f1-caa37097e02d",
+        "name": "Colombia",
+        "short_code": "Colombia"
+      },
+      "away_team": {
+        "id": "31a67b60-57c6-4420-ad20-df4cd3be497c",
+        "name": "Portugal",
+        "short_code": "Portugal"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "17e154de-b99f-40ea-8e10-cd9e251022bc",
+      "kickoff_at": "2026-06-27T23:30:00+00:00",
+      "prediction_lock_at": "2026-06-27T23:30:00+00:00",
+      "home_team": {
+        "id": "b10f0cce-7f93-4653-a010-5bf2e4d08b69",
+        "name": "DR Congo",
+        "short_code": "DR Congo"
+      },
+      "away_team": {
+        "id": "5597e041-d8f1-4e5b-a0b2-82042818000e",
+        "name": "Uzbekistan",
+        "short_code": "Uzbekistan"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "8d157f18-185f-42ea-90b8-6d4f34d8ea76",
+      "kickoff_at": "2026-06-28T02:00:00+00:00",
+      "prediction_lock_at": "2026-06-28T02:00:00+00:00",
+      "home_team": {
+        "id": "3309db04-9711-49b2-89ae-2c306a2a2625",
+        "name": "Jordan",
+        "short_code": "Jordan"
+      },
+      "away_team": {
+        "id": "6b2a1582-5810-4adc-8712-53335deffefb",
+        "name": "Argentina",
+        "short_code": "Argentina"
+      },
+      "status": "scheduled"
+    },
+    {
+      "id": "be1b0898-ab4a-45e9-ae90-ca51ab1bb4c2",
+      "kickoff_at": "2026-06-28T02:00:00+00:00",
+      "prediction_lock_at": "2026-06-28T02:00:00+00:00",
+      "home_team": {
+        "id": "e036db34-6205-4a3f-8a79-384017245f18",
+        "name": "Algeria",
+        "short_code": "Algeria"
+      },
+      "away_team": {
+        "id": "621a2a15-fc69-4b87-ab9b-a4e762f55fde",
+        "name": "Austria",
+        "short_code": "Austria"
+      },
+      "status": "scheduled"
+    }
+  ]
+}

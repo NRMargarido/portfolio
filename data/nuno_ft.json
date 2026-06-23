@@ -1,0 +1,215 @@
+{
+  "team_name": "NUNO_FT",
+  "platform": "play.fifa.com/fantasy",
+  "round": "Matchday 2 — WILDCARD · LIVE (Vinícius © SCORED + CS, double banked — armband HELD, ladder closed)",
+  "generated_at": "2026-06-18T20:15:00+00:00",
+  "deadline_at": "2026-06-18T16:00:00+00:00",
+  "status": "locked",
+  "formation": "4-5-1",
+  "budget_total": 99.9,
+  "budget_used_est": 99.9,
+  "chip": "WILDCARD — MD2 (used)",
+  "squad": [
+    {
+      "name": "Hernán Galíndez",
+      "pos": "GK",
+      "country": "Ecuador",
+      "price": 4.2,
+      "confirmed_price": true,
+      "slot": "xi",
+      "kickoff_at": "2026-06-21T00:00:00+00:00",
+      "opponent": "Curaçao",
+      "note": "✅ Ecuador 0-0 Curaçao · CLEAN SHEET banked (GK)"
+    },
+    {
+      "name": "Achraf Hakimi",
+      "pos": "DEF",
+      "country": "Morocco",
+      "price": 6.0,
+      "confirmed_price": true,
+      "slot": "xi",
+      "kickoff_at": "2026-06-19T22:00:00+00:00",
+      "opponent": "Scotland",
+      "note": "✅ Scotland 0-1 Morocco · 90' · CLEAN SHEET banked (DEF) · your add"
+    },
+    {
+      "name": "Marc Cucurella",
+      "pos": "DEF",
+      "country": "Spain",
+      "price": 5.1,
+      "confirmed_price": true,
+      "slot": "xi",
+      "kickoff_at": "2026-06-21T16:00:00+00:00",
+      "opponent": "Saudi Arabia",
+      "note": "✅ Spain 4-0 Saudi · CLEAN SHEET banked (DEF)"
+    },
+    {
+      "name": "Luc De Fougerolles",
+      "pos": "DEF",
+      "country": "Canada",
+      "price": 3.5,
+      "confirmed_price": true,
+      "slot": "xi",
+      "kickoff_at": "2026-06-18T22:00:00+00:00",
+      "opponent": "Qatar",
+      "note": "✅ PLAYED — 9 pts banked as placeholder captain. Armband moved forward to Vinícius."
+    },
+    {
+      "name": "Piero Hincapié",
+      "pos": "DEF",
+      "country": "Ecuador",
+      "price": 4.7,
+      "confirmed_price": true,
+      "slot": "xi",
+      "kickoff_at": "2026-06-21T00:00:00+00:00",
+      "opponent": "Curaçao",
+      "note": "✅ Ecuador 0-0 Curaçao · CLEAN SHEET banked (DEF)"
+    },
+    {
+      "name": "Nakamura",
+      "pos": "MID",
+      "country": "Japan",
+      "price": 5.5,
+      "confirmed_price": true,
+      "slot": "xi",
+      "kickoff_at": "2026-06-21T04:00:00+00:00",
+      "opponent": "Tunisia",
+      "note": "✅ Japan 4-0 Tunisia · big away win (your value add)"
+    },
+    {
+      "name": "Michael Olise",
+      "pos": "MID",
+      "country": "France",
+      "price": 9.5,
+      "confirmed_price": true,
+      "slot": "xi",
+      "kickoff_at": "2026-06-22T21:00:00+00:00",
+      "opponent": "Iraq",
+      "note": "✅ France 3-0 Iraq · CLEAN SHEET banked (MID) · biggest mismatch of MD2"
+    },
+    {
+      "name": "Fabián Ruiz",
+      "pos": "MID",
+      "country": "Spain",
+      "price": 6.8,
+      "confirmed_price": true,
+      "slot": "xi",
+      "kickoff_at": "2026-06-21T16:00:00+00:00",
+      "opponent": "Saudi Arabia",
+      "note": "✅ Spain 4-0 Saudi · CLEAN SHEET banked (MID)"
+    },
+    {
+      "name": "Vinícius Júnior",
+      "pos": "MID",
+      "country": "Brazil",
+      "price": 10.0,
+      "confirmed_price": true,
+      "slot": "xi",
+      "chain": 1,
+      "kickoff_at": "2026-06-20T00:30:00+00:00",
+      "opponent": "Haiti",
+      "note": "🅒 CAPTAINED · ✅ SCORED 45+3' · Brazil 3-0 Haiti (CS) · goal+CS DOUBLED · next live rung Mbappé (today)"
+    },
+    {
+      "name": "Raphinha",
+      "pos": "MID",
+      "country": "Brazil",
+      "price": 8.2,
+      "confirmed_price": true,
+      "slot": "xi",
+      "kickoff_at": "2026-06-20T00:30:00+00:00",
+      "opponent": "Haiti",
+      "note": "✅ Brazil 3-0 Haiti · subbed off 40' (limited return) · CS banked"
+    },
+    {
+      "name": "Enner Valencia",
+      "pos": "FWD",
+      "country": "Ecuador",
+      "price": 5.9,
+      "confirmed_price": true,
+      "slot": "xi",
+      "kickoff_at": "2026-06-21T00:00:00+00:00",
+      "opponent": "Curaçao",
+      "note": "Ecuador 0-0 Curaçao · blanked (no goal) · lone striker"
+    },
+    {
+      "name": "Jordan Pickford",
+      "pos": "GK",
+      "country": "England",
+      "price": 4.8,
+      "confirmed_price": true,
+      "slot": "bench",
+      "bench_order": 1,
+      "kickoff_at": "2026-06-23T20:00:00+00:00",
+      "opponent": "Ghana",
+      "note": "GK rotation · START MD3 vs Panama (England CS)"
+    },
+    {
+      "name": "O'Reilly",
+      "pos": "DEF",
+      "country": "England",
+      "price": 4.7,
+      "confirmed_price": true,
+      "slot": "bench",
+      "bench_order": 2,
+      "kickoff_at": "2026-06-23T20:00:00+00:00",
+      "opponent": "Ghana",
+      "note": "Your pick · ENG CS holds into MD3 vs Panama (elite)"
+    },
+    {
+      "name": "Kylian Mbappé",
+      "pos": "FWD",
+      "country": "France",
+      "price": 10.5,
+      "confirmed_price": true,
+      "slot": "bench",
+      "bench_order": 3,
+      "chain": 2,
+      "kickoff_at": "2026-06-22T21:00:00+00:00",
+      "opponent": "Iraq",
+      "note": "✅ France 3-0 Iraq (CS) · rung 2 stood down (Vinícius © scored) · armband stayed on Vinícius"
+    },
+    {
+      "name": "Harry Kane",
+      "pos": "FWD",
+      "country": "England",
+      "price": 10.5,
+      "confirmed_price": true,
+      "slot": "bench",
+      "bench_order": 4,
+      "chain": 3,
+      "kickoff_at": "2026-06-23T20:00:00+00:00",
+      "opponent": "Ghana",
+      "note": "Benched for LIVE-SUB · plays Jun 23 (latest) · captain rung 3 · ELITE MD3 vs Panama"
+    }
+  ],
+  "captain_chain": [
+    {
+      "rung": 1,
+      "name": "Vinícius Júnior",
+      "fixture": "Brazil vs Haiti",
+      "kickoff_at": "2026-06-20T00:30:00+00:00"
+    },
+    {
+      "rung": 2,
+      "name": "Kylian Mbappé",
+      "fixture": "France vs Iraq",
+      "kickoff_at": "2026-06-22T21:00:00+00:00"
+    },
+    {
+      "rung": 3,
+      "name": "Harry Kane",
+      "fixture": "England vs Ghana",
+      "kickoff_at": "2026-06-23T20:00:00+00:00"
+    }
+  ],
+  "chain_rule": "LIVE-SWITCH ARMBAND — RESOLVED. ✅ De Fougerolles wore it first as a placeholder, banked 9 pts (Canada 6-0 Qatar, Jun 18). Armband then MOVED to Vinícius (Brazil 3-0 Haiti, Jun 20) — who SCORED at 45+3' and kept a clean sheet, so his captain double is banked (~18 pts). Ladder now CLOSED: moving the armband to Mbappé (today) or Kane (Jun 23) would forfeit that double, and Mbappé needs ~2 goals to beat it — not worth it. Armband stays on Vinícius. Mbappé + Kane remain on the bench purely as LIVE-SUB cover for any early XI blanker.",
+  "plans": [
+    "WILDCARD MD2 LOCKED (your final submission). Targets met: 2× Brazil (Vinícius + Raphinha) and 3× Ecuador (Galíndez + Hincapié + Valencia).",
+    "YOUR EDITS vs my draft: added Hakimi (set-piece DEF vs Scotland) and Nakamura (Japan value) into the XI; benched Kane + Mbappé as LIVE-SUB options (both play late). Dropped Robinson + McKennie.",
+    "LIVE-SUB LADDER: start the early-fixture XI, then sub Mbappé (Jun 22) / Kane (Jun 23) in for any early blanker. Captain ladder Vinícius → Mbappé → Kane.",
+    "MD3 ECUADOR EXIT (all 3 face Germany): bench Galíndez → start Pickford vs Panama (free swap). Use the 2 free transfers on Hincapié + Valencia. Kane + Konsa + Pickford all hold for MD3 (vs Panama, elite).",
+    "MD3 CAPTAIN: Kane vs Panama or Vinícius vs Scotland."
+  ],
+  "fallbacks": "CONFIRMED by you (Jun 18): bench DEF = O'Reilly; Japan MID = Nakamura; armband = live-switch starting from De Fougerolles (first to play) → Vinícius → Mbappé → Kane; Kane + Mbappé both benched as live-sub options, Valencia lone striker (4-5-1). All prices are your actual cards; squad value = $99.9m (under the $100m budget)."
+}

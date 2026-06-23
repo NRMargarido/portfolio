@@ -1,0 +1,105 @@
+{
+  "last_updated": "2026-06-23T07:42:46.934060+00:00",
+  "rounds": [
+    {
+      "label": "group_stage_r2",
+      "display": "Group Stage \u00b7 Matchday 2",
+      "tournament": "summer26",
+      "fetched_at": "2026-06-23T07:42:46.934060+00:00",
+      "has_lineup": true,
+      "has_predictions": true,
+      "prediction_pts": 23,
+      "fantasy_pts": 34
+    },
+    {
+      "label": "group_stage_r1",
+      "display": "Group Stage \u00b7 Matchday 1",
+      "tournament": "summer26",
+      "fetched_at": "2026-06-18T14:07:27.139633+00:00",
+      "has_lineup": true,
+      "has_predictions": true,
+      "prediction_pts": 35,
+      "fantasy_pts": 38
+    },
+    {
+      "label": "friendlies_2026_06_09",
+      "display": "Friendlies Jun 09",
+      "tournament": "friendlies_2026",
+      "fetched_at": "2026-06-08T20:22:27.966427+00:00",
+      "has_lineup": true,
+      "has_predictions": true,
+      "prediction_pts": 0,
+      "fantasy_pts": 0
+    },
+    {
+      "label": "friendlies_2026_06_08",
+      "display": "Friendlies Jun 08",
+      "tournament": "friendlies_2026",
+      "fetched_at": "2026-06-08T17:19:51.805883+00:00",
+      "has_lineup": true,
+      "has_predictions": true,
+      "prediction_pts": 0,
+      "fantasy_pts": 0
+    },
+    {
+      "label": "friendlies_2026_06_07",
+      "display": "Friendlies Jun 07",
+      "tournament": "friendlies_2026",
+      "fetched_at": "2026-06-08T17:20:16.542240+00:00",
+      "has_lineup": false,
+      "has_predictions": true,
+      "prediction_pts": -18,
+      "fantasy_pts": 0
+    },
+    {
+      "label": "friendlies_2026_06_06",
+      "display": "Friendlies Jun 06",
+      "tournament": "friendlies_2026",
+      "fetched_at": "2026-06-05T23:45:32.405337+00:00",
+      "has_lineup": true,
+      "has_predictions": true,
+      "prediction_pts": 0,
+      "fantasy_pts": 0
+    },
+    {
+      "label": "friendlies_2026_06_05",
+      "display": "Friendlies Jun 05",
+      "tournament": "friendlies_2026",
+      "fetched_at": "2026-06-05T23:45:20.804211+00:00",
+      "has_lineup": true,
+      "has_predictions": true,
+      "prediction_pts": 14,
+      "fantasy_pts": 13
+    },
+    {
+      "label": "friendlies_2026_06_04",
+      "display": "Friendlies Jun 04",
+      "tournament": "friendlies_2026",
+      "fetched_at": "2026-06-04T23:35:39.283207+00:00",
+      "has_lineup": true,
+      "has_predictions": true,
+      "prediction_pts": 9,
+      "fantasy_pts": 19
+    },
+    {
+      "label": "friendlies_2026_06_03",
+      "display": "Friendlies Jun 03",
+      "tournament": "friendlies_2026",
+      "fetched_at": "2026-06-04T00:44:17.202101+00:00",
+      "has_lineup": true,
+      "has_predictions": true,
+      "prediction_pts": 10,
+      "fantasy_pts": 14
+    },
+    {
+      "label": "friendlies_2026_06_02",
+      "display": "Friendlies Jun 02",
+      "tournament": "friendlies_2026",
+      "fetched_at": "2026-06-02T23:24:45.523456+00:00",
+      "has_lineup": false,
+      "has_predictions": true,
+      "prediction_pts": 5,
+      "fantasy_pts": 0
+    }
+  ]
+}

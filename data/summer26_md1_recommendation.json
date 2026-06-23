@@ -1,0 +1,410 @@
+{
+  "generated_at": "2026-06-09T22:00:00+00:00",
+  "tournament": "summer26",
+  "round": "group_stage_r1",
+  "round_display": "Group Stage · Matchday 1",
+  "lineup_lock_at": "2026-06-11T19:00:00+00:00",
+  "status": "recommended_not_submitted",
+  "lineup": {
+    "formation": "3-4-3",
+    "budget_used": 118,
+    "budget_total": 120,
+    "captain_id": "4d95dcaf-e10c-4197-83c4-1479bde21379",
+    "captain_name": "Florian Wirtz",
+    "vice_captain_id": "98fe18e3-d0ec-4991-9c9b-9c63d93184d3",
+    "vice_captain_name": "Erling Haaland",
+    "starters": [
+      {
+        "id": "1e7c1aab-ec3c-442b-8fb5-5a663b7a809d",
+        "display_name": "Gregor Kobel",
+        "position": "GK",
+        "country": "Switzerland",
+        "squad_value": 8,
+        "fixture": "Switzerland vs Qatar",
+        "fixture_date": "2026-06-13",
+        "captain": false,
+        "vice_captain": false
+      },
+      {
+        "id": "384b4ec1-0247-4ac1-aef9-6b1286eef901",
+        "display_name": "Rúben Dias",
+        "position": "DEF",
+        "country": "Portugal",
+        "squad_value": 9,
+        "fixture": "Portugal vs DR Congo",
+        "fixture_date": "2026-06-17",
+        "captain": false,
+        "vice_captain": false
+      },
+      {
+        "id": "dea28f0c-ecc9-4049-ab2c-9b33c5822fc3",
+        "display_name": "Nuno Mendes",
+        "position": "DEF",
+        "country": "Portugal",
+        "squad_value": 9,
+        "fixture": "Portugal vs DR Congo",
+        "fixture_date": "2026-06-17",
+        "captain": false,
+        "vice_captain": false
+      },
+      {
+        "id": "4d95dcaf-e10c-4197-83c4-1479bde21379",
+        "display_name": "Florian Wirtz",
+        "position": "MID",
+        "country": "Germany",
+        "squad_value": 9,
+        "fixture": "Germany vs Curaçao",
+        "fixture_date": "2026-06-14",
+        "captain": true,
+        "vice_captain": false
+      },
+      {
+        "id": "6791942d-32f2-4f2b-abd1-c6befa52e85e",
+        "display_name": "Jamal Musiala",
+        "position": "MID",
+        "country": "Germany",
+        "squad_value": 9,
+        "fixture": "Germany vs Curaçao",
+        "fixture_date": "2026-06-14",
+        "captain": false,
+        "vice_captain": false
+      },
+      {
+        "id": "98fe18e3-d0ec-4991-9c9b-9c63d93184d3",
+        "display_name": "Erling Haaland",
+        "position": "FWD",
+        "country": "Norway",
+        "squad_value": 10,
+        "fixture": "Iraq vs Norway",
+        "fixture_date": "2026-06-16",
+        "captain": false,
+        "vice_captain": true
+      },
+      {
+        "id": "a312538e-ce73-4db7-9389-3f0a85eb8b76",
+        "display_name": "Mikel Oyarzabal",
+        "position": "FWD",
+        "country": "Spain",
+        "squad_value": 8,
+        "fixture": "Spain vs Cabo Verde",
+        "fixture_date": "2026-06-15",
+        "captain": false,
+        "vice_captain": false
+      },
+      {
+        "id": "258a2577-989c-4cfa-bc84-8845bc1c928e",
+        "display_name": "Lionel Messi",
+        "position": "FWD",
+        "country": "Argentina",
+        "squad_value": 7,
+        "fixture": "Argentina vs Algeria",
+        "fixture_date": "2026-06-17",
+        "captain": false,
+        "vice_captain": false
+      },
+      {
+        "id": "de19edbc-61c1-41bd-9b95-4db5edced66f",
+        "display_name": "Michael Olise",
+        "position": "MID",
+        "country": "France",
+        "squad_value": 10,
+        "fixture": "France vs Senegal",
+        "fixture_date": "2026-06-16",
+        "captain": false,
+        "vice_captain": false
+      },
+      {
+        "id": "0a08914f-3c46-4444-a912-0dc46e2469f8",
+        "display_name": "Bruno Fernandes",
+        "position": "MID",
+        "country": "Portugal",
+        "squad_value": 8,
+        "fixture": "Portugal vs DR Congo",
+        "fixture_date": "2026-06-17",
+        "captain": false,
+        "vice_captain": false
+      },
+      {
+        "id": "a580ae0c-563c-4819-a614-873425d6cdd1",
+        "display_name": "David Raum",
+        "position": "DEF",
+        "country": "Germany",
+        "squad_value": 8,
+        "fixture": "Germany vs Curaçao",
+        "fixture_date": "2026-06-14",
+        "captain": false,
+        "vice_captain": false
+      }
+    ],
+    "bench": [
+      {
+        "id": "53d0f2e3-1f96-4e2a-a5cc-d46af07f9e31",
+        "display_name": "Nino Fancito",
+        "position": "GK",
+        "country": "Curacao",
+        "squad_value": 2,
+        "bench_order": 1
+      },
+      {
+        "id": "46668d4f-46e2-491f-b58f-fcc74ec4d264",
+        "display_name": "Julián Araujo",
+        "position": "DEF",
+        "country": "Mexico",
+        "squad_value": 7,
+        "bench_order": 2
+      },
+      {
+        "id": "b10f64a5-86f2-4225-904a-4d84c11322fb",
+        "display_name": "César Montes",
+        "position": "DEF",
+        "country": "Mexico",
+        "squad_value": 7,
+        "bench_order": 3
+      },
+      {
+        "id": "6454d1dd-3643-4757-8ddf-b45f74385fef",
+        "display_name": "Alexis Vega",
+        "position": "MID",
+        "country": "Mexico",
+        "squad_value": 7,
+        "bench_order": 4
+      }
+    ]
+  },
+  "predictions": [
+    {
+      "home": "Mexico",
+      "away": "South Africa",
+      "home_goals": 2,
+      "away_goals": 0,
+      "kickoff": "2026-06-11T19:00:00Z",
+      "confidence": "high"
+    },
+    {
+      "home": "South Korea",
+      "away": "Czechia",
+      "home_goals": 2,
+      "away_goals": 1,
+      "kickoff": "2026-06-12T02:00:00Z",
+      "confidence": "medium"
+    },
+    {
+      "home": "Canada",
+      "away": "Bosnia & Herzegovina",
+      "home_goals": 1,
+      "away_goals": 0,
+      "kickoff": "2026-06-12T19:00:00Z",
+      "confidence": "medium"
+    },
+    {
+      "home": "USA",
+      "away": "Paraguay",
+      "home_goals": 2,
+      "away_goals": 1,
+      "kickoff": "2026-06-13T01:00:00Z",
+      "confidence": "medium"
+    },
+    {
+      "home": "Qatar",
+      "away": "Switzerland",
+      "home_goals": 0,
+      "away_goals": 3,
+      "kickoff": "2026-06-13T19:00:00Z",
+      "confidence": "high"
+    },
+    {
+      "home": "Brazil",
+      "away": "Morocco",
+      "home_goals": 1,
+      "away_goals": 0,
+      "kickoff": "2026-06-13T22:00:00Z",
+      "confidence": "low"
+    },
+    {
+      "home": "Haiti",
+      "away": "Scotland",
+      "home_goals": 0,
+      "away_goals": 3,
+      "kickoff": "2026-06-14T01:00:00Z",
+      "confidence": "high"
+    },
+    {
+      "home": "Australia",
+      "away": "Türkiye",
+      "home_goals": 1,
+      "away_goals": 2,
+      "kickoff": "2026-06-14T04:00:00Z",
+      "confidence": "medium"
+    },
+    {
+      "home": "Germany",
+      "away": "Curaçao",
+      "home_goals": 4,
+      "away_goals": 0,
+      "kickoff": "2026-06-14T17:00:00Z",
+      "confidence": "very_high"
+    },
+    {
+      "home": "Netherlands",
+      "away": "Japan",
+      "home_goals": 2,
+      "away_goals": 1,
+      "kickoff": "2026-06-14T20:00:00Z",
+      "confidence": "medium"
+    },
+    {
+      "home": "Côte d'Ivoire",
+      "away": "Ecuador",
+      "home_goals": 1,
+      "away_goals": 2,
+      "kickoff": "2026-06-14T23:00:00Z",
+      "confidence": "low"
+    },
+    {
+      "home": "Sweden",
+      "away": "Tunisia",
+      "home_goals": 2,
+      "away_goals": 0,
+      "kickoff": "2026-06-15T16:00:00Z",
+      "confidence": "high"
+    },
+    {
+      "home": "Spain",
+      "away": "Cabo Verde",
+      "home_goals": 4,
+      "away_goals": 0,
+      "kickoff": "2026-06-15T19:00:00Z",
+      "confidence": "very_high"
+    },
+    {
+      "home": "Belgium",
+      "away": "Egypt",
+      "home_goals": 2,
+      "away_goals": 1,
+      "kickoff": "2026-06-15T22:00:00Z",
+      "confidence": "medium"
+    },
+    {
+      "home": "Saudi Arabia",
+      "away": "Uruguay",
+      "home_goals": 0,
+      "away_goals": 2,
+      "kickoff": "2026-06-16T01:00:00Z",
+      "confidence": "high"
+    },
+    {
+      "home": "Iran",
+      "away": "New Zealand",
+      "home_goals": 2,
+      "away_goals": 0,
+      "kickoff": "2026-06-16T19:00:00Z",
+      "confidence": "medium"
+    },
+    {
+      "home": "France",
+      "away": "Senegal",
+      "home_goals": 2,
+      "away_goals": 0,
+      "kickoff": "2026-06-16T22:00:00Z",
+      "confidence": "high"
+    },
+    {
+      "home": "Iraq",
+      "away": "Norway",
+      "home_goals": 0,
+      "away_goals": 3,
+      "kickoff": "2026-06-17T01:00:00Z",
+      "confidence": "very_high"
+    },
+    {
+      "home": "Argentina",
+      "away": "Algeria",
+      "home_goals": 3,
+      "away_goals": 0,
+      "kickoff": "2026-06-17T04:00:00Z",
+      "confidence": "high"
+    },
+    {
+      "home": "Austria",
+      "away": "Jordan",
+      "home_goals": 3,
+      "away_goals": 0,
+      "kickoff": "2026-06-17T05:00:00Z",
+      "confidence": "high"
+    },
+    {
+      "home": "Portugal",
+      "away": "DR Congo",
+      "home_goals": 3,
+      "away_goals": 0,
+      "kickoff": "2026-06-17T17:00:00Z",
+      "confidence": "high"
+    },
+    {
+      "home": "England",
+      "away": "Croatia",
+      "home_goals": 2,
+      "away_goals": 0,
+      "kickoff": "2026-06-17T20:00:00Z",
+      "confidence": "medium"
+    },
+    {
+      "home": "Ghana",
+      "away": "Panama",
+      "home_goals": 1,
+      "away_goals": 0,
+      "kickoff": "2026-06-17T23:00:00Z",
+      "confidence": "medium"
+    },
+    {
+      "home": "Uzbekistan",
+      "away": "Colombia",
+      "home_goals": 0,
+      "away_goals": 3,
+      "kickoff": "2026-06-18T02:00:00Z",
+      "confidence": "high"
+    }
+  ],
+  "key_injury_intel": {
+    "confirmed_out": [
+      "Lamine Yamal (ESP) — hamstring, max 15min MD1 per Barcelona; skip for MD1",
+      "Jurriën Timber (NED) — groin, replaced by Geertruida",
+      "Xavi Simons (NED) — ACL",
+      "Matthijs de Ligt (NED) — back surgery",
+      "Jerdy Schouten (NED) — ACL",
+      "Rodrygo (BRA) — ACL + meniscus",
+      "Éder Militão (BRA) — hamstring",
+      "Estêvão (BRA) — hamstring",
+      "Kaoru Mitoma (JPN) — hamstring",
+      "Takumi Minamino (JPN) — ACL",
+      "Dejan Kulusevski (SWE) — long-term injury",
+      "Lennart Karl (GER) — thigh tear, replaced by Ouédraogo",
+      "Serge Gnabry (GER) — adductor",
+      "Hugo Ekitiké (FRA) — Achilles",
+      "Fermín López (ESP) — metatarsal fracture",
+      "Mohammed Kudus (GHA) — hamstring + complication",
+      "Billy Gilmour (SCO) — knee",
+      "Christoph Baumgartner (AUT) — thigh"
+    ],
+    "doubtful_md1": [
+      "Martin Ødegaard (NOR) — fitness/sharpness concern; skipped in lineup",
+      "Neymar (BRA) — calf grade-2; targeting MD2",
+      "Alphonso Davies (CAN) — hamstring; targeting MD2",
+      "Julio Enciso (PAR) — hamstring+quad; MRI pending",
+      "Ez Abde (MAR) — knee from June 8 warm-up; MRI pending",
+      "Noussair Mazraoui (MAR) — discomfort from June 8; MRI pending",
+      "Ronald Araújo (URU) — muscle strain; targeting MD2",
+      "Cristian Romero (ARG) — partial MCL; doubtful"
+    ],
+    "expected_fit_despite_concern": [
+      "Lionel Messi (ARG) — played June 9 vs Iceland; confirmed for Algeria June 17",
+      "Bukayo Saka (ENG) — managed Achilles; expected to start vs Croatia",
+      "Achraf Hakimi (MAR) — hamstring; played 120min in CL final, confirmed fit",
+      "Luka Modrić (CRO) — fractured cheekbone; recovered, fit",
+      "Joško Gvardiol (CRO) — shin surgery; recovered, fit",
+      "Arda Güler (TUR) — hamstring; tracking toward recovery",
+      "Reece James (ENG) — hamstring; managed, expected available",
+      "David Alaba (AUT) — knee; returned to full training, confirmed"
+    ]
+  }
+}
