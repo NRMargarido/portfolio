@@ -486,10 +486,10 @@ const SKILLS=[
   {group:"ai",pt:"Vibecoding",en:"Vibecoding",tags:["developer","prototype","product","tech","ai","build"]},
   {group:"ai",pt:"Agentes de IA",en:"AI agents",tags:["ai","automation","innovation","tech"]},
   {group:"ai",pt:"Automação e no-code",en:"Automation & no-code",tags:["automation","operations","efficiency","ops","process","nocode"]},
-  {group:"tools",pt:"Adobe Premiere e Photoshop",en:"Adobe Premiere & Photoshop",tags:["creative","design","media","video","photo","editing"]},
-  {group:"tools",pt:"Canva",en:"Canva",tags:["creative","design","media","social"]},
-  {group:"tools",pt:"WordPress",en:"WordPress",tags:["web","cms","content"]},
-  {group:"tools",pt:"MS Office",en:"MS Office",tags:["admin","operations"]},
+  {group:"tools",pt:"Adobe Premiere e Photoshop",en:"Adobe Premiere & Photoshop",tags:["creative","design","media","video","photo","editing","photoshop","premiere","lightroom","indesign","audition","adobe"]},
+  {group:"tools",pt:"Canva",en:"Canva",tags:["creative","design","media","social","canva"]},
+  {group:"tools",pt:"WordPress",en:"WordPress",tags:["web","cms","content","wordpress","wp"]},
+  {group:"tools",pt:"MS Office",en:"MS Office",tags:["admin","operations","office","word","excel","powerpoint","ppt","outlook","msoffice"]},
   {group:"tools",pt:"Português, Inglês, Espanhol",en:"Portuguese, English, Spanish",tags:["communication","international","languages"]}
 ];
 const ROLE={
@@ -552,7 +552,9 @@ function applyFilter(){
   if(!q){ sec.classList.remove('filtering','empty'); lis.forEach(li=>li.classList.remove('match')); document.getElementById('noMatch').classList.remove('show'); return; }
   const targets=localMatch(q); let any=false;
   lis.forEach(li=>{
-    const hit=(li.dataset.tags||'').split(' ').some(t=>targets.has(t));
+    const tags=(li.dataset.tags||'').split(' ');
+    const words=norm(li.textContent).split(/\s+/).filter(Boolean);
+    const hit=tags.some(t=>targets.has(t)) || words.some(w=>targets.has(w));
     li.classList.toggle('match',hit); if(hit) any=true;
   });
   if(!REDUCE){ grid.classList.add('refreshing'); setTimeout(()=>grid.classList.remove('refreshing'),180); }
