@@ -182,8 +182,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
   <nav class="sidenav rise d4" aria-label="Sections">
     <a href="#experience" data-sec="experience" data-i18n="nav_xp"></a>
-    <a href="#projects" data-sec="projects" data-i18n="nav_proj"></a>
     <a href="#skills" data-sec="skills" data-i18n="nav_sk"></a>
+    <a href="#projects" data-sec="projects" data-i18n="nav_proj"></a>
     <a href="#about" data-sec="about" data-i18n="nav_about"></a>
     <a href="#contact" data-sec="contact" data-i18n="nav_ct"></a>
   </nav>
@@ -233,6 +233,29 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
       </div>
     </section>
 
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="wrap reveal">
+        <p class="kicker" data-i18n="sk_k"></p>
+        <h2 class="h2" data-i18n="sk_h" style="margin-bottom:44px"></h2>
+
+        <div class="skills-grid" id="skillsGrid">
+          <div class="sk" data-group="communication"><h3 data-i18n="sk_g1_h"></h3><ul></ul></div>
+          <div class="sk" data-group="business"><h3 data-i18n="sk_g2_h"></h3><ul></ul></div>
+          <div class="sk" data-group="ai"><h3 data-i18n="sk_g3_h"></h3><ul></ul></div>
+          <div class="sk" data-group="tools"><h3 data-i18n="sk_g4_h"></h3><ul></ul></div>
+        </div>
+        <div class="matchbox" id="matchbox">
+          <p class="mlabel" data-i18n="comp_prompt"></p>
+          <div class="matchfield">
+            <input id="matchInput" type="text" autocomplete="off" aria-label="What are you looking for?" />
+            <button class="clear" id="matchClear" type="button" aria-label="Clear">&times;</button>
+          </div>
+        </div>
+        <p class="nomatch" id="noMatch" data-i18n="comp_nomatch"></p>
+      </div>
+    </section>
+
     <!-- PROJECTS -->
     <section class="section" id="projects">
       <div class="wrap reveal">
@@ -258,29 +281,6 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
             <div class="tags" data-i18n="proj3_tags"></div>
           </article>
         </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-      <div class="wrap reveal">
-        <p class="kicker" data-i18n="sk_k"></p>
-        <h2 class="h2" data-i18n="sk_h" style="margin-bottom:44px"></h2>
-
-        <div class="skills-grid" id="skillsGrid">
-          <div class="sk" data-group="communication"><h3 data-i18n="sk_g1_h"></h3><ul></ul></div>
-          <div class="sk" data-group="business"><h3 data-i18n="sk_g2_h"></h3><ul></ul></div>
-          <div class="sk" data-group="ai"><h3 data-i18n="sk_g3_h"></h3><ul></ul></div>
-          <div class="sk" data-group="tools"><h3 data-i18n="sk_g4_h"></h3><ul></ul></div>
-        </div>
-        <div class="matchbox" id="matchbox">
-          <p class="mlabel" data-i18n="comp_prompt"></p>
-          <div class="matchfield">
-            <input id="matchInput" type="text" autocomplete="off" aria-label="What are you looking for?" />
-            <button class="clear" id="matchClear" type="button" aria-label="Clear">&times;</button>
-          </div>
-        </div>
-        <p class="nomatch" id="noMatch" data-i18n="comp_nomatch"></p>
       </div>
     </section>
 
