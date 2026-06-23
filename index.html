@@ -112,6 +112,7 @@ h1,h2,h3{font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-
 .card .tags i{font-style:normal;color:var(--accent);margin:0 .3em}
 .card .plinks{display:flex;gap:18px;margin-top:16px;flex-wrap:wrap}
 .card .plinks a{color:var(--accent);font-weight:500;font-size:14px;display:inline-flex;align-items:center;gap:5px}
+.card .plinks a .note{color:var(--muted);font-weight:400;font-size:12px}
 .card .plinks a .arr{transition:transform .2s}
 .card .plinks a:hover{text-decoration:underline;text-underline-offset:3px}
 .card .plinks a:hover .arr{transform:translate(2px,-2px)}
@@ -289,7 +290,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
             <div class="tags" data-i18n="proj2_tags"></div>
             <div class="plinks">
               <a href="https://agentsxi.com" target="_blank" rel="noopener">agentsxi.com <span class="arr">&#8599;</span></a>
-              <a href="dashboard.html" target="_blank" rel="noopener">dashboard <span class="arr">&#8599;</span></a>
+              <a href="dashboard.html" target="_blank" rel="noopener">dashboard <span class="note" data-i18n="proj_dash_note"></span> <span class="arr">&#8599;</span></a>
             </div>
           </article>
           <article class="card">
@@ -297,7 +298,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
             <p data-i18n="proj3_desc"></p>
             <div class="tags" data-i18n="proj3_tags"></div>
             <div class="plinks">
-              <a href="dashboard.html" target="_blank" rel="noopener">dashboard <span class="arr">&#8599;</span></a>
+              <a href="dashboard.html" target="_blank" rel="noopener">dashboard <span class="note" data-i18n="proj_dash_note"></span> <span class="arr">&#8599;</span></a>
             </div>
           </article>
         </div>
@@ -380,6 +381,7 @@ const I18N={
 
     proj_k:"Projetos", proj_h:"Onde a curiosidade encontra o código",
     proj_intro:"Projetos pessoais onde exploro inteligência artificial, dados e automação.",
+    proj_dash_note:"(otimizado para desktop)",
     proj1_title:"Plataforma cívica",
     proj1_desc:"Plataforma cívica de incidência municipal e local que reúne e digere várias fontes de informação, com o intuito de promover uma maior intervenção e conhecimento cívico do utilizador. Procura ainda aproximar o cidadão das necessidades diárias da autarquia.",
     proj1_tags:"Cívico <i>·</i> Web <i>·</i> Dados",
@@ -432,6 +434,7 @@ const I18N={
 
     proj_k:"Projects", proj_h:"Where curiosity meets code",
     proj_intro:"Personal projects exploring artificial intelligence, data and automation.",
+    proj_dash_note:"(optimized for desktop)",
     proj1_title:"Civic platform",
     proj1_desc:"A civic platform focused on the municipal and local level that gathers and digests multiple sources of information to encourage greater civic engagement and awareness, bringing citizens closer to the day-to-day needs of their local council.",
     proj1_tags:"Civic <i>·</i> Web <i>·</i> Data",
