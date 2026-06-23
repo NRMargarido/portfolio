@@ -61,6 +61,14 @@ h1,h2,h3{font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-
 .links a{color:var(--accent);font-weight:500;font-size:15px;display:inline-flex;align-items:center;gap:6px}
 .links a .arr{transition:transform .2s}.links a:hover .arr{transform:translate(2px,-2px)}
 
+/* planiflex two-up */
+.duo{display:flex;gap:20px;width:min(740px,96%);text-align:left}
+.duo .mini{flex:1;border:1px solid var(--line);border-radius:14px;padding:22px;background:rgba(255,255,255,.28)}
+.duo .mini h3{font-size:17px;margin-bottom:9px}
+.duo .mini p{color:var(--muted);font-size:14px;line-height:1.5;margin-bottom:14px;max-width:none}
+.duo .mini .links{justify-content:flex-start;flex-direction:column;gap:8px;align-items:flex-start}
+@media(max-width:620px){.duo{flex-direction:column;width:100%}}
+
 /* galleries (open in lightbox) */
 .gal{display:flex;gap:12px;width:max-content;max-width:100%;margin-inline:auto;overflow-x:auto;padding-bottom:8px}
 .gal figure{flex:0 0 auto;display:flex;flex-direction:column;gap:6px}
@@ -109,8 +117,7 @@ h1,h2,h3{font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-
     <button data-target="oponto">O Ponto</button>
     <button data-target="video" data-i18n="m_video"></button>
     <button data-target="pbi">Power BI</button>
-    <button data-target="luxury">Luxury Literie</button>
-    <button data-target="evento" data-i18n="m_evento"></button>
+    <button data-target="planiflex">Planiflex</button>
     <a class="back-item" href="index.html"><span class="arr">&larr;</span> <span data-i18n="back"></span></a>
   </nav>
 
@@ -167,20 +174,23 @@ h1,h2,h3{font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-
         <div class="links"><a href="https://docs.google.com/presentation/d/1fsF4lriFp_VyYr3o045VgwFng8CQ2QMN/edit?usp=sharing" target="_blank" rel="noopener"><span data-i18n="open"></span> <span class="arr">&#8599;</span></a></div>
       </section>
 
-      <section class="panel" id="p-luxury">
+      <section class="panel" id="p-planiflex">
         <p class="lead" data-i18n="k_data"></p>
-        <h2>Catálogo Luxury Literie</h2>
-        <p data-i18n="cat_d"></p>
-        <div class="links"><a href="https://luxuryliterie.pt/" target="_blank" rel="noopener">luxuryliterie.pt <span class="arr">&#8599;</span></a></div>
-      </section>
-
-      <section class="panel" id="p-evento">
-        <p class="lead" data-i18n="k_data"></p>
-        <h2 data-i18n="evt_t"></h2>
-        <p data-i18n="evt_d"></p>
-        <div class="links">
-          <a href="https://jornaleconomico.sapo.pt/noticias/planiflex-investe-45-milhoes-para-aumento-de-instalacoes-e-loja/" target="_blank" rel="noopener">Jornal Económico <span class="arr">&#8599;</span></a>
-          <a href="https://www.jornaldenegocios.pt/empresas/industria/detalhe/fatima-e-joao-investem-45-milhoes-na-fabrica-e-dao-camas-e-colchoes-a-quem-perdeu-casa-nos-incendios" target="_blank" rel="noopener">Jornal de Negócios <span class="arr">&#8599;</span></a>
+        <h2>Planiflex</h2>
+        <div class="duo">
+          <article class="mini">
+            <h3>Catálogo &middot; Luxury Literie</h3>
+            <p data-i18n="cat_d"></p>
+            <div class="links"><a href="https://luxuryliterie.pt/" target="_blank" rel="noopener">luxuryliterie.pt <span class="arr">&#8599;</span></a></div>
+          </article>
+          <article class="mini">
+            <h3 data-i18n="evt_t"></h3>
+            <p data-i18n="evt_d"></p>
+            <div class="links">
+              <a href="https://jornaleconomico.sapo.pt/noticias/planiflex-investe-45-milhoes-para-aumento-de-instalacoes-e-loja/" target="_blank" rel="noopener">Jornal Económico <span class="arr">&#8599;</span></a>
+              <a href="https://www.jornaldenegocios.pt/empresas/industria/detalhe/fatima-e-joao-investem-45-milhoes-na-fabrica-e-dao-camas-e-colchoes-a-quem-perdeu-casa-nos-incendios" target="_blank" rel="noopener">Jornal de Negócios <span class="arr">&#8599;</span></a>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -203,8 +213,8 @@ const I18N={
     ek_all:"Ver todos os artigos",
     read_hint:"Clica numa imagem para ler.",
     pbi_d:"Scraping de dados e visualização em Power BI. Trabalho realizado no âmbito da cadeira de Business and Market Intelligence no curso de Competitividade e Desenvolvimento de Negócios.",
-    cat_d:"Organização do catálogo disponível da marca.",
-    evt_t:"Evento Planiflex (+400 pessoas)",
+    cat_d:"Organização do catálogo disponível da Luxury Literie, sub-marca da Planiflex.",
+    evt_t:"Evento (+400 pessoas)",
     evt_d:"Organização de um evento para mais de 400 pessoas, com repercussão nacional na imprensa.",
     open:"Abrir apresentação"
   },
@@ -216,8 +226,8 @@ const I18N={
     ek_all:"View all articles",
     read_hint:"Click an image to read it.",
     pbi_d:"Data scraping and visualisation in Power BI. Work done for the Business and Market Intelligence course in the Master's in Competitiveness and Business Development.",
-    cat_d:"Organising the brand's available catalogue.",
-    evt_t:"Planiflex event (400+ people)",
+    cat_d:"Organising the available catalogue of Luxury Literie, a Planiflex sub-brand.",
+    evt_t:"Event (400+ people)",
     evt_d:"Organising an event for over 400 people, with national press coverage.",
     open:"Open presentation"
   }
